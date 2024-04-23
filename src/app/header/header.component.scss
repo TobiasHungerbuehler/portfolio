@@ -1,6 +1,44 @@
+@import './../../styles.scss';
+
 section {
     background-color: #141D2F;
     height: 110px;
+    width: 100%;
+    // max-width: 1400px;
+    @include flex-center-center;
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid yellow;
+    
+    
+    .content{
+        @include contentWidth;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            img{
+                height: 30px;
+                width: auto;
+                cursor: pointer;
+            }
+            nav{
+                a{
+                    text-decoration: none;
+                    color: white;
+                    padding-right: 10px;
+                    cursor: pointer;
+                    transition: all 125ms ease-in-out;
+                    
+                    &:hover {
+                        transition: all 125ms ease-in-out;
+                        color: $light-blue;
+                    }
+                }
+ 
+            }
+    }
+    
+    
     
 
     

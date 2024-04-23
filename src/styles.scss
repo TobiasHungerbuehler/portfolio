@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+$light-blue:  #00BEE8;
+
+$dark-blue: #4B47FF; 
+
+$bg-color: #141D2F;
+
 html {
     scroll-behavior: smooth;
 }
@@ -7,11 +13,26 @@ html {
 body {
     margin: 0px;
     padding: 0px;
-    background-color: rgb(199, 196, 196);
+    background-color: $bg-color;
     font-family: "Poppins", sans-serif;
     color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.d-none {
+    display: none;
 }
 
 
+@mixin contentWidth(){
+    width: 100%;
+    margin: 0 32px 0 32px;
+}
 
+@mixin flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

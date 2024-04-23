@@ -1,0 +1,79 @@
+@import './../../styles.scss';
+
+section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     >img {
+         height: 80%;
+     }
+}
+
+.overlay{
+    @include flex-center-center;
+    flex-direction: column;
+    border: 1px solid yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    >.title-wrapper{
+        @include flex-center-center;
+    }
+}
+
+
+.title-box-left {
+    @include flex-center-center;
+    height: 108px;
+    width: 58px;
+    padding-right: 32px;
+
+    >p{
+        margin: 0;
+        transform: rotate(-90deg);
+        font-size: 58px;
+        line-height: 58px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+}
+
+.title-box-right {
+    >h1{
+        font-size:78px;
+        font-weight: 700;
+        margin: 0;
+        white-space: nowrap;
+        line-height: 68px;
+    }
+    >p{
+        font-size: 42px;
+        margin: 0;
+        margin-top: 24px;
+        padding: 0;
+        color: $dark-blue;
+        line-height: 44px;
+    }
+}
+
+button{
+    margin-top: 44px;
+    width: 165px;
+    height: 58px;
+    font-size: 23px;
+    color: white;
+    background-color: $light-blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+    &:hover{
+        transition: all 125ms ease-in-out;
+        background-color: $dark-blue;
+    }
+}
+
+
