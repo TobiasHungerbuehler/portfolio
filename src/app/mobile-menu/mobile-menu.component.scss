@@ -34,22 +34,19 @@
     right: 0; 
 }
 
-.overlay-content {
+.overlay-menu {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    >a{
+        text-decoration: none;
+        display: block;
+        margin: 24px 0;
+        font-size: 24px;
+        color: white;
+    }
 }
 
- .burger-menu img {
-     cursor: pointer;
- }
 
-.overlay-content a {
-    text-decoration: none;
-    display: block;
-    margin: 24px 0;
-    font-size: 24px;
-    color: white;
-}

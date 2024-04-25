@@ -17,45 +17,45 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-        >img{
-            height: 30px;
-            width: auto;
-            cursor: pointer;
-        }
-        >nav{ @include flex-center-center;
-            >a{
-                padding-left: 32px;
-                text-decoration: none;
-                font-size: 23px;
-                color: white;
-                cursor: pointer;
-                transition: all 125ms ease-in-out;
-                &:hover {
-                    transition: all 125ms ease-in-out;
-                    color: $light-blue;
-                }
-            }
-            >img {
-                height: 30px;
-                width: auto;
-            }
-
-        }
+    >img{
+        height: 30px;
+        width: auto;
+        cursor: pointer;
+    }
 }
 
-@media (max-width: 768px) {
-    .content-frame nav {
+nav{ 
+    @include flex-center-center;
+    @media (max-width: 768px){
         display: none;
     }
-    .burger-menu {
-        display: block;
+    >a{
+        padding-left: 32px;
+        text-decoration: none;
+        font-size: 23px;
+        color: white;
+        transition: all 125ms ease-in-out;
+        cursor: pointer;
+        &:hover {
+            transition: all 125ms ease-in-out;
+            color: $light-blue;
+        }
     }
 }
-@media (min-width: 769px) {
-    .burger-menu {
-        display: none;
-    }
-}
+    .burger-menu{
+        height: 30px;
+        width: auto;
+        cursor: pointer;
+        @media (max-width: 768px){
+            display: block;
+        }
+        @media (min-width: 769px){
+            display: none;
+        }
+
+    } 
+
+
 
 
 
