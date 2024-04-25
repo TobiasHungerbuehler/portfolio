@@ -14,17 +14,17 @@ section{
      }
 }
 
-.overlay{
+.title-wrapper{
     @include flex-center-center;
-    flex-direction: column;
+    //flex-direction: column;
     border: 1px solid yellow;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    >.title-wrapper{
-        @include flex-center-center;
-    }
+    // >.title-wrapper{
+    //     @include flex-center-center;
+    // }
     background-color: rgb(128, 128, 128, 0.3);
 
 }
