@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
-
-
+import { Component, ViewChild } from '@angular/core';
+import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [MobileMenuComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isOverlayVisible: boolean = false;
+  @ViewChild('mobileMenuComponent', { static: false }) mobileMenu!: MobileMenuComponent; // Referenz auf die Child-Komponente
 
-  toggleOverlay(): void {
-    this.isOverlayVisible = !this.isOverlayVisible;
-  }
-
-  closeOverlay(): void {
-    this.isOverlayVisible = false;
-  }
+  toggleMenu() {
+      this.mobileMenu.toggle();
+    } 
+  
 }

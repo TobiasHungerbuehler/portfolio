@@ -1,0 +1,17 @@
+<div class="overlay" [class.active]="isVisible">
+    <div class="content-frame">
+        <img src="./assets/img/logo.png" alt="Logo">
+        <div class="close-btn" (click)="close()">
+            <img src="./assets/img/close.png" alt="Logo">
+        </div>
+
+    </div>
+    <nav class="overlay-content">
+        <a href="#aboutMe" (click)="close()">About me</a>
+        <a href="#skills" (click)="close()">Skills</a>
+        <a href="#portfolio" (click)="close()">Portfolio</a>
+        <a href="#contact" (click)="close()">Contact</a>
+        
+    </nav>
+</div>
+

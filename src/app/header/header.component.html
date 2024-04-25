@@ -8,18 +8,11 @@
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
         </nav>
-        <div class="burger-menu" (click)="toggleOverlay()">
+        <div class="burger-menu" (click)="toggleMenu()">
             <img src="./assets/img/burgerMenu.png" alt="Menu">
         </div>
     </div>
-    <div class="overlay" [class.active]="isOverlayVisible">
-        <nav class="overlay-content">
-            <a href="#aboutMe" (click)="closeOverlay()">About me</a>
-            <a href="#skills" (click)="closeOverlay()">Skills</a>
-            <a href="#portfolio" (click)="closeOverlay()">Portfolio</a>
-            <a (click)="closeOverlay()">Close</a>
-        </nav>
-    </div>
+    <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
 
 
