@@ -16,24 +16,16 @@ section{
 
 .title-wrapper{
     @include flex-center-center;
-    //flex-direction: column;
-    border: 1px solid yellow;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // >.title-wrapper{
-    //     @include flex-center-center;
-    // }
-    background-color: rgb(128, 128, 128, 0.3);
-
 }
 
 .title-box-left {
     @include flex-center-center;
     width: clamp(2px, 0.8vw, 30px);
     padding-right: clamp(12px, 2.8vw, 32px);
-    background-color: rgb(128, 128, 128, 0.3);
     >p {
         margin: 0;
         transform: rotate(-90deg);
@@ -51,7 +43,6 @@ section{
         margin: 0;
         white-space: nowrap;
         line-height: 0.7em; // Angepasst für Konsistenz bei verschiedenen Schriftgrößen
-        background-color: rgb(128, 128, 128, 0.3);
     }
     >p {
         font-size: clamp(14px, 3vw, 42px);
@@ -60,25 +51,29 @@ section{
         padding: 0;
         color: $dark-blue;
         line-height: 0.9em; // Angepasst für Konsistenz bei verschiedenen Schriftgrößen
-        background-color: rgb(128, 128, 128, 0.3);
     }
 }
 
 
 button{
-    margin-top: 44px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
     width: 165px;
     height: 58px;
     font-size: 23px;
     color: white;
     background-color: $light-blue;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 125ms ease-in-out;
     &:hover{
         transition: all 125ms ease-in-out;
         background-color: $dark-blue;
+        width: 180px;
+        height: 64px;
     }
 }
 

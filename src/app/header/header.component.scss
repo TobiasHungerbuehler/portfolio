@@ -1,17 +1,17 @@
 @import './../../styles.scss';
 
 section {
+    position: fixed;
+    z-index: 3;
     background-color: #141D2F;
-    height: 110px;
+    height: 90px;
     width: 100%;
-    // max-width: 1400px;
     @include flex-center-center;
     position: absolute;
     top: 0;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgb(255, 255, 0, 0.1);
     
-    
-    .content{
+    .content-frame{
         @include contentWidth;
         display: flex;
         justify-content: space-between;
@@ -22,21 +22,86 @@ section {
                 cursor: pointer;
             }
             nav{
+                background-color: red;
+                @include flex-center-center;
                 a{
+                    background-color: grey;
                     text-decoration: none;
                     color: white;
-                    padding-right: 10px;
+                    padding-left: 32px;
                     cursor: pointer;
                     transition: all 125ms ease-in-out;
-                    
+                    font-size: 23px;
                     &:hover {
                         transition: all 125ms ease-in-out;
                         color: $light-blue;
                     }
                 }
+                img {
+                    height: 30px;
+                    width: auto;
+                }
  
             }
     }
+
+    @media (max-width: 768px) {
+        .content-frame nav {
+            display: none;
+        }
+        .burger-menu {
+            display: block;
+        }
+    }
+    @media (min-width: 769px) {
+        .burger-menu {
+            display: none;
+        }
+    }
+
+    // mobile
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Startposition außerhalb des Bildschirms */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        transition: right 0.3s ease; /* Animiere die rechte Eigenschaft */
+    }
+
+    .overlay.active {
+        right: 0; /* Bewege das Overlay ins Bild, wenn es aktiv ist */
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .burger-menu img {
+        cursor: pointer;
+    }
+
+    .overlay-content a {
+        display: block;
+        margin: 20px 0;
+        font-size: 24px;
+        color: white;
+    }
+
+
+
+
+
+
+    
+
+    
     
     
     
