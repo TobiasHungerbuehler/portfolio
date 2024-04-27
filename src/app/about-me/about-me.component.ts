@@ -10,54 +10,16 @@ import { Component, EventEmitter, Output, HostListener, ElementRef} from '@angul
 })
 export class AboutMeComponent {
   
-  @Output() onScroll = new EventEmitter<string>();
+  handleVisibility(isVisible: any) {  // Verwende `any` vorübergehend zur Fehlersuche
+    console.log('Received event:', isVisible);  // Logge den empfangenen Wert
+    console.log('Type of received event:', typeof isVisible);  // Logge den Typ des empfangenen Wertes
 
-  constructor(private el: ElementRef) {}
-
-  @HostListener('window:scroll', ['$event'])
-  checkVisibility() {
-    const componentPosition = this.el.nativeElement.getBoundingClientRect();
-    const componentTop = componentPosition.top;
-    const componentBottom = componentPosition.bottom;
-
-    // Prüft, ob die Komponente im Viewport ist
-    const isVisible = (componentTop < window.innerHeight) && (componentBottom >= 0);
-
-    if (isVisible) {
-      this.onScroll.emit('aboutMe');
+    if (typeof isVisible === 'boolean') {
+      console.log('About Me visibility:', isVisible);
+    } else {
+      console.error('Unexpected event type');
     }
   }
 
-
 }
 
-
-  // id = 'aboutMe'; // Angenommen, die Section hat die ID "about-me"
-
-  // constructor(private elementRef: ElementRef) {}
-
-  // ngOnInit() {
-  //   this.addScrollListener();
-  // }
-
-  // addScrollListener() {
-  //   window.addEventListener('scroll', this.onWindowScroll, true);
-  // }
-
-  // onWindowScroll = (): void => {
-  //   const rect = this.elementRef.nativeElement.getBoundingClientRect();
-  //   const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
-  //   if (isInViewport) {
-  //     console.log(`Section "${this.id}" im sichtbaren Bereich: ${Date.now()}`);
-  //     this.onScroll.emit(this.id);
-  //   }
-  // }
-
-  // ngOnDestroy() {
-  //   window.removeEventListener('scroll', this.onWindowScroll, true);
-  // }
-
-  // @HostBinding('id')
-  // get elementId() {
-  //   return this.id;
-  // }

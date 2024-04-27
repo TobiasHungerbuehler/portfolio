@@ -1,6 +1,7 @@
 <!-- about-me.component.html -->
 
-<section id="aboutMe" #aboutMeRef>
+<!-- <section id="aboutMe" #aboutMeRef> -->
+<section id="aboutMe" appVisibilityTracker (visibilityChange)="handleVisibility($event)">
     <div>
         <h2>About me</h2>
 
