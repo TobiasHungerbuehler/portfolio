@@ -1,6 +1,8 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { CommonModule } from '@angular/common';
+import { ScrollStateService } from '../services/scroll-state.service';
+import { Subscription } from 'rxjs';
 
 
 
@@ -12,10 +14,31 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent  {
+  
   @ViewChild('mobileMenuComponent', { static: false }) mobileMenu!: MobileMenuComponent; // Referenz auf die Child-Komponente
+  
+  private subscription!: Subscription; // Typ korrekt verwenden
+  activeSection = '';
 
+  constructor(private scrollService: ScrollStateService) {
+    this.run();
+  }
 
-  private observer!: IntersectionObserver;
+  run() {
+    //console.log('header init');
+    
+    this.subscription = this.scrollService.currentSection.subscribe(section => {
+      this.activeSection = section;
+      // Hier könntest du die CSS-Klasse basierend auf `activeSection` aktualisieren
+      console.log(this.activeSection);
+      
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+  
 
     toggleMenu() {
       this.mobileMenu.toggle();

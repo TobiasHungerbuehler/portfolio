@@ -6,6 +6,7 @@ import { AboutMeComponent } from '../about-me/about-me.component';
 import { MySkillsComponent } from '../my-skills/my-skills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ContactComponent } from '../contact/contact.component';
+import { ScrollStateService } from '../services/scroll-state.service';
 
 @Component({
   selector: 'app-base',
@@ -14,17 +15,20 @@ import { ContactComponent } from '../contact/contact.component';
             AboutMeComponent,
             MySkillsComponent,
             PortfolioComponent,
-            ContactComponent
+            ContactComponent,
   ],
   templateUrl: './base.component.html',
   styleUrl: './base.component.scss'
 })
 export class BaseComponent {
 
+  constructor(private scrollService: ScrollStateService) {}
   
   handleScroll(sectionId: string) {
     console.log('Scrolled to section:', sectionId);
     // Füge hier deine Logik hinzu, um etwas zu tun, wenn gescrollt wird
+    this.scrollService.changeSection(sectionId);
+
   }
 
 }

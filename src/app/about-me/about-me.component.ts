@@ -1,5 +1,5 @@
 // about-me.component.ts
-import { Component, EventEmitter, Output, HostListener, ViewChild, ElementRef, HostBinding  } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
