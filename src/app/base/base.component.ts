@@ -1,3 +1,5 @@
+
+// base.component.ts
 import { Component } from '@angular/core';
 import { StartSectionComponent } from '../start-section/start-section.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
@@ -18,5 +20,11 @@ import { ContactComponent } from '../contact/contact.component';
   styleUrl: './base.component.scss'
 })
 export class BaseComponent {
+
+  
+  handleScroll(sectionId: string) {
+    console.log('Scrolled to section:', sectionId);
+    // Füge hier deine Logik hinzu, um etwas zu tun, wenn gescrollt wird
+  }
 
 }
