@@ -25,10 +25,7 @@ export class BaseComponent {
   constructor(private scrollService: ScrollStateService) {}
   
   handleScroll(sectionId: string) {
-    console.log('Scrolled to section:', sectionId);
-    // Füge hier deine Logik hinzu, um etwas zu tun, wenn gescrollt wird
     this.scrollService.changeSection(sectionId);
-
   }
 
 }
