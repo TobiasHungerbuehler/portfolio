@@ -22,10 +22,10 @@ import { ScrollStateService } from '../services/scroll-state.service';
 })
 export class BaseComponent {
 
-  constructor(private scrollService: ScrollStateService) {}
+  // constructor(private scrollService: ScrollStateService) {}
   
-  handleScroll(sectionId: string) {
-    this.scrollService.changeSection(sectionId);
-  }
+  // handleScroll(sectionId: string) {
+  //   this.scrollService.changeSection(sectionId);
+  // }
 
 }
