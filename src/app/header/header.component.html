@@ -5,17 +5,13 @@
         <a href="#startSection">
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
-        <!-- <nav>
-            <a href="#aboutMe" id="link-aboutMe" #aboutMe>About me</a>
-            <a href="#mySkills" id="link-mySkills" #mySkills>My skills</a>
-            <a href="#portfolio" id="link-portfolio" #portfolio>Portfolio</a>
-        </nav> -->
+
 
 
         <nav>
-            <a [class.active]="activeSection === 'aboutMe'" href="#aboutMe">About Me</a>
-            <a [class.active]="activeSection === 'mySkills'" href="#mySkills">My Skills</a>
-            <a [class.active]="activeSection === 'portfolio'" href="#portfolio">Portfolio</a>
+            <a [class.active-section]="activeSection === 'aboutMe'" href="#aboutMe">About Me</a>
+            <a [class.active-section]="activeSection === 'mySkills'" href="#mySkills">My Skills</a>
+            <a [class.active-section]="activeSection === 'portfolio'" href="#portfolio">Portfolio</a>
           </nav>
 
 

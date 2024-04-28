@@ -1,10 +1,8 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { CommonModule } from '@angular/common';
 import { ScrollStateService } from '../services/scroll-state.service';
 import { Subscription } from 'rxjs';
-
-
 
 @Component({
   selector: 'app-header',
@@ -20,18 +18,16 @@ export class HeaderComponent  {
   private subscription!: Subscription; // Typ korrekt verwenden
   activeSection = '';
 
-  constructor(private scrollService: ScrollStateService) {
-    this.run();
+  constructor(private scrollService: ScrollStateService) {}
+
+  ngOnInit() {
+    this.subscribeToSectionChanges();
   }
 
-  run() {
-    //console.log('header init');
-    
+  subscribeToSectionChanges() {
     this.subscription = this.scrollService.currentSection.subscribe(section => {
       this.activeSection = section;
-      // Hier könntest du die CSS-Klasse basierend auf `activeSection` aktualisieren
       console.log(this.activeSection);
-      
     });
   }
 
