@@ -1,4 +1,3 @@
-
 <!-- header.component.html -->
 <section>
     <div class="content-frame">
@@ -9,10 +8,19 @@
 
 
         <nav>
-            <a [class.active-section]="activeSection === 'aboutMe'" href="#aboutMe">About Me</a>
-            <a [class.active-section]="activeSection === 'mySkills'" href="#mySkills">My Skills</a>
-            <a [class.active-section]="activeSection === 'portfolio'" href="#portfolio">Portfolio</a>
-          </nav>
+            <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
+                <a href="#aboutMe">About Me</a>
+                <div class="under-line"></div>
+            </div>
+            <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
+                <a href="#mySkills">My Skills</a>
+                <div class="under-line"></div>
+            </div>
+            <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
+                <a href="#portfolio">Portfolio</a>
+                <div class="under-line"></div>
+            </div>
+        </nav>
 
 
 
@@ -23,6 +31,3 @@
     </div>
     <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
-
-
-

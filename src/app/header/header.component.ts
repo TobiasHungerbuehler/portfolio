@@ -27,7 +27,7 @@ export class HeaderComponent  {
   subscribeToSectionChanges() {
     this.subscription = this.scrollService.currentSection.subscribe(section => {
       this.activeSection = section;
-      console.log(this.activeSection);
+      //console.log(this.activeSection);
     });
   }
 

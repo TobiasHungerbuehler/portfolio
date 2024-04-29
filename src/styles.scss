@@ -20,13 +20,6 @@ html, body {
 }
 
 
-// *,
-// *:before,
-// *:after {
-//     box-sizing: border-box;
-// }
-
-
 body {
     display: block;
     overflow-x: hidden;
@@ -48,7 +41,6 @@ body {
 
 
 @mixin contentWidth(){
-    background-color: rgb(240, 248, 255, 0.1);
     width: 85%;
     //padding: 0 32px 0 32px;
 }
@@ -58,6 +50,17 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* Versteckt sowohl horizontale als auch vertikale Scrollbars */
 html {
