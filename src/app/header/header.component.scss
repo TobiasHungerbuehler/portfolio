@@ -8,9 +8,7 @@ section {
     height: 90px;
     @include flex-center-center;
     background-color: #141D2F;
-    border-bottom: 1px solid rgb(255, 255, 0, 0.1);
 }
-
 
 .content-frame {
     @include contentWidth;
@@ -26,7 +24,6 @@ section {
 
 nav {
     @include flex-center-center;
-
     @media (max-width: 768px) {
         display: none;
     }
@@ -34,21 +31,18 @@ nav {
 
 .link-box {
     padding-left: 32px;
-
     >a {
         text-decoration: none;
         font-size: 23px;
         color: white;
         transition: all 125ms ease-in-out;
         cursor: pointer;
-
         &:hover {
             transition: all 125ms ease-in-out;
             color: $light-blue;
         }
     }
-
-    .under-line {
+    >.under-line {
         background-color: transparent;
         height: 3px;
         width: 60px;
@@ -58,16 +52,13 @@ nav {
 
 .link-box-on {
     transition: all 125ms ease-in-out;
-
     >a {
         color: $light-blue;
     }
-
     >.under-line {
         background-color: $dark-blue;
     }
 }
-
 
 .burger-menu {
     height: 30px;
@@ -81,5 +72,4 @@ nav {
     @media (min-width: 769px) {
         display: none;
     }
-
 }
