@@ -1,19 +1,28 @@
-
 <!-- header.component.html -->
 <section>
     <div class="content-frame">
-        <img src="./assets/img/logo.png" alt="Logo">
+        <a href="#startSection">
+            <img src="./assets/img/logo.png" alt="Logo">
+        </a>
+        
         <nav>
-            <a href="#aboutMe">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
+            <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
+                <a href="#aboutMe">About Me</a>
+                <div class="under-line"></div>
+            </div>
+            <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
+                <a href="#mySkills">My Skills</a>
+                <div class="under-line"></div>
+            </div>
+            <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
+                <a href="#portfolio">Portfolio</a>
+                <div class="under-line"></div>
+            </div>
         </nav>
+
         <div class="burger-menu" (click)="toggleMenu()">
             <img src="./assets/img/burgerMenu.png" alt="Menu">
         </div>
     </div>
     <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
-
-
-

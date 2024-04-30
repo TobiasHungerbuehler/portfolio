@@ -10,6 +10,7 @@
     z-index: 5;
     transition: right 0.3s ease; /* Animiere die rechte Eigenschaft */
     display: flex;
+    justify-content: center;
 }
 
 .content-frame{
@@ -40,13 +41,43 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    >a{
+}
+
+.link-box {
+    margin-top: 12px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    > a {
+        margin-top: 0px;
         text-decoration: none;
-        display: block;
-        margin: 24px 0;
-        font-size: 24px;
+        font-size: 23px;
         color: white;
+        transition: all 125ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transition: all 125ms ease-in-out;
+            color: $light-blue;
+        }
+    }
+
+    .under-line {
+        height: 3px;
+        width: 60px;
+        background-color: transparent; // Default Zustand ohne Farbe
+    }
+}
+        
+.link-box-on {
+
+    > a {
+        color: $light-blue; // Ändert die Textfarbe wenn aktiv
+    }
+
+    > .under-line {
+        background-color: $dark-blue; // Ändert die Unterstrichfarbe wenn aktiv
     }
 }
 
-
+    

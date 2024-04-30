@@ -1,0 +1,17 @@
+@import './../../styles.scss';
+
+
+section{
+    @include flex-center-center;
+    height: 2500px;
+    width: 100vw;
+    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
+    >div{
+        @include contentWidth;
+        
+    }
+    
+
+
+    
+}

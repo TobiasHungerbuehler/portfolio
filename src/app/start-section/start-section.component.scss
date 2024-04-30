@@ -1,17 +1,27 @@
 @import './../../styles.scss';
 
 section{
+    box-sizing: border-box;
     position: relative;
     height: 100vh;
     width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-     >img {
-         height: auto;
-         max-width: 48%;
-        max-height: 90%;
-     }
+    align-items: end;
+    border: 1px solid yellow;
+}
+
+.backdrop{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    >img {
+       height: auto;
+       max-width: 48%;
+       max-height: 80%;
+    }
 }
 
 .title-wrapper{
@@ -55,7 +65,8 @@ section{
 }
 
 
-button{
+.button{
+    @include flex-center-center;
     position: absolute;
     top: 70%;
     left: 50%;
