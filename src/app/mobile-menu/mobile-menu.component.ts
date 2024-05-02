@@ -48,7 +48,6 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
   subscribeToSectionChanges() {
     this.subscription = this.scrollService.currentSection.subscribe(section => {
       this.activeSection = section;
-      console.log(this.activeSection); // Log the current active section for debugging.
     });
   }
 

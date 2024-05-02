@@ -1,10 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 $light-blue:  #00BEE8;
 
 $dark-blue: #4B47FF; 
 
 $bg-color: #141D2F;
+
+
 
 html {
     scroll-behavior: smooth;
@@ -49,6 +52,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin x{
+    border: 1px solid rgb(255, 255, 0, 0.5);
 }
 
 
