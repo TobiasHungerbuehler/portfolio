@@ -7,6 +7,10 @@ $dark-blue: #4B47FF;
 
 $bg-color: #141D2F;
 
+h2{
+    font-size: clamp(40px, 6vw, 90px);
+    font-weight: 700;
+}
 
 
 html {

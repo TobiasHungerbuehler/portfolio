@@ -2,13 +2,16 @@
 
 
 section{
+    position: absolute;
+    z-index: 1;
     @include flex-center-center;
     height: 250px;
     width: 100vw;
-    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
+
     >div{
+        position: relative;
         @include contentWidth;
-        
+        //top: -200px;
     }
     
 

@@ -2,16 +2,72 @@
 
 
 section{
-    @include flex-center-center;
-    height: 250px;
-    width: 100vw;
-    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-    >div{
-        @include contentWidth;
-        
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 140vh;
+    @include x; 
+}
+
+.portrait-wrapper{
+    position: absolute;
+    bottom: 44%;
+    width: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: flex-end;
+    >.bg{
+        //margin-right: 5%;
+        @include x;
+        padding: 100px 100px 0px 100px;
+        background-image: url("../../assets/img/bg-portrait.png");
+        width: 40%;
+        height: auto;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >.portrait{
+            @include x;
+            width: 490px;  
+            height: auto;
+        }
     }
     
+}
 
 
+.wave-wrapper {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    right: 0;
+    height: 700px;
+    width: 100%; 
+    overflow: hidden; 
+    @media (max-width: 1000px) {
+        right: -100px;
+        left: 0;
+    }
+    >.wave{
+        border: solid 1px green;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+
+
+
+.text-wrapper{
+    @include x;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include contentWidth;
     
 }
