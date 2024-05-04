@@ -14,27 +14,19 @@ section{
     position: absolute;
     bottom: 44%;
     width: 100%;
-    z-index: 6;
+    z-index: 2;
     display: flex;
     justify-content: flex-end;
-    >.bg{
-        //margin-right: 5%;
+    >.bg-portrait{
+        position: absolute;
+        z-index: 3;
+    }
+    >.portrait{
+        position: absolute;
+        z-index: 4;
         @include x;
-        padding: 100px 100px 0px 100px;
-        background-image: url("../../assets/img/bg-portrait.png");
-        width: 40%;
+        width: 490px;  
         height: auto;
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        >.portrait{
-            @include x;
-            width: 490px;  
-            height: auto;
-        }
     }
     
 }
