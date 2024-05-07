@@ -1,38 +1,72 @@
 @import './../../styles.scss';
 
+$mobileWidth: 1100px;
 
 section{
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    width: 100%;
-    height: 140vh;
+    width: 100vw;
+    height: 1260px;
     @include x; 
+    @media (max-width: $mobileWidth) {
+    } 
 }
 
-.portrait-wrapper{
-    position: absolute;
-    bottom: 44%;
+.content-frame{
+    padding-top: 124px;
     width: 100%;
-    z-index: 2;
     display: flex;
-    justify-content: flex-end;
+    @media (max-width: $mobileWidth) {
+        flex-direction: column-reverse;
+       //padding-top: 0;
+    }
+}
+
+.text-container{
+    height: 500px;
+    width: 50%;
+    z-index: 4;
+    @include x; 
+    @media (max-width: $mobileWidth) {
+        width: 100%;
+    }
+} 
+
+.portrait-wrapper{
+    position: relative;
+    border: solid 1px red;
+    height: 600px;
+    width: 50%;
+    @media (max-width: $mobileWidth) {
+        width: 100%;
+    }
     >.bg-portrait{
         position: absolute;
-        z-index: 3;
+        z-index: 1;
+        top: 60px;
+        width: 100%;
+        height: auto;
     }
     >.portrait{
         position: absolute;
-        z-index: 4;
-        @include x;
-        width: 490px;  
-        height: auto;
+        z-index: 2;
+        left: 10%;
+        bottom: 0;
+        height: 550px;
+        width: auto;
+        @media (max-width: $mobileWidth) {
+            left: 50%;
+            transform: translate(-50%);
+        }
+        @media (max-width: 560px) {
+            height: 95vw;
+            min-height: 320px;
+        }
     }
-    
 }
-
-
-.wave-wrapper {
+ 
+.wave-wrapper{
     position: absolute;
     bottom: 0;
     z-index: 3;
@@ -40,26 +74,12 @@ section{
     height: 700px;
     width: 100%; 
     overflow: hidden; 
-    @media (max-width: 1000px) {
-        right: -100px;
-        left: 0;
+    @media (max-width: 420px) {
+        //bottom: 124px;
     }
     >.wave{
-        border: solid 1px green;
         height: 100%;
         width: 100%;
     }
-
 }
 
-
-
-
-.text-wrapper{
-    @include x;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    @include contentWidth;
-    
-}
