@@ -1,5 +1,5 @@
 // about-me.component.ts
-import { Component,HostListener, ElementRef} from '@angular/core';
+import { Component,HostListener, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import { ScrollStateService } from '../services/scroll-state.service';
 import { TextContainerComponent } from './text-container/text-container.component';
 
@@ -14,6 +14,21 @@ import { TextContainerComponent } from './text-container/text-container.componen
 
 
 export class AboutMeComponent {
+
+  // @ViewChild('portraitWrapper') portraitWrapper!: ElementRef<HTMLImageElement>;
+  // @ViewChild('waveWraper') waveWrapper!: ElementRef<HTMLImageElement>;
+  // @ViewChild('aboutMe') aboutMe!: ElementRef<HTMLElement>;
+
+  // ngAfterViewInit() {
+  //   // Warte bis die View initialisiert wurde, um Zugriff auf die DOM-Elemente zu haben
+  //   const portraitHeight = this.portraitWrapper.nativeElement.offsetHeight;
+  //   const waveHeight = this.waveWrapper.nativeElement.offsetHeight;
+
+    
+  //   this.aboutMe.nativeElement.style.height = `${portraitHeight + waveHeight}px`;
+  // }
+
+
   // Konstruktor der Komponente, der Abhängigkeiten injiziert.
   constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
               private scrollService: ScrollStateService) // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
