@@ -82,6 +82,7 @@ section{
     height: 100%;
     min-height: 300px;
     max-height: 700px;
+    
     @media (max-width: $mobileWidth) {
         top: -650px;
     } 
