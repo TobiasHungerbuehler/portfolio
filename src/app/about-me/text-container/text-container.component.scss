@@ -7,12 +7,10 @@
     height: 100%;
     width: clamp(500px, 40vw, 700px);
     margin-left: $distance-to-side*2;
-    @include x;
     @media (max-width: $mobileWidth) {
         margin-left: $distance-to-side;
         @include contentWidth;
-        margin-top: 64px;
-
+        margin-top: 44px;
     }
     @media (max-width: 550px) {
     }
@@ -28,14 +26,12 @@
         line-height: 20px;
         font-size: 16px;
     }
-    
 }
 
 .smal-text-box{
     line-height: 20px;
     @include flex-center-center;
     font-size: 16px;
-
     >.img-container{
         @include flex-center-center;
         height: 100px;
