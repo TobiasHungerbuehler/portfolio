@@ -68,11 +68,20 @@ skills = [
   },
 ]  
 
-getClass(index: number): string {
-  if (index < 4) return 'row-1';
-  if (index < 7) return 'row-2';
-  if (index < 9) return 'row-3';
-  return 'row-4';
+skillGroups: { skills: any[] }[] = [];
+
+ngOnInit() {
+  this.groupSkills();
+}
+
+groupSkills() {
+  const groupSizes = [4, 3, 2, 1];
+  let index = 0;
+
+  for (const size of groupSizes) {
+    this.skillGroups.push({ skills: this.skills.slice(index, index + size) });
+    index += size;
+  }
 }
 
 
