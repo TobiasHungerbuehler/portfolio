@@ -1,0 +1,48 @@
+@import './../../../styles.scss';
+@import './../about-me.component.scss';
+
+.text-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: clamp(500px, 40vw, 700px);
+    margin-left: $distance-to-side*2;
+    @media (max-width: $mobileWidth) {
+        margin-left: $distance-to-side;
+        @include contentWidth;
+        margin-top: 44px;
+    }
+    @media (max-width: 550px) {
+    }
+    >h2{
+        margin: 0;
+        line-height: 90px;
+        padding: 0px 0px 24px 0px;
+        @media (max-width: $mobileWidth) {
+            padding: 0;
+        }
+    }
+    >p{
+        line-height: 20px;
+        font-size: 16px;
+    }
+}
+
+.smal-text-box{
+    line-height: 20px;
+    @include flex-center-center;
+    font-size: 16px;
+    >.img-container{
+        @include flex-center-center;
+        height: 100px;
+        width: 25%;
+        >img{
+            width: 50px;
+            height: auto;
+        }
+    }
+    >.txt{
+        width: 75%;
+        display: flex;
+    }
+}

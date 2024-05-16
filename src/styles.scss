@@ -8,7 +8,7 @@ $dark-blue: #4B47FF;
 $bg-color: #141D2F;
 
 h2{
-    font-size: clamp(40px, 6vw, 90px);
+    font-size: clamp(40px, 7vw, 90px);
     font-weight: 700;
 }
 
@@ -46,10 +46,11 @@ body {
     display: none;
 }
 
+$distance-to-side: 8%;
 
 @mixin contentWidth(){
-    width: 85%;
-    //padding: 0 32px 0 32px;
+    width: 84%;
+    
 }
 
 @mixin flex-center-center{

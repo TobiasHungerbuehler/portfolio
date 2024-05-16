@@ -1,12 +1,13 @@
 // about-me.component.ts
 import { Component,HostListener, ElementRef} from '@angular/core';
 import { ScrollStateService } from '../services/scroll-state.service';
+import { TextContainerComponent } from './text-container/text-container.component';
 
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [],
+  imports: [TextContainerComponent],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
