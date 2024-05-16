@@ -1,7 +1,25 @@
 <section id="mySkills">
-    <div>
-        <h2>My skills</h2>
 
+    <div class="conten-wrapper">
+
+        <div class="skill-container">
+
+            @for (skill of skills; track skill; ) {
+                <div class="skill-Element">
+                    <img src="./assets/img/skills/{{skill.img}}" alt="">
+                    <p>{{skill.name}}</p>
+                </div>
+
+            }
+
+        </div>
+
+        <div class="text-container">
+            
+            <h2>My skills</h2>
+
+        </div>
+    
     </div>
 
 

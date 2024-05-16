@@ -4,17 +4,37 @@
 section{
     position: absolute;
     z-index: 7;
-    @include flex-center-center;
-    height: 250px;
     width: 100vw;
+    border: 2px solid red;
+    @include flex-center-center;
 
-    >div{
-        position: relative;
+
+    >.conten-wrapper{
+        @include x;
         @include contentWidth;
-        //top: -200px;
+        display: flex;
+        justify-content: center;  
     }
     
+}
 
 
+.skill-container{
+    width: 50%;
+    min-height: 300px;
+    border: 1px solid purple;
+}
+
+.skill-Element{
     
 }
+
+
+.text-container{
+    min-height: 300px;
+    width: 50%;
+    border: 1px solid rgb(126, 129, 135);
+
+}
+
+

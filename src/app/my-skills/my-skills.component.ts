@@ -9,18 +9,63 @@ import { ScrollStateService } from '../services/scroll-state.service';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
-  // Konstruktor der Komponente, der Abhängigkeiten injiziert.
   constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
   private scrollService: ScrollStateService) // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
 {}
 
-  // Dekorator, der eine Methode als Event-Handler für das native scroll Event des Fensters registriert.
   @HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
 
-  onScroll() {
-  // Wird jedes Mal aufgerufen, wenn auf der Seite gescrollt wird.
-  this.scrollService.checkAndEmitVisibility(this.elementRef, 'mySkills'); 
-  // Ruft eine Methode im scrollService auf, die prüft, ob das Element sichtbar ist, und einen Zustand entsprechend ändert.
-  }
+  onScroll() { // Wird jedes Mal aufgerufen, wenn auf der Seite gescrollt wird.
+  this.scrollService.checkAndEmitVisibility(this.elementRef, 'mySkills'); // Ruft eine Methode im scrollService auf, die prüft, ob das Element sichtbar ist, und einen Zustand entsprechend ändert.
+}
+
+
+
+
+
+
+skills = [
+  {
+    name: "JavaScript",
+    img:"javaScript.png",
+  },
+  {
+    name: "Angular",
+    img:"angular.png",
+  },
+  {
+    name: "TypeScript",
+    img:"typeScript.png",
+  },
+  {
+    name: "HTML",
+    img:"html.png",
+  },
+  {
+    name: "GIT",
+    img:"git.png",
+  },
+  {
+    name: "Firebase",
+    img:"firebase.png",
+  },
+  {
+    name: "CSS",
+    img:"css.png",
+  },
+  {
+    name: "Scrum",
+    img:"scrum.png",
+  },
+  {
+    name: "Rest-API",
+    img:"api.png",
+  },
+  {
+    name: "Material design",
+    img:"materialDesign.png",
+  },
+]  
 
 }
+
