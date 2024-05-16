@@ -2,14 +2,29 @@
 @import './../about-me.component.scss';
 
 .text-wrapper{
-    height: 100%;
-    width: 500px;
-    margin-left: $distance-to-side*2;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     
+
+    height: 100%;
+    width: clamp(500px, 40vw, 700px);
+    margin-left: $distance-to-side*2;
+    @media (max-width: $mobileWidth) {
+        margin-left: 0;
+        @include x;
+    }
+    @media (max-width: 550px) {
+        width: 90%;
+    }
     >h2{
         margin: 0;
         line-height: 90px;
         padding: 0px 0px 24px 0px;
+        @media (max-width: $mobileWidth) {
+            padding: 0;
+        }
     }
     >p{
         line-height: 20px;
@@ -22,7 +37,6 @@
     line-height: 20px;
     @include flex-center-center;
     font-size: 16px;
-    //@include x;
 
     >.img-container{
         @include flex-center-center;
@@ -33,10 +47,8 @@
             height: auto;
         }
     }
-
     >.txt{
         width: 75%;
         display: flex;
     }
-
 }
