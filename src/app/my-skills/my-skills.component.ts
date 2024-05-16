@@ -1,10 +1,11 @@
 import { Component,HostListener, ElementRef} from '@angular/core';
 import { ScrollStateService } from '../services/scroll-state.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -66,6 +67,20 @@ skills = [
     img:"materialDesign.png",
   },
 ]  
+
+getClass(index: number): string {
+  if (index < 4) return 'row-1';
+  if (index < 7) return 'row-2';
+  if (index < 9) return 'row-3';
+  return 'row-4';
+}
+
+
+
+
+
+
+
 
 }
 

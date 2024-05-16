@@ -20,13 +20,16 @@ section{
 
 
 .skill-container{
+    position: relative;
     width: 50%;
     min-height: 300px;
     border: 1px solid purple;
 }
 
-.skill-Element{
-    
+.skill-element{
+    position: absolute;
+    margin: 10px;
+    text-align: center; 
 }
 
 
@@ -37,4 +40,20 @@ section{
 
 }
 
+.row-1 {
+    margin-top: 100px;
+}
+
+.row-2 {
+
+
+  }
+
+  .row-3 {
+
+  }
+
+  .row-4 {
+
+  }
 

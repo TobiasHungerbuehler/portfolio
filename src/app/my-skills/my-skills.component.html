@@ -4,10 +4,11 @@
 
         <div class="skill-container">
 
-            @for (skill of skills; track skill; ) {
-                <div class="skill-Element">
+            @for (skill of skills; track skill; let i = $index; ) {
+                <div class="skill-element" [ngClass]="getClass(i)">
                     <img src="./assets/img/skills/{{skill.img}}" alt="">
                     <p>{{skill.name}}</p>
+         
                 </div>
 
             }
