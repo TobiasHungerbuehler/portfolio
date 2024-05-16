@@ -2,21 +2,19 @@
 @import './../about-me.component.scss';
 
 .text-wrapper{
-
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    
-
     height: 100%;
     width: clamp(500px, 40vw, 700px);
     margin-left: $distance-to-side*2;
+    @include x;
     @media (max-width: $mobileWidth) {
-        margin-left: 0;
-        @include x;
+        margin-left: $distance-to-side;
+        @include contentWidth;
+        margin-top: 64px;
+
     }
     @media (max-width: 550px) {
-        width: 90%;
     }
     >h2{
         margin: 0;

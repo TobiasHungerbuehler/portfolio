@@ -49,7 +49,6 @@ body {
 $distance-to-side: 8%;
 
 @mixin contentWidth(){
-    //width: 100% - ($distance-to-side*2);
     width: 84%;
     
 }

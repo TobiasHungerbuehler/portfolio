@@ -13,11 +13,12 @@ section{
 }
 
 .content-wrapper{
-    //position: relative; /// hier weiter machen. wave versuchen an top von content-wrapper zu setzten
+    position: relative; 
     width: 100%;
     height: 100%;
-    margin-top: 74px;
-    overflow: hidden;
+    //overflow: hidden;
+
+    border: solid 1px rgb(8, 237, 222);
 
     display: flex;
     @media (max-width: $mobileWidth) {
@@ -33,7 +34,6 @@ section{
     border: solid 1px purple;
     @media (max-width: $mobileWidth) {
         width: 100%;
-        @include flex-center-center;
     } 
 }
 
@@ -42,14 +42,14 @@ section{
     position: relative;
     width: 50%;
     height: 50vw;
-    min-height: 400px;
-    max-height: 550px;
-
+    height: 550px;
     border: solid 1px grey;
 
     @media (max-width: $mobileWidth) {
         width: 100%;
         margin-top: 0px;
+        height: 400px;
+
     } 
     
 }
@@ -70,33 +70,26 @@ section{
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
-    min-height: 350px;
-    height: 50vw;
-    max-height: 500px;
+    height: 100%;
     width: auto;
-}
-
-.wave-container{
-    position: relative;
-    width: 100%;
-    background-color: red;
 }
 
 .wave{
     position: absolute;
     z-index: 3;
-    top: -100px;
+    top: 550px;
     width: 100%;
     height: 100%;
     min-height: 300px;
     max-height: 700px;
 
+    //background-color: rgb(255, 0, 0, 0.2);
     @media (max-width: $mobileWidth) {
-        top: -600px;
+        top: 250px;
     } 
 
-    @media (max-width: 550px) {
-        top: -550px;
-    } 
+    // @media (max-width: 550px) {
+
+    // } 
 }
 
