@@ -46,10 +46,10 @@ body {
     display: none;
 }
 
-$distance-to-side: 8%;
+$distance-to-side: 8vw;
 
 @mixin contentWidth(){
-    width: 84%;
+    width: 84vw;
     
 }
 

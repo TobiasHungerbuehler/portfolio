@@ -6,7 +6,7 @@
     flex-direction: column;
     height: 100%;
     width: clamp(500px, 40vw, 700px);
-    margin-left: $distance-to-side*2;
+    margin-left: $distance-to-side;
     @media (max-width: $mobileWidth) {
         margin-left: $distance-to-side;
         @include contentWidth;
