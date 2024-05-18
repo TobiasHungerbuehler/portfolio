@@ -2,46 +2,49 @@
 
     <div class="conten-wrapper">
 
+        
         <div class="skill-container">
 
-            @for (group of skillGroups; track group;) {
-                <div class="row">
+            <img src="./assets/img/left-blue 1.png" alt="">
 
-                    @for (skill of group.skills; track skill; let i = $index; ) {
-                        <div class="skill-element">
+            <div class="elements-wrapper">
+                @for (group of skillGroups; track group;) {
+                    <div class="row">
+                        @for (skill of group.skills; track skill; let i = $index; ) {
+                            <div class="skill-element">
+                                <img src="./assets/img/skills/{{skill.img}}" alt="">
+                                <p>{{skill.name}}</p>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
 
-                            <img src="./assets/img/skills/{{skill.img}}" alt="">
-                            <p>{{skill.name}}</p>
 
-                 
-                        </div>
-                    }
-                </div>
-            }
+
+            <a href="#contact">
+                <div class="button">Get in touch</div>
+            </a>
+
         </div>
 
         <div class="text-container">
 
-            <div class="overlay">
-
-                <div>
+                <div class="h2-wrapper">
                     <h2>My skills</h2>
                     <div class="line"></div>
                 </div>
                  
                 <p>I have grown my frontend developments skills that have allowed me to create different real projects.</p>
 
-
-                <button>Get in touch</button>
-
-
-            </div>
-            
-
+                <div>
+                    <a href="#contact">
+                        <div class="button">Get in touch</div>
+                    </a>
+                </div>
         </div>
     
     </div>
-
 
 </section> 
 

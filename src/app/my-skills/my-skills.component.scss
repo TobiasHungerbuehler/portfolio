@@ -5,79 +5,202 @@ $mobileWidth: 1100px;
 section {
     margin-top: 124px;
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     z-index: 7;
     width: 100vw;
     border: 2px solid red;
     @include flex-center-center;
 
     >.conten-wrapper {
-        @include x;
         width: 100%;
+        height: 800px;
         display: flex;
         justify-content: center;
-
+        
         @media (max-width: $mobileWidth) {
+            height: 1100px;
             flex-direction: column-reverse;
         }
 
+        
         >.skill-container {
-            width: 65%;
+            position: relative;
+            width: 50%;
+            height: 100%;
             border: 1px solid purple;
-            margin-left: $distance-to-side;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
 
-            >.row {
+            >img{
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                width: 20vw;
+                height: auto;
+
+            }
+
+            >.elements-wrapper{
+                background-color: rgb(250, 235, 215, 0.2);
+                position: absolute;
+                z-index: 3;
+                left: $distance-to-side;
                 display: flex;
-                justify-content: flex-start;
-                width: 100%;
+                align-items: center;
+                flex-direction: column;
+                width: 60vw;
+            
+                @media (max-width: $mobileWidth) {
 
-                >.skill-element {
-                    @include x;
-                    width: 10%;
-                    margin-right: 15%;
-                    margin-bottom: 64px;
+                }
+                
+                >.row {
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
+                    justify-content: flex-start;
+                    width: 100%;
+                    @include x;
+                    
+                    >.skill-element {
+                        
+                        @include x;
+                        width: 10%;
+                        margin-right: 15%;
+                        margin-bottom: 64px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        &:nth-child(4){
+                            margin-right: 0;
+                        }
 
-                    >img {
-                        width: 5vw;
-                        max-width: 60px;
-                        height: auto;
-                    }
 
-                    >p {
-                        text-align: center;
-                        font-size: 1em;
-                        font-size: 16px;
-                        font-weight: 700;
-                        margin-top: 12px;
+    
+                        >img {
+                            //width: 5vw;
+                            width: clamp(42px, 5vh, 60px);
+                            //max-width: 60px;
+                            height: auto;
+                        }
+    
+                        >p {
+                            margin: 0;
+                            padding: 0;
+                            text-align: center;
+                            font-size: 1em;
+                            font-weight: 700;
+                            margin-top: 12px;
+                            
+                            @media (max-width: $mobileWidth) {
+                                width: 100vw;
+                                font-size: 0.8em;
+                            }
+                        }
                     }
+                }  
+            }
+
+            >a{
+                @include x;
+                height: 100px;
+            } .button{
+                position: absolute;
+                z-index: 4;
+                bottom: 50px;
+                left: 50%;
+                transform: translate(-50%);
+                @include color-btn;
+                display: none;
+                &:hover{
+                    bottom: 46px;
+                }
+
+                @media (max-width: $mobileWidth) {
+                    display: flex
+                }
+            }
+        }
+
+
+        >.text-container {
+            box-sizing: border-box;
+            min-height: 300px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            
+            border: 1px solid rgb(126, 129, 135);
+            
+            @media (max-width: 1100px) {
+                width: 100%;
+            }
+
+            >.h2-wrapper {
+                position: relative;
+                z-index: 7;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                height: 140px;
+
+                >h2 {
+                    margin-right: $distance-to-side;
+                }
+
+                >.line {
+                    position: absolute;
+                    z-index: 8;
+                    right: 0;
+                    width: $distance-to-side /2;
+                    height: 4px;
+                    background-color: $dark-blue;
+                    border-top-left-radius: 2px;
+                    border-bottom-left-radius: 2px;
                 }
             }
 
-        }
-
-        >.text-container {
-
-            min-height: 300px;
-            width: 35%;
-            border: 1px solid rgb(126, 129, 135);
-
-            @media (max-width: 1100px) {
-                width: 100%;
-                margin-left: $distance-to-side;
+            >p {
+                text-align: right;
+                margin-right: $distance-to-side;
+                width: 80%;
+                max-width: 500px;
             }
 
-           
+            >div {
+                margin-top: 32px;
+                height: 90px;
+                @include x;
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+
+                >a{
+                    text-decoration: none;
+                    >.button {
+                        @include color-btn;
+                        margin-right: $distance-to-side;
+                        &:hover{
+                            margin-right: 7.5vw;
+                        }
+    
+                    }
+                }
+
+            }
+
+
+
+
+
+
 
         }
     }
