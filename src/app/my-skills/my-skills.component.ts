@@ -1,10 +1,11 @@
 import { Component,HostListener, ElementRef} from '@angular/core';
 import { ScrollStateService } from '../services/scroll-state.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -30,42 +31,65 @@ skills = [
     img:"javaScript.png",
   },
   {
-    name: "Angular",
-    img:"angular.png",
-  },
-  {
-    name: "TypeScript",
-    img:"typeScript.png",
-  },
-  {
-    name: "HTML",
-    img:"html.png",
-  },
-  {
     name: "GIT",
     img:"git.png",
-  },
-  {
-    name: "Firebase",
-    img:"firebase.png",
-  },
-  {
-    name: "CSS",
-    img:"css.png",
   },
   {
     name: "Scrum",
     img:"scrum.png",
   },
   {
+    name: "Material design",
+    img:"materialDesign.png",
+  },
+  {
+    name: "Angular",
+    img:"angular.png",
+  },
+  {
+    name: "Firebase",
+    img:"firebase.png",
+  },
+  {
     name: "Rest-API",
     img:"api.png",
   },
   {
-    name: "Material design",
-    img:"materialDesign.png",
+    name: "TypeScript",
+    img:"typeScript.png",
+  },
+  {
+    name: "CSS",
+    img:"css.png",
+  },
+  {
+    name: "HTML",
+    img:"html.png",
   },
 ]  
+
+skillGroups: { skills: any[] }[] = [];
+
+ngOnInit() {
+  this.groupSkills();
+}
+
+groupSkills() {
+  const groupSizes = [4, 3, 2, 1];
+  let index = 0;
+
+  for (const size of groupSizes) {
+    this.skillGroups.push({ skills: this.skills.slice(index, index + size) });
+    index += size;
+  }
+}
+
+
+
+
+
+
+
 
 }
 

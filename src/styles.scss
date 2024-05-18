@@ -46,10 +46,10 @@ body {
     display: none;
 }
 
-$distance-to-side: 8%;
+$distance-to-side: 8vw;
 
 @mixin contentWidth(){
-    width: 84%;
+    width: 84vw;
     
 }
 
@@ -61,6 +61,32 @@ $distance-to-side: 8%;
 
 @mixin x{
     border: 1px solid rgb(255, 255, 0, 0.5);
+}
+
+@mixin color-btn{
+    @include flex-center-center;
+    width: 165px;
+    height: 58px;
+    font-size: clamp(16px, 1.5em, 23px);
+    font-size: 23px;
+    color: white;
+    text-decoration: none;
+    background-color: $light-blue;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+    @media (max-width: 769px){
+        width: 130px;
+        height: 54px;
+        font-size: 18px;
+    }
+    &:hover{
+        transition: all 125ms ease-in-out;
+        background-color: $dark-blue;
+        width: 180px;
+        height: 64px;
+    }
 }
 
 
