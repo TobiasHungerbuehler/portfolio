@@ -9,10 +9,12 @@
 
             <div class="elements-wrapper">
                 @for (group of skillGroups; track group;) {
-                    <div class="row">
+                    <div class="column">
                         @for (skill of group.skills; track skill; let i = $index; ) {
                             <div class="skill-element">
-                                <img src="./assets/img/skills/{{skill.img}}" alt="">
+                                <div>
+                                    <img src="./assets/img/skills/{{skill.img}}" alt="">
+                                </div>
                                 <p>{{skill.name}}</p>
                             </div>
                         }

@@ -31,40 +31,40 @@ skills = [
     img:"javaScript.png",
   },
   {
-    name: "Angular",
-    img:"angular.png",
-  },
-  {
-    name: "TypeScript",
-    img:"typeScript.png",
-  },
-  {
-    name: "HTML",
-    img:"html.png",
-  },
-  {
     name: "GIT",
     img:"git.png",
-  },
-  {
-    name: "Firebase",
-    img:"firebase.png",
-  },
-  {
-    name: "CSS",
-    img:"css.png",
   },
   {
     name: "Scrum",
     img:"scrum.png",
   },
   {
+    name: "Material design",
+    img:"materialDesign.png",
+  },
+  {
+    name: "Angular",
+    img:"angular.png",
+  },
+  {
+    name: "Firebase",
+    img:"firebase.png",
+  },
+  {
     name: "Rest-API",
     img:"api.png",
   },
   {
-    name: "Material design",
-    img:"materialDesign.png",
+    name: "TypeScript",
+    img:"typeScript.png",
+  },
+  {
+    name: "CSS",
+    img:"css.png",
+  },
+  {
+    name: "HTML",
+    img:"html.png",
   },
 ]  
 
