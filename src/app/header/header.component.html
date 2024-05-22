@@ -1,22 +1,30 @@
 <!-- header.component.html -->
 <section>
-    <div class="content-frame">
+    <div>
         <a href="#startSection">
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
         
         <nav>
+<!-- 
+            @for (link of links; track link;){
+                <div [class.link-box-on]="activeSection === '{{link.id}}'">
+                    <a href="#{{link.id}}">{{link.text}}</a>
+                    <div></div>
+                </div>
+            } -->
+
             <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
                 <a href="#aboutMe">About Me</a>
                 <div class="under-line"></div>
             </div>
-            <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
+            <div [class.link-box-on]="activeSection === 'mySkills'">
                 <a href="#mySkills">My Skills</a>
-                <div class="under-line"></div>
+                <div></div>
             </div>
-            <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
+            <div [class.link-box-on]="activeSection === 'portfolio'">
                 <a href="#portfolio">Portfolio</a>
-                <div class="under-line"></div>
+                <div></div>
             </div>
         </nav>
 
@@ -24,5 +32,9 @@
             <img src="./assets/img/burgerMenu.png" alt="Menu">
         </div>
     </div>
-    <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
+    <app-mobile-menu  #mobileMenuComponent></app-mobile-menu>
 </section>
+
+
+
+

@@ -9,6 +9,14 @@
     </div>
     <nav class="overlay-menu">
 
+        <!-- @for (link of links; track link;){
+            <div [class.link-box-on]="activeSection === '{{link.id}}'">
+                <a href="#{{link.id}}">{{link.text}}</a>
+                <div></div>
+            </div>
+        } -->
+
+
         <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
             <a href="#aboutMe" (click)="close()">About me</a>
             <div class="under-line"></div>
@@ -25,12 +33,6 @@
             <a href="#contact" (click)="close()">Contact</a>
             <div class="under-line"></div>
         </div>
-
-
-
-
-        
-        
         
         
     </nav>

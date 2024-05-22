@@ -11,25 +11,54 @@
     transition: right 0.3s ease; /* Animiere die rechte Eigenschaft */
     display: flex;
     justify-content: center;
+
+    >.content-frame{
+        @include contentWidth;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img{
+            height: 30px;
+            width: auto;
+            cursor: pointer;
+        }
+        .close-btn{
+                background-color: #0b0d12;
+                height: 40px;
+                width: auto;
+            }
+    }
+
+    > nav div {
+        margin-top: 12px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        > a {
+            margin-top: 0px;
+            text-decoration: none;
+            font-size: 23px;
+            color: white;
+            transition: all 125ms ease-in-out;
+            cursor: pointer;
+    
+            &:hover {
+                transition: all 125ms ease-in-out;
+                color: $light-blue;
+            }
+        }
+    
+        .under-line {
+            height: 3px;
+            width: 60px;
+            background-color: transparent; // Default Zustand ohne Farbe
+        }
+    }
+
 }
 
-.content-frame{
-    @include contentWidth;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img{
-        height: 30px;
-        width: auto;
-        cursor: pointer;
-    }
-    .close-btn{
-            background-color: #0b0d12;
-            height: 40px;
-            width: auto;
-        }
-}
+
 
 .overlay.active {
     right: 0; 
@@ -44,29 +73,7 @@
 }
 
 .link-box {
-    margin-top: 12px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    > a {
-        margin-top: 0px;
-        text-decoration: none;
-        font-size: 23px;
-        color: white;
-        transition: all 125ms ease-in-out;
-        cursor: pointer;
 
-        &:hover {
-            transition: all 125ms ease-in-out;
-            color: $light-blue;
-        }
-    }
-
-    .under-line {
-        height: 3px;
-        width: 60px;
-        background-color: transparent; // Default Zustand ohne Farbe
-    }
 }
         
 .link-box-on {

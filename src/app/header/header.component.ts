@@ -1,11 +1,13 @@
 /**
  * Represents the HeaderComponent managing the navigation bar.
  */
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, input, output } from '@angular/core';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { CommonModule } from '@angular/common';
 import { ScrollStateService } from '../services/scroll-state.service';
 import { Subscription } from 'rxjs';
+import { NavigationService } from '../services/navigation.service';
+import { NavigationLink } from '../interfaces/navigation-link.model';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +17,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
+  /**
+   * Subscription to manage the observable subscription lifecycle.
+  */
+  private subscription!: Subscription;
+
+  constructor(private scrollService: ScrollStateService, public navigation: NavigationService) { }
+
+  links: NavigationLink[] = [];
+
   /**
    * A reference to the mobile menu component for toggling visibility.
    */
-  @ViewChild('mobileMenuComponent', { static: false }) 
+  @ViewChild('mobileMenuComponent', { static: false })
   private mobileMenu!: MobileMenuComponent;
 
   /**
@@ -27,18 +38,13 @@ export class HeaderComponent implements OnInit {
    */
   activeSection = '';
 
-  /**
-   * Subscription to manage the observable subscription lifecycle.
-   */
-  private subscription!: Subscription;
-
-  constructor(private scrollService: ScrollStateService) {}
 
   /**
    * Subscribes to section changes to update the active section in the header.
    */
   ngOnInit() {
     this.subscribeToSectionChanges();
+    this.links = this.navigation.getLinks();
   }
 
   /**
@@ -65,8 +71,8 @@ export class HeaderComponent implements OnInit {
   }
 }
 
-  
 
-    
-  
+
+
+
 
