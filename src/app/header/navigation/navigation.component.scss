@@ -1,6 +1,10 @@
 @import './../../../styles.scss';
+@import './../header.component.scss';
+
+
 .link-box {
     padding-left: 32px;
+
     >a {
       text-decoration: none;
       font-size: 23px;
@@ -18,7 +22,16 @@
       width: 60px;
       margin-top: 4px;
     }
+    
+    @media (min-width: $mobile-width) {
+      &:last-child {
+        display: none;
+      }
+    }
+
   }
+
+
   
   .link-box-on {
     transition: all 125ms ease-in-out;

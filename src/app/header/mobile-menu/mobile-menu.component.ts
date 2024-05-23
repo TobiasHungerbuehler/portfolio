@@ -3,11 +3,11 @@
  * This component listens to changes in the active section of the page to highlight the corresponding menu item.
  */
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ScrollStateService } from '../services/scroll-state.service';
+import { ScrollStateService } from '../../services/scroll-state.service';
 import { Subscription } from 'rxjs';
-import { NavigationLink } from '../interfaces/navigation-interface.';
-import { NavigationComponent } from '../header/navigation/navigation.component';
-import { NavigationService } from '../services/navigation.service';
+import { NavigationLink } from '../../interfaces/navigation-interface.';
+import { NavigationComponent } from '../navigation/navigation.component';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-mobile-menu',
