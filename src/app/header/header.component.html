@@ -5,11 +5,19 @@
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
         
-        <app-navigation class="desktop-nav" [links]="links"></app-navigation>
+        <div>
+            <app-navigation class="desktop-nav" [links]="links"></app-navigation>
+            <img src="./assets/img/globe.png" alt="Language">
+            <div>
+                <p>EN</p>
+                <p>DE</p>
+            </div>
+        </div>
 
         <div class="burger-menu" (click)="toggleMenu()">
             <img src="./assets/img/burgerMenu.png" alt="Menu">
         </div>
+
     </div>
     <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
