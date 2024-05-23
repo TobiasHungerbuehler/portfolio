@@ -35,7 +35,7 @@
     right: 0; 
 }
 
-.overlay-menu {
+.mobile-nav {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -43,41 +43,41 @@
     text-align: center;
 }
 
-.link-box {
-    margin-top: 12px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    > a {
-        margin-top: 0px;
-        text-decoration: none;
-        font-size: 23px;
-        color: white;
-        transition: all 125ms ease-in-out;
-        cursor: pointer;
+// .link-box {
+//     margin-top: 12px;
+//     display: flex;
+//     align-items: flex-start;
+//     flex-direction: column;
+//     > a {
+//         margin-top: 0px;
+//         text-decoration: none;
+//         font-size: 23px;
+//         color: white;
+//         transition: all 125ms ease-in-out;
+//         cursor: pointer;
 
-        &:hover {
-            transition: all 125ms ease-in-out;
-            color: $light-blue;
-        }
-    }
+//         &:hover {
+//             transition: all 125ms ease-in-out;
+//             color: $light-blue;
+//         }
+//     }
 
-    .under-line {
-        height: 3px;
-        width: 60px;
-        background-color: transparent; // Default Zustand ohne Farbe
-    }
-}
+//     .under-line {
+//         height: 3px;
+//         width: 60px;
+//         background-color: transparent; // Default Zustand ohne Farbe
+//     }
+// }
         
-.link-box-on {
+// .link-box-on {
 
-    > a {
-        color: $light-blue; // Ändert die Textfarbe wenn aktiv
-    }
+//     > a {
+//         color: $light-blue; // Ändert die Textfarbe wenn aktiv
+//     }
 
-    > .under-line {
-        background-color: $dark-blue; // Ändert die Unterstrichfarbe wenn aktiv
-    }
-}
+//     > .under-line {
+//         background-color: $dark-blue; // Ändert die Unterstrichfarbe wenn aktiv
+//     }
+// }
 
     

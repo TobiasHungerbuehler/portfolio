@@ -22,43 +22,44 @@ section {
     }
 }
 
-nav {
+.desktop-nav {
     @include flex-center-center;
     @media (max-width: 768px) {
         display: none;
     }
+
 }
 
-.link-box {
-    padding-left: 32px;
-    >a {
-        text-decoration: none;
-        font-size: 23px;
-        color: white;
-        transition: all 125ms ease-in-out;
-        cursor: pointer;
-        &:hover {
-            transition: all 125ms ease-in-out;
-            color: $light-blue;
-        }
-    }
-    >.under-line {
-        background-color: transparent;
-        height: 3px;
-        width: 60px;
-        margin-top: 4px;
-    }
-}
+// .link-box {
+//     padding-left: 32px;
+//     >a {
+//         text-decoration: none;
+//         font-size: 23px;
+//         color: white;
+//         transition: all 125ms ease-in-out;
+//         cursor: pointer;
+//         &:hover {
+//             transition: all 125ms ease-in-out;
+//             color: $light-blue;
+//         }
+//     }
+//     >.under-line {
+//         background-color: transparent;
+//         height: 3px;
+//         width: 60px;
+//         margin-top: 4px;
+//     }
+// }
 
-.link-box-on {
-    transition: all 125ms ease-in-out;
-    >a {
-        color: $light-blue;
-    }
-    >.under-line {
-        background-color: $dark-blue;
-    }
-}
+// .link-box-on {
+//     transition: all 125ms ease-in-out;
+//     >a {
+//         color: $light-blue;
+//     }
+//     >.under-line {
+//         background-color: $dark-blue;
+//     }
+// }
 
 .burger-menu {
     height: 30px;

@@ -5,7 +5,12 @@
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
         
-        <nav>
+
+        <app-navigation class="desktop-nav" [links]="links"></app-navigation>
+
+
+
+        <!-- <nav>
             <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
                 <a href="#aboutMe">About Me</a>
                 <div class="under-line"></div>
@@ -18,7 +23,7 @@
                 <a href="#portfolio">Portfolio</a>
                 <div class="under-line"></div>
             </div>
-        </nav>
+        </nav> -->
 
         <div class="burger-menu" (click)="toggleMenu()">
             <img src="./assets/img/burgerMenu.png" alt="Menu">
