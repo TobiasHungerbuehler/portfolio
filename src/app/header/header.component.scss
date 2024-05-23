@@ -53,8 +53,15 @@ section {
                 right: 3.6vw;
                 border: 1px solid white;
 
-                >p{
-                    margin: 0;
+                p {
+                    margin: 0 5px;
+                    cursor: pointer;
+                    transition: color 0.1s;
+                
+                    &.active {
+                      font-weight: bold;
+                      color: #007BFF; /* Beispiel für eine blaue Farbe */
+                    }
                 }
             }
     
