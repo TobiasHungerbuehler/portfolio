@@ -9,8 +9,8 @@
             <app-navigation class="desktop-nav" [links]="links"></app-navigation>
             <img src="./assets/img/globe.png" alt="Language">
             <div>
-                <p>EN</p>
-                <p>DE</p>
+                <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
+                <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
             </div>
         </div>
 
