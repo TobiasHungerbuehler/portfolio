@@ -5,24 +5,19 @@
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
         
-        <nav>
-            <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
-                <a href="#aboutMe">About Me</a>
-                <div class="under-line"></div>
+        <div>
+            <app-navigation class="desktop-nav" [links]="links"></app-navigation>
+            <img src="./assets/img/globe.png" alt="Language">
+            <div>
+                <p>EN</p>
+                <p>DE</p>
             </div>
-            <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
-                <a href="#mySkills">My Skills</a>
-                <div class="under-line"></div>
-            </div>
-            <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
-                <a href="#portfolio">Portfolio</a>
-                <div class="under-line"></div>
-            </div>
-        </nav>
+        </div>
 
         <div class="burger-menu" (click)="toggleMenu()">
             <img src="./assets/img/burgerMenu.png" alt="Menu">
         </div>
+
     </div>
     <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
