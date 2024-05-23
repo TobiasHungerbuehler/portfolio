@@ -43,13 +43,13 @@ section{
     @media (max-width: 500px) {
         height: 300px;
     } 
+
     >.bg-portrait{
         position: absolute;
         z-index: 1;
-        left: 50%;
-        transform: translate(-50%);
+        right: 0;
         height: 150%;
-        width: 150%;
+        width: 100%;
     }
     >.portrait{
         position: absolute;
