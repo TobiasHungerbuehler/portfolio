@@ -1,43 +1,22 @@
 <!-- mobile-menu.component.html -->
 <div class="overlay" [class.active]="isVisible">
-    <div class="content-frame">
+
+    <div class="header-frame">
         <img src="./assets/img/logo.png" alt="Logo">
         <div class="close-btn" (click)="close()">
             <img src="./assets/img/close.png" alt="Logo">
         </div>
 
     </div>
-
+    
     <app-navigation class="mobile-nav" [links]="links"></app-navigation>
+    
+    <div class="language-selector">
+        <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
+        <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
+      </div>
 
 
 
-    <!-- <nav class="overlay-menu">
-
-        <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
-            <a href="#aboutMe" (click)="close()">About me</a>
-            <div class="under-line"></div>
-        </div>
-        <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
-            <a href="#skills" (click)="close()">Skills</a>
-            <div class="under-line"></div>
-        </div>
-        <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
-            <a href="#portfolio" (click)="close()">Portfolio</a>
-            <div class="under-line"></div>
-        </div>
-        <div class="link-box" [class.link-box-on]="activeSection === 'contact'">
-            <a href="#contact" (click)="close()">Contact</a>
-            <div class="under-line"></div>
-        </div>
-
-
-
-
-        
-        
-        
-        
-    </nav> -->
 </div>
 

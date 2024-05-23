@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { NavigationLink } from '../../interfaces/navigation-interface.';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { NavigationService } from '../../services/navigation.service';
+import { TextService } from '../../services/text.service';
 
 @Component({
   selector: 'app-mobile-menu',
@@ -16,14 +17,20 @@ import { NavigationService } from '../../services/navigation.service';
   templateUrl: './mobile-menu.component.html',
   styleUrls: ['./mobile-menu.component.scss']
 })
-export class MobileMenuComponent implements OnInit, OnDestroy {
+export class MobileMenuComponent {
+
   isVisible = false;
   links: NavigationLink[] = [];
   private subscription!: Subscription;
+  currentLanguage = 'EN';
 
-  constructor(
-    private navigationService: NavigationService
-  ) {}
+  constructor(private navigationService: NavigationService, private textService: TextService) {
+
+        // Abonniere die aktuelle Sprache, um Änderungen zu überwachen
+        this.textService.currentLanguage$.subscribe(lang => {
+          this.currentLanguage = lang;
+        });
+  }
 
   ngOnInit() {
     this.links = this.navigationService.getLinks();
@@ -42,4 +49,9 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
   close(): void {
     this.isVisible = false;
   }
+
+    // Methode, um die Sprache zu setzen
+    setLanguage(language: string) {
+      this.textService.setLanguage(language);
+    }
 }

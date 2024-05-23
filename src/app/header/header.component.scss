@@ -72,11 +72,11 @@ section {
             width: auto;
             cursor: pointer;
         
-            @media (max-width: 768px) {
+            @media (max-width: $mobile-width) {
                 display: block;
             }
         
-            @media (min-width: 769px) {
+            @media (min-width: $mobile-width) {
                 display: none;
             }
         }
