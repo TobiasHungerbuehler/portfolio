@@ -26,10 +26,10 @@ export class MobileMenuComponent {
 
   constructor(private navigationService: NavigationService, private textService: TextService) {
 
-        // Abonniere die aktuelle Sprache, um Änderungen zu überwachen
-        this.textService.currentLanguage$.subscribe(lang => {
-          this.currentLanguage = lang;
-        });
+    // Abonniere die aktuelle Sprache, um Änderungen zu überwachen
+    this.textService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+    });
   }
 
   ngOnInit() {
@@ -48,10 +48,13 @@ export class MobileMenuComponent {
 
   close(): void {
     this.isVisible = false;
+    console.log('mobile menu close()');
+    
   }
 
-    // Methode, um die Sprache zu setzen
-    setLanguage(language: string) {
-      this.textService.setLanguage(language);
-    }
+  // Methode, um die Sprache zu setzen
+  setLanguage(language: string) {
+    this.textService.setLanguage(language);
+    this.close();
+  }
 }

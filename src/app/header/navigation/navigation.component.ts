@@ -39,10 +39,6 @@ export class NavigationComponent {
     }
   }
 
-  // onLinkClick() {
-  //   if (this.isMobileMenu) {
-  //     this.closeMenu.emit();
-  //   }
 
   closeOverlay() {
     if (this.isMobileMenu) {

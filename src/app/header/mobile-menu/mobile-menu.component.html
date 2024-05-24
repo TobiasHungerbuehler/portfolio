@@ -9,7 +9,7 @@
 
     </div>
     
-    <app-navigation class="mobile-nav" [links]="links"></app-navigation>
+    <app-navigation class="mobile-nav" [links]="links" [isMobileMenu]="true" (closeMenu)="close()"></app-navigation>
     
     <div class="language-selector">
         <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>

@@ -1,5 +1,5 @@
 
-
+<!-- navigation.componenet -->
 
     <div *ngFor="let link of links" class="link-box" [class.link-box-on]="activeSection === link.id">
       <a [href]="'#' + link.id" (click)="scrollToId($event, link.id)">{{ link.text }}</a>
