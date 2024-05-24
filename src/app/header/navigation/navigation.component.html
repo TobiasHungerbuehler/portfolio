@@ -1,23 +1,10 @@
-<!-- <nav>
-    <div class="link-box" [class.link-box-on]="activeSection === 'aboutMe'">
-        <a href="#aboutMe">About Me</a>
-        <div class="under-line"></div>
-    </div>
-    <div class="link-box" [class.link-box-on]="activeSection === 'mySkills'">
-        <a href="#mySkills">My Skills</a>
-        <div class="under-line"></div>
-    </div>
-    <div class="link-box" [class.link-box-on]="activeSection === 'portfolio'">
-        <a href="#portfolio">Portfolio</a>
-        <div class="under-line"></div>
-    </div>
-</nav> -->
 
-<!-- <nav> -->
+
+
     <div *ngFor="let link of links" class="link-box" [class.link-box-on]="activeSection === link.id">
-      <a [href]="'#' + link.id" (click)="onLinkClick()">{{ link.text }}</a>
+      <a [href]="'#' + link.id" (click)="scrollToId($event, link.id)">{{ link.text }}</a>
       <div class="under-line"></div>
     </div>
-  <!-- </nav> -->
+
   
   

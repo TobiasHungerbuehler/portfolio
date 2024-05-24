@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
-import { ScrollStateService } from '../../services/scroll-state.service'; 
+import { ScrollStateService } from '../../services/scroll-state.service';
 import { NavigationLink } from '../../interfaces/navigation-interface.';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ScrollToService } from '../../services/scroll-to.service';
 
 @Component({
   selector: 'app-navigation',
@@ -20,7 +21,7 @@ export class NavigationComponent {
   activeSection = '';
   private subscription!: Subscription;
 
-  constructor(private scrollService: ScrollStateService) {}
+  constructor(private scrollService: ScrollStateService, private scrollToService: ScrollToService) { }
 
   ngOnInit() {
     this.subscribeToSectionChanges();
@@ -38,10 +39,22 @@ export class NavigationComponent {
     }
   }
 
-  onLinkClick() {
+  // onLinkClick() {
+  //   if (this.isMobileMenu) {
+  //     this.closeMenu.emit();
+  //   }
+
+  closeOverlay() {
     if (this.isMobileMenu) {
       this.closeMenu.emit();
     }
   }
 
+  scrollToId(event: Event, sectionId: string): void {
+    event.preventDefault();
+    this.scrollToService.scrollToSection(sectionId);
+    this.closeOverlay();
+  }
 }
+
+
