@@ -1,6 +1,6 @@
 @import './../../styles.scss';
 
-section{
+section {
     box-sizing: border-box;
     position: relative;
     height: 100vh;
@@ -12,24 +12,35 @@ section{
     align-items: center;
 }
 
-.backdrop{
+.backdrop {
     width: 100%;
-    margin-top: 10%;
-    display: flex;
-    justify-content: space-between;
+    height: 100%;
     >.img-left {
-       height: auto;
-       max-width: 48%;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        height: auto;
+        width: 48%;
+        max-width: 500px;
+
+        @media (max-width: 700px) {
+            margin-bottom: 60%;
+        }
     }
-    >.img-right{
+    >.img-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
         height: auto;
         max-width: 48%;
     }
+
 }
 
-.title-wrapper{
+.title-wrapper {
     @include flex-center-center;
     position: absolute;
+    z-index: 3;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -39,6 +50,7 @@ section{
     @include flex-center-center;
     width: clamp(2px, 0.8vw, 30px);
     padding-right: clamp(12px, 2.8vw, 32px);
+
     >p {
         margin: 0;
         transform: rotate(-90deg);
@@ -57,6 +69,7 @@ section{
         white-space: nowrap;
         line-height: 0.7em; // Angepasst für Konsistenz bei verschiedenen Schriftgrößen
     }
+
     >p {
         font-size: clamp(14px, 3vw, 42px);
         margin: 0;
@@ -68,7 +81,7 @@ section{
 }
 
 
-.button{
+.button {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -77,7 +90,7 @@ section{
 }
 
 
-.sm-link-box{
+.sm-link-box {
     position: absolute;
     width: 100%;
     left: 0;
@@ -85,7 +98,8 @@ section{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    @media (max-width: 769px){
+
+    @media (max-width: 769px) {
         justify-content: center;
     }
 }
@@ -93,7 +107,7 @@ section{
 $line-width: 100px;
 $img-gap: 30px;
 
-.line{
+.line {
     position: absolute;
     left: 0;
     width: $line-width;
@@ -103,7 +117,8 @@ $img-gap: 30px;
     background-color: $light-blue;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
-    @media (max-width: 769px){
+
+    @media (max-width: 769px) {
         width: 50px;
     }
 }
@@ -111,21 +126,26 @@ $img-gap: 30px;
 .img-wrapper {
     margin-left: $line-width + $img-gap;
     @include flex-center-center;
+
     @media (max-width: 769px) {
         margin-left: 0;
     }
-    > a {
+
+    >a {
         @include flex-center-center;
         height: 40px;
         width: 40px;
+
         &:nth-child(2) {
             margin-left: 30px;
             margin-right: 30px;
         }
-        > img {
+
+        >img {
             transition: all 125ms ease-in-out;
             height: 30px;
             width: auto;
+
             &:hover {
                 height: 40px;
                 transition: all 80ms ease-in-out;
@@ -136,7 +156,7 @@ $img-gap: 30px;
 
 
 
-.scroll-box{
+.scroll-box {
     position: absolute;
     right: 0;
     bottom: 100px;
@@ -144,18 +164,20 @@ $img-gap: 30px;
     justify-content: center;
     align-items: center;
     transform: rotate(90deg);
+
     @media (max-width: 769px) {
         display: none;
     }
-    >p{
+
+    >p {
         margin: 0;
         font-size: 1.6em;
-    }  
-    > img{
+    }
+
+    >img {
         transform: rotate(-90deg);
         margin-left: 10px;
         height: 2em;
         width: auto;
     }
 }
-
