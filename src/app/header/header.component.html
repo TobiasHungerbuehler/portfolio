@@ -5,12 +5,14 @@
             <img src="./assets/img/logo.png" alt="Logo">
         </a>
         
-        <div>
+        <div class="nav-container">
             <app-navigation class="desktop-nav" [links]="links"></app-navigation>
-            <img src="./assets/img/globe.png" alt="Language">
-            <div>
-                <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
-                <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
+            <div class="language-container">
+                <img src="./assets/img/globe.png" alt="Language" class="globe-icon">
+                <div class="language-selector">
+                    <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
+                    <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
+                </div>
             </div>
         </div>
 

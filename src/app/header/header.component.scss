@@ -23,10 +23,11 @@ section {
             cursor: pointer;
         }
 
-        > div {
+        > .nav-container {
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            //@include x;
 
             @media (max-width: $mobile-width) {
                 display: none;
@@ -34,36 +35,65 @@ section {
     
             >.desktop-nav {
                 @include flex-center-center;
+                //@include x;
             
             }
-    
-            >img {
-                margin-left: 34px;
-                margin-top: 1.8%;
-                height: 18px;
+
+            .language-container {
+                position: relative;
+                top: 7px;
                 width: auto;
-                cursor: pointer;
-            }
-
-            >div{
-                position: absolute;
-                width: 30px;
-                z-index: 15;
-                top: 32px;
-                right: 3.6vw;
-                border: 1px solid white;
-
-                p {
-                    margin: 0 5px;
-                    cursor: pointer;
-                    transition: color 0.1s;
+                //@include x;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 
-                    &.active {
-                      font-weight: bold;
-                      color: #007BFF; /* Beispiel für eine blaue Farbe */
+                .globe-icon {
+                    margin-left: 34px;
+                    margin-top: 2.2%;
+                    height: 18px;
+                    width: auto;
+                    cursor: pointer;
+                }
+                
+                .language-selector {
+                    //@include x;
+                    position: absolute;
+
+                    width: $distance-to-side;
+                    max-width: 120px;
+                    height: 50px;
+                    z-index: 15;
+                    top: 12;
+                    right: 0; // Adjust this if needed
+                    transform: translate(100%);
+                    @include flex-center-center;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.125s ease-in-out, visibility 0.3s ease-in-out;
+
+
+                    p {
+                        margin: 0 5px;
+                        cursor: pointer;
+                        transition: color 0.1s;
+                
+                        &.active {
+                            font-weight: bold;
+                            color: $dark-blue; 
+                        }
                     }
                 }
+
+                &:hover .language-selector {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
+    
+
+
+
     
         }
 
@@ -88,45 +118,8 @@ section {
 
 
 
-
-
-
-
-
 }
 
 
 
-
-
-// .link-box {
-//     padding-left: 32px;
-//     >a {
-//         text-decoration: none;
-//         font-size: 23px;
-//         color: white;
-//         transition: all 125ms ease-in-out;
-//         cursor: pointer;
-//         &:hover {
-//             transition: all 125ms ease-in-out;
-//             color: $light-blue;
-//         }
-//     }
-//     >.under-line {
-//         background-color: transparent;
-//         height: 3px;
-//         width: 60px;
-//         margin-top: 4px;
-//     }
-// }
-
-// .link-box-on {
-//     transition: all 125ms ease-in-out;
-//     >a {
-//         color: $light-blue;
-//     }
-//     >.under-line {
-//         background-color: $dark-blue;
-//     }
-// }
 
