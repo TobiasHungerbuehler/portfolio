@@ -8,4 +8,5 @@ export interface Project {
   };
   demoLink: string;
   githubLink: string;
+  img: string;
 }
