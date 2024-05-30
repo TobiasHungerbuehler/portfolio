@@ -5,7 +5,6 @@ section{
     box-sizing: border-box;
     border: 2px solid rgb(236, 233, 62);
     @include flex-center-center;
-    height: 500px;
     width: 100vw;
     overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
     >div{
