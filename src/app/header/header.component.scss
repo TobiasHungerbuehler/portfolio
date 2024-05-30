@@ -23,11 +23,10 @@ section {
             cursor: pointer;
         }
 
-        > .nav-container {
+        > div {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            //@include x;
 
             @media (max-width: $mobile-width) {
                 display: none;
@@ -35,15 +34,13 @@ section {
     
             >.desktop-nav {
                 @include flex-center-center;
-                //@include x;
             
             }
 
-            .language-container {
+            >div {
                 position: relative;
                 top: 7px;
                 width: auto;
-                //@include x;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -57,21 +54,18 @@ section {
                 }
                 
                 .language-selector {
-                    //@include x;
                     position: absolute;
-
                     width: $distance-to-side;
                     max-width: 120px;
                     height: 50px;
                     z-index: 15;
                     top: 12;
-                    right: 0; // Adjust this if needed
+                    right: 0; 
                     transform: translate(100%);
                     @include flex-center-center;
                     opacity: 0;
                     visibility: hidden;
                     transition: opacity 0.125s ease-in-out, visibility 0.3s ease-in-out;
-
 
                     p {
                         margin: 0 5px;
@@ -90,10 +84,6 @@ section {
                     visibility: visible;
                 }
             }
-    
-
-
-
     
         }
 

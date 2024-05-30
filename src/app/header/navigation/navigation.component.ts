@@ -39,7 +39,6 @@ export class NavigationComponent {
     }
   }
 
-
   closeOverlay() {
     if (this.isMobileMenu) {
       this.closeMenu.emit();
