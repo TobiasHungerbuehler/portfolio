@@ -44,6 +44,7 @@ export class PortfolioProjectsService {
       githubLink: "https://github.com/TobiasHungerbuehler/pokedex",
       img:"./assets/img/portfolio/pokedex.png"
     }
+
   ];
 
 

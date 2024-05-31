@@ -1,18 +1,147 @@
 @import './../../styles.scss';
 
 
-section{
+section {
+    position: relative;
     box-sizing: border-box;
-    border: 2px solid rgb(236, 233, 62);
-    @include flex-center-center;
+    border: 2px solid rgb(236, 62, 230);
     width: 100vw;
-    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-    >div{
-        @include contentWidth;
-        
+    height: 2000px;
+    //overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
+    
+    >.background{
+        box-sizing: border-box;
+        width: 100%;
+        bottom: 0;
+        // position: absolute;
+        // z-index: 1;
+
+        border: 2px solid rgb(236, 140, 62);
+
+        >img:nth-child(1) {
+            position: absolute;
+            left: 0;
+            width: 45%;
+            height: auto;
+        }
+        >img:nth-child(2) {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+        }
     }
+
+    >h2 {
+
+    }
+
+    >.project-wrapper{
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%);
+        @include contentWidth;
+        border: 2px solid rgb(88, 236, 62);
+        
+        >.project-element {
+            display: flex;
+            flex-direction: row;
+            //@include x;
+            margin-bottom: 124px;
     
+            >div {
+                width: 50%;
+                @include x;
+                display: flex;
+                justify-content: flex-end;
+    
+                >img {
+                    //@include x;
+                    height: 350px;
+                    width: auto;
+                }
+            }
+    
+            >.details-container {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                //border: 1px solid red;
+    
+                >h3 {
+                    font-weight: 700;
+                    font-size: 32px;
+                    color: $dark-blue;
+                }
+    
+                >.technologie {
+                    //@include x;
+                    display: flex;
+    
+    
+                    >div {
+                        display: flex;
+    
+                        >p {
+                            font-weight: 400;
+                            font-size: 23px;
+                            color: $light-blue;
+    
+                            >span {
+                                margin: 0;
+                                padding: 0 12px 0 10px;                        }
+                        }
+                    }
+                }
+    
+                >.description {
+                    font-size: 16px;
+
+                }
+            }
+    
+    
+            &.project-element:nth-child(2n+1) { /// andersherum
+    
+                flex-direction: row-reverse;
+                
+                >div {
+                    justify-content: flex-start;
+        
+    
+                }
+    
+                >.details-container {
+                    justify-content: flex-end;
+    
+                    >h3 {
+                        align-self: flex-end;
+                    }
+    
+                    >.technologie {
+                        align-self: flex-end;
+                    }
+    
+                    >.description {
+                        margin-right: 0;
+                        margin-left: $distance-to-side;
+                        text-align: right;
+                    }
+                }
+    
+                
+            }
+    
+        }
+    }
 
 
     
+
+
+
+
+
 }
