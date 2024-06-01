@@ -43,6 +43,17 @@ export class PortfolioProjectsService {
       demoLink: "https://pokedex.thtech.ch",
       githubLink: "https://github.com/TobiasHungerbuehler/pokedex",
       img:"./assets/img/portfolio/pokedex.png"
+    },
+    {
+      name: "Pokédex",
+      technologies: ["JavaScript", "HTML", "CSS", "API"],
+      description: {
+        en: "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+        de: "Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+      },
+      demoLink: "https://pokedex.thtech.ch",
+      githubLink: "https://github.com/TobiasHungerbuehler/pokedex",
+      img:"./assets/img/portfolio/pokedex.png"
     }
 
   ];

@@ -1,15 +1,16 @@
 @import './../../styles.scss';
 
+$mobileWidth: 1100px;
 
 section {
     position: relative;
     box-sizing: border-box;
     border: 2px solid rgb(236, 62, 230);
     width: 100vw;
-    height: 2000px;
+    height: 2300px;
     //overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-    
-    >.background{
+
+    >.background {
         box-sizing: border-box;
         width: 100%;
         bottom: 0;
@@ -24,6 +25,7 @@ section {
             width: 45%;
             height: auto;
         }
+
         >img:nth-child(2) {
             position: absolute;
             right: 0;
@@ -32,11 +34,9 @@ section {
         }
     }
 
-    >h2 {
+    >h2 {}
 
-    }
-
-    >.project-wrapper{
+    >.project-wrapper {
         box-sizing: border-box;
         position: absolute;
         z-index: 2;
@@ -44,101 +44,148 @@ section {
         transform: translate(-50%);
         @include contentWidth;
         border: 2px solid rgb(88, 236, 62);
-        
+
         >.project-element {
             display: flex;
             flex-direction: row;
             //@include x;
             margin-bottom: 124px;
-    
+
+            @media (max-width: $mobileWidth) {
+                flex-direction: column;
+            }
+
             >div {
                 width: 50%;
                 @include x;
                 display: flex;
                 justify-content: flex-end;
-    
+
+                @media (max-width: $mobileWidth) {
+                    justify-content: center;
+                    width: 100%;
+                }
+
                 >img {
-                    //@include x;
+                    margin-right: 10%;
                     height: 350px;
                     width: auto;
+
+                    @media (max-width: $mobileWidth) {
+                        margin: 0;
+                    }
                 }
             }
-    
+
             >.details-container {
                 display: flex;
-                justify-content: flex-start;
+                justify-content: center;
+                align-items: flex-start;
                 flex-direction: column;
-                //border: 1px solid red;
-    
+
+                @media (max-width: $mobileWidth) {
+                    align-items: center;
+                }
+
                 >h3 {
                     font-weight: 700;
                     font-size: 32px;
                     color: $dark-blue;
+                    margin: 0 0 0 10%;
+
+                    @media (max-width: $mobileWidth) {
+                        margin: 0;
+                    }
+
                 }
-    
+
                 >.technologie {
-                    //@include x;
+                    margin-left: 10%;
                     display: flex;
-    
-    
+
+                    @media (max-width: $mobileWidth) {
+                        margin: 0;
+                    }
+
+
                     >div {
                         display: flex;
-    
+
                         >p {
+                            margin: 0;
                             font-weight: 400;
                             font-size: 23px;
                             color: $light-blue;
-    
+
                             >span {
                                 margin: 0;
-                                padding: 0 12px 0 10px;                        }
+                                padding: 0 12px 0 10px;
+                            }
+                        }
+
+                        &:last-child{
+                            >p span {
+                                display: none;
+                            }
                         }
                     }
                 }
-    
+
                 >.description {
+                    margin-left: 10%;
                     font-size: 16px;
+
+                    @media (max-width: $mobileWidth) {
+                        margin: 0;
+                        width: 60%;
+                        text-align: center;
+                    }
 
                 }
             }
-    
-    
-            &.project-element:nth-child(2n+1) { /// andersherum
-    
-                flex-direction: row-reverse;
-                
-                >div {
-                    justify-content: flex-start;
-        
-    
+
+
+            &.project-element:nth-child(2n+2) {
+
+                @media (min-width: $mobileWidth) {
+                    flex-direction: row-reverse;
+
+                    >div {
+                        justify-content: flex-start;
+
+                        >img {
+                            margin-left: 6%;
+                        }
+                    }
+
+                    >.details-container {
+                        justify-content: center;
+                        align-items: flex-end;
+
+                        >h3 {
+                            margin-right: 16%;
+                        }
+
+                        >.technologie {
+                            margin-right: 16%;
+                        }
+
+                        >.description {
+                            margin-right: 16%;
+                            text-align: right;
+                        }
+                    }
                 }
-    
-                >.details-container {
-                    justify-content: flex-end;
-    
-                    >h3 {
-                        align-self: flex-end;
-                    }
-    
-                    >.technologie {
-                        align-self: flex-end;
-                    }
-    
-                    >.description {
-                        margin-right: 0;
-                        margin-left: $distance-to-side;
-                        text-align: right;
-                    }
-                }
-    
-                
+
+
+
             }
-    
+
         }
     }
 
 
-    
+
 
 
 
