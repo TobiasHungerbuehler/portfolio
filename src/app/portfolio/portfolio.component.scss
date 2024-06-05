@@ -10,12 +10,49 @@ section {
     height: 2300px;
     //overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
 
+    >.h2-container {
+        position: relative;
+        margin-top: 124px;
+        width: 100%;
+        height: 150px;
+        @include x;
+
+        >.line {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: 0;
+            height: 4px;
+            width: 70%;
+            background-color: $dark-blue;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        >h2{
+            @include x;
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            margin: 0;
+            background-color: $bg-color;
+            padding: 0 20px 0 20px;
+        }
+
+    }
+
+
+
     >.background {
+        
         box-sizing: border-box;
         width: 100%;
+        height: 70%;
         bottom: 0;
-        // position: absolute;
-        // z-index: 1;
+        position: absolute;
+        z-index: 1;
 
         border: 2px solid rgb(236, 140, 62);
 
@@ -34,9 +71,9 @@ section {
         }
     }
 
-    >h2 {}
 
     >.project-wrapper {
+        margin-top: 300px;
         box-sizing: border-box;
         position: absolute;
         z-index: 2;
@@ -110,19 +147,19 @@ section {
 
                     >div {
                         display: flex;
-
+                        
                         >p {
                             margin: 0;
                             font-weight: 400;
                             font-size: 23px;
                             color: $light-blue;
-
+                            
                             >span {
                                 margin: 0;
                                 padding: 0 12px 0 10px;
                             }
                         }
-
+                        
                         &:last-child{
                             >p span {
                                 display: none;
@@ -130,17 +167,55 @@ section {
                         }
                     }
                 }
-
+                
                 >.description {
                     margin-left: 10%;
                     font-size: 16px;
-
+                    
                     @media (max-width: $mobileWidth) {
                         margin: 0;
                         width: 60%;
                         text-align: center;
                     }
+                    
+                }
+                
+                >div:last-child {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-left: 10%;
+                    width: 60%;
+                    min-width: 380px;
+                    height: 80px;
+                    
+                    @media (max-width: $mobileWidth) {
+                        margin: 0;
+                        width: 45%;
+                        min-width: none;
+                    }
+                    
+                    >a {
+                        @include color-btn;
+                        background-color: $dark-blue;
+                        
+                        &:hover{
+                            transition: all 100ms ease-in-out;
+                            width: 165px;
+                            height: 58px;
+                            background-color: $light-blue;
+                        }
 
+                        &:last-child{
+                            transition: all 100ms ease-in-out;
+                            background-color: transparent;
+                            border: 1px solid $light-blue;
+
+                            &:hover{
+                                background-color: $light-blue;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -173,6 +248,10 @@ section {
                         >.description {
                             margin-right: 16%;
                             text-align: right;
+                        }
+
+                        >div:last-child {
+                            margin-right: 16%;
                         }
                     }
                 }
