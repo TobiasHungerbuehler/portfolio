@@ -9,6 +9,7 @@ import { NavigationLink } from '../../interfaces/navigation-interface.';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { NavigationService } from '../../services/navigation.service';
 import { TextService } from '../../services/text.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-mobile-menu',
@@ -24,10 +25,10 @@ export class MobileMenuComponent {
   private subscription!: Subscription;
   currentLanguage = 'EN';
 
-  constructor(private navigationService: NavigationService, private textService: TextService) {
+  constructor(private navigationService: NavigationService, private textService: TextService, private languageService: LanguageService) {
 
     // Abonniere die aktuelle Sprache, um Änderungen zu überwachen
-    this.textService.currentLanguage$.subscribe(lang => {
+    this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
   }
@@ -54,7 +55,7 @@ export class MobileMenuComponent {
 
   // Methode, um die Sprache zu setzen
   setLanguage(language: string) {
-    this.textService.setLanguage(language);
+    this.languageService.setCurrentLanguage(language);
     this.close();
   }
 }

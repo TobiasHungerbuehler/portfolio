@@ -3,6 +3,7 @@ import { TextService } from '../../services/text.service';
 import { CommonModule } from '@angular/common';
 import { Texts, LanguageText, SectionTexts } from '../../interfaces/texts.interface';
 import { Subscription } from 'rxjs';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-text-container',
@@ -16,14 +17,14 @@ export class TextContainerComponent {
   currentLanguage: string = 'EN';
   private languageSubscription!: Subscription;
 
-  constructor(private textService: TextService) { }
+  constructor(private textService: TextService, private languageService: LanguageService) { }
 
   ngOnInit() {
     // Initialer Text basierend auf der aktuellen Sprache
-    this.currentLanguage = this.textService.getCurrentLanguage();
+    this.currentLanguage = this.languageService.getCurrentLanguage();
 
     // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
-    this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe(language => {
       this.currentLanguage = language;
     });
   }

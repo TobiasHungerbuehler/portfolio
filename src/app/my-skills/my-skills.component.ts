@@ -3,6 +3,7 @@ import { ScrollStateService } from '../services/scroll-state.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { TextService } from '../services/text.service';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -18,7 +19,8 @@ export class MySkillsComponent {
 
   constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
   private scrollService: ScrollStateService, // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
-  private textService: TextService
+  private textService: TextService,
+  private languageService: LanguageService
   ) {}
 
   @HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
@@ -80,10 +82,10 @@ skillGroups: { skills: any[] }[] = [];
 ngOnInit() {
 
       // Initialer Text basierend auf der aktuellen Sprache
-      this.currentLanguage = this.textService.getCurrentLanguage();
+      this.currentLanguage = this.languageService.getCurrentLanguage();
 
       // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
-      this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
+      this.languageSubscription = this.languageService.currentLanguage$.subscribe(language => {
         this.currentLanguage = language;
       });
 

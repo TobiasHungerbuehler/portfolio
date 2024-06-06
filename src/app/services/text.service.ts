@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Text } from '@angular/compiler';
-import { Texts, LanguageText, SectionTexts  } from '../interfaces/texts.interface';
+import { Texts, LanguageText, SectionTexts } from '../interfaces/texts.interface';
+import { LanguageService } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TextService {
-
-  private currentLanguageSubject = new BehaviorSubject<string>('EN');
-  currentLanguage$ = this.currentLanguageSubject.asObservable();
+ 
+  // private currentLanguageSubject = new BehaviorSubject<string>('EN');
+  // currentLanguage$ = this.currentLanguageSubject.asObservable();
 
   private texts: Texts = {
     aboutMe: {
@@ -34,21 +35,12 @@ export class TextService {
     }
   };
 
-  constructor() {}
+  constructor(private languageService: LanguageService) { }
 
-  getCurrentLanguage(): string {
-    return this.currentLanguageSubject.value;
-  }
 
-  setLanguage(language: string) {
-    
-    this.currentLanguageSubject.next(language);
-    
-    }
-    
-    getText(section: keyof Texts, key: keyof SectionTexts): LanguageText {
-      const sectionTexts = this.texts[section];
-      const text = sectionTexts[key];
+  getText(section: keyof Texts, key: keyof SectionTexts): LanguageText {
+    const sectionTexts = this.texts[section];
+    const text = sectionTexts[key];
     if (!text) {
       // Fallback-Wert, falls der Schlüssel nicht existiert
       return { en: '', de: '' };
