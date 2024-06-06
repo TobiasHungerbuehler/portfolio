@@ -32,7 +32,6 @@ export class PortfolioComponent {
     // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
     this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
       this.currentLanguage = language;
-      console.log(this.currentLanguage);
     });
 
     this.projects = this.portfolioService.getProjects();

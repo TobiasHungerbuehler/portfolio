@@ -1,6 +1,8 @@
 import { Component,HostListener, ElementRef} from '@angular/core';
 import { ScrollStateService } from '../services/scroll-state.service';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { TextService } from '../services/text.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -10,9 +12,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
+
+  currentLanguage: string = 'EN';
+  private languageSubscription!: Subscription;
+
   constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
-  private scrollService: ScrollStateService) // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
-{}
+  private scrollService: ScrollStateService, // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
+  private textService: TextService
+  ) {}
 
   @HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
 
@@ -71,6 +78,16 @@ skills = [
 skillGroups: { skills: any[] }[] = [];
 
 ngOnInit() {
+
+      // Initialer Text basierend auf der aktuellen Sprache
+      this.currentLanguage = this.textService.getCurrentLanguage();
+
+      // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
+      this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
+        this.currentLanguage = language;
+      });
+
+
   this.groupSkills();
 }
 
@@ -85,6 +102,17 @@ groupSkills() {
 }
 
 
+ngOnDestroy() {
+  // Unsubscribe, um Speicherlecks zu vermeiden
+  if (this.languageSubscription) {
+    this.languageSubscription.unsubscribe();
+  }
+}
+
+getText(section: keyof typeof this.textService['texts'], key: keyof typeof this.textService['texts'][typeof section]): string {
+  const text = this.textService.getText(section, key);
+  return this.currentLanguage === 'EN' ? text.en : text.de;
+}
 
 
 

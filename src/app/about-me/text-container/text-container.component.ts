@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { TextService } from '../../services/text.service';
 import { CommonModule } from '@angular/common';
-import { Texts, LanguageTexts, SectionTexts } from '../../interfaces/texts.interface';
+import { Texts, LanguageText, SectionTexts } from '../../interfaces/texts.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-text-container',
@@ -12,24 +13,31 @@ import { Texts, LanguageTexts, SectionTexts } from '../../interfaces/texts.inter
 })
 export class TextContainerComponent {
 
-  constructor(private textService: TextService) {}
+  currentLanguage: string = 'EN';
+  private languageSubscription!: Subscription;
 
-  text1: string = '';
-  text2: string = '';
-  text3: string = '';
+  constructor(private textService: TextService) { }
 
-  ngOnInit(): void {
-    this.updateTexts();
-    this.textService.currentLanguage$.subscribe(() => {
-      this.updateTexts();
+  ngOnInit() {
+    // Initialer Text basierend auf der aktuellen Sprache
+    this.currentLanguage = this.textService.getCurrentLanguage();
+
+    // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
+    this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
+      this.currentLanguage = language;
     });
   }
 
-  updateTexts(): void {
-    const keys: (keyof SectionTexts)[] = ['text1', 'text2', 'text3'];
-    for (let i = 0; i < keys.length; i++) {
-      this[keys[i]] = this.textService.getText('aboutMe', keys[i]);
+  ngOnDestroy() {
+    // Unsubscribe, um Speicherlecks zu vermeiden
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
     }
+  }
+
+  getText(section: keyof typeof this.textService['texts'], key: keyof typeof this.textService['texts'][typeof section]): string {
+    const text = this.textService.getText(section, key);
+    return this.currentLanguage === 'EN' ? text.en : text.de;
   }
 
 }
