@@ -36,7 +36,6 @@ export class PortfolioComponent {
     });
 
     this.projects = this.portfolioService.getProjects();
-    console.log(this.projects);
     
   }
 
