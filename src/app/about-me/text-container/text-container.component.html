@@ -1,13 +1,14 @@
 <!-- text-container.component.html -->
 <div class="text-wrapper">
         <h2>About me</h2>
-        <p>{{text1}}</p>
+        <p>{{ getText('aboutMe', 'text1') }}</p>
+
         <div class="smal-text-box">
             <div class="img-container">
                 <img src="./assets/img/bulb.png" alt="">
             </div>
             <div class="txt">
-                <p>{{text2}}</p>
+                <p class="description">{{ getText('aboutMe', 'text2') }}</p>
             </div>
         </div>
         <div class="smal-text-box">
@@ -15,7 +16,7 @@
                 <img src="./assets/img/puzzle.png" alt="">
             </div>
             <div class="txt">
-                <p>{{text3}}</p>
+                <p class="description">{{ getText('aboutMe', 'text3') }}</p>
             </div>
         </div>
     </div>

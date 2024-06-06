@@ -5,6 +5,7 @@ import { TextService } from '../services/text.service';
 import { Subscription } from 'rxjs';
 import { PortfolioProjectsService } from '../services/portfolio-projects.service';
 import { Project } from '../interfaces/portfolioProjects.interface';
+import { LanguageService } from '../services/language.service';
 
 
 @Component({
@@ -20,8 +21,8 @@ export class PortfolioComponent {
   // Konstruktor der Komponente, der Abhängigkeiten injiziert.
   constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
     private scrollService: ScrollStateService, // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
-    private textService: TextService,
-    private portfolioService: PortfolioProjectsService
+    private languageService: LanguageService,
+    private portfolioService: PortfolioProjectsService,
   ) { }
 
   projects: Project [] = [];
@@ -30,9 +31,8 @@ export class PortfolioComponent {
   
   ngOnInit() {
     // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
-    this.languageSubscription = this.textService.currentLanguage$.subscribe(language => {
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe(language => {
       this.currentLanguage = language;
-      console.log(this.currentLanguage);
     });
 
     this.projects = this.portfolioService.getProjects();

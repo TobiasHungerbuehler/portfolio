@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../interfaces/portfolioProjects.interface';
+import { LanguageService } from './language.service';
 
 
 @Injectable({
