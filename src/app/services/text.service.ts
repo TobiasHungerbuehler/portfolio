@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Text } from '@angular/compiler';
 import { Texts, LanguageText, SectionTexts } from '../interfaces/texts.interface';
-import { LanguageService } from './language.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TextService {
- 
-  // private currentLanguageSubject = new BehaviorSubject<string>('EN');
-  // currentLanguage$ = this.currentLanguageSubject.asObservable();
 
   private texts: Texts = {
     aboutMe: {
@@ -32,10 +27,17 @@ export class TextService {
         en: "I have grown my frontend developments skills that have allowed me to create different real projects.",
         de: "Ich habe meine Frontend-Entwicklungsfähigkeiten ausgebaut, die es mir ermöglicht haben, verschiedene reale Projekte zu erstellen."
       }
+    },
+    portfolio: {
+      text1: {
+        en: "Explore a selection of my work here - Interact with projects to see my skills in action.",
+        de: "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen."
+      }
     }
+
   };
 
-  constructor(private languageService: LanguageService) { }
+  constructor() { }
 
 
   getText(section: keyof Texts, key: keyof SectionTexts): LanguageText {

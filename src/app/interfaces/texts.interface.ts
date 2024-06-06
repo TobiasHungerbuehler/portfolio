@@ -12,4 +12,5 @@ export interface SectionTexts {
 export interface Texts {
   aboutMe: SectionTexts;
   mySkills: SectionTexts;
+  portfolio: SectionTexts;
 }
