@@ -51,4 +51,9 @@ export class TextService {
     setLanguage(language: string) {
       this.currentLanguage.next(language); // Aktualisieren des BehaviorSubject
     }
+
+    // gibt anderen services wie portfolioProjects die ausgewählte sprache zurück
+    getCurrentLanguage(): string {
+      return this.currentLanguage.value;
+    }
 }
