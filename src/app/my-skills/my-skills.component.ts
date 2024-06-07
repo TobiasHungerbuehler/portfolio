@@ -6,11 +6,12 @@ import { TextService } from '../services/text.service';
 import { LanguageService } from '../services/language.service';
 import { SkillsService } from '../services/skills.service';
 import { Skill, SkillGroup } from '../interfaces/skills.interface';
+import { SingleSkillComponent } from './single-skill/single-skill.component';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SingleSkillComponent],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -27,6 +28,7 @@ export class MySkillsComponent {
     private skillsService: SkillsService,
   ) { }
 
+  
   @HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
 
   onScroll() { // Wird jedes Mal aufgerufen, wenn auf der Seite gescrollt wird.
