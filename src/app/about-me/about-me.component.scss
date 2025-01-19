@@ -29,11 +29,11 @@ section{
 }
 
 .portrait-container{
-    margin-top: 100px;
+    //margin-top: 100px;
     position: relative;
     width: 50%;
-    height: 50vw;
-    height: 550px;
+    //height: 50vw;
+    height: 750px;
     overflow: visible;
     @media (max-width: $mobileWidth) {
         width: 100%;
@@ -43,6 +43,7 @@ section{
     @media (max-width: 500px) {
         height: 300px;
     } 
+
 
     >.bg-portrait{
         position: absolute;
