@@ -1,31 +1,26 @@
 <!-- header.component.html -->
 <section class="header">
-
     <div class="content-frame">
-
         <a href="#startSection">
-            <img src="./assets/img/logo.png" alt="Logo">
+            <img src="./assets/img/logo.png" alt="Logo" />
         </a>
-        
+
         <div>
-    
             <app-navigation class="desktop-nav" [links]="links"></app-navigation>
 
             <div>
-                <img src="./assets/img/globe.png" alt="Language" class="globe-icon">
-                
+                <img src="./assets/img/globe.png" alt="Language" class="globe-icon" />
+
                 <div class="language-selector">
                     <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
                     <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
                 </div>
             </div>
-
         </div>
 
         <div class="burger-menu" (click)="toggleMenu()">
-            <img src="./assets/img/burgerMenu.png" alt="Menu">
+            <img src="./assets/img/burgerMenu.png" alt="Menu" />
         </div>
-
     </div>
     <app-mobile-menu #mobileMenuComponent></app-mobile-menu>
 </section>
