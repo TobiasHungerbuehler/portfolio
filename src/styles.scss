@@ -1,34 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
+////////////////////////
+// Design colors
+$light-blue: #00bee8;
+$dark-blue: #4b47ff;
+$bg-color: #141d2f;
 
-$light-blue:  #00BEE8;
-
-$dark-blue: #4B47FF; 
-
-$bg-color: #141D2F;
-
-h2{
+////////////////////////
+// Fonts
+h2 {
     font-size: clamp(40px, 7vw, 90px);
     font-weight: 700;
 }
-
 
 html {
     scroll-behavior: smooth;
     display: block;
 }
 
-html, body {
+$flow-text-size: 16px;
+html,
+body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    display: block; // Stellt sicher, dass der body als Block behandelt wird
+    display: block;
 }
 
-
 body {
-    display: block;
     overflow-x: hidden;
     box-sizing: border-box;
     height: 100vh;
@@ -48,27 +48,27 @@ body {
 
 $distance-to-side: 8vw;
 
-@mixin contentWidth(){
+//inner contentwidth
+@mixin contentWidth() {
     width: 84vw;
-    
 }
 
-@mixin flex-center-center{
+@mixin flex-center-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin x{
+@mixin x {
     border: 1px solid rgb(255, 255, 0, 0.5);
 }
 
-@mixin color-btn{
+@mixin color-btn {
     @include flex-center-center;
     width: 165px;
     height: 58px;
     font-size: clamp(16px, 1.5em, 23px);
-    font-size: 23px;
+    //font-size: 23px;
     color: white;
     text-decoration: none;
     background-color: $light-blue;
@@ -76,29 +76,18 @@ $distance-to-side: 8vw;
     border-radius: 10px;
     cursor: pointer;
     transition: all 125ms ease-in-out;
-    @media (max-width: 769px){
+    @media (max-width: 769px) {
         width: 130px;
         height: 54px;
         font-size: 18px;
     }
-    &:hover{
+    &:hover {
         transition: all 125ms ease-in-out;
         background-color: $dark-blue;
         width: 180px;
         height: 64px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Versteckt sowohl horizontale als auch vertikale Scrollbars */
 html {
