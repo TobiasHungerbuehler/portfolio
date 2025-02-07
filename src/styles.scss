@@ -1,24 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
-////////////////////////
 // Design colors
+////////////////////////
+
 $light-blue: #00bee8;
 $dark-blue: #4b47ff;
 $bg-color: #141d2f;
 
-////////////////////////
 // Fonts
+////////////////////////
 h2 {
     font-size: clamp(40px, 7vw, 90px);
     font-weight: 700;
 }
+
+// Global Text size
+$flow-text-size: 16px;
+
+// Global classes
+///////////////////////
 
 html {
     scroll-behavior: smooth;
     display: block;
 }
 
-$flow-text-size: 16px;
 html,
 body {
     height: 100%;
@@ -46,7 +52,14 @@ body {
     display: none;
 }
 
+// Global variables
+////////////////////////
+
+// Distance from inner content to viewport side
 $distance-to-side: 8vw;
+
+//Mobile threshold
+$mobileWidth: 1100px;
 
 //inner contentwidth
 @mixin contentWidth() {
@@ -68,7 +81,6 @@ $distance-to-side: 8vw;
     width: 165px;
     height: 58px;
     font-size: clamp(16px, 1.5em, 23px);
-    //font-size: 23px;
     color: white;
     text-decoration: none;
     background-color: $light-blue;

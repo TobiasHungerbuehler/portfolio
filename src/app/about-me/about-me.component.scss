@@ -1,13 +1,12 @@
 @import "./../../styles.scss";
 
-$mobileWidth: 1100px;
-
 section {
     box-sizing: border-box;
     width: 100vw;
     height: auto;
-    margin-top: 64px;
+    margin-top: 184px;
     @media (max-width: $mobileWidth) {
+        margin-top: 120px;
         overflow: hidden;
     }
     > .content-wrapper {
@@ -19,71 +18,67 @@ section {
             justify-content: center;
             flex-direction: column-reverse;
         }
-    }
-}
+        > .text-container {
+            z-index: 4;
+            width: 50%;
+            @media (max-width: $mobileWidth) {
+                width: 100%;
+            }
+        }
 
-.text-container {
-    z-index: 4;
-    width: 50%;
-    @media (max-width: $mobileWidth) {
-        width: 100%;
-    }
-}
+        > .portrait-container {
+            position: relative;
+            width: 50%;
+            height: 750px;
+            overflow: visible;
+            @media (max-width: $mobileWidth) {
+                width: 100%;
+                margin-top: 0px;
+                height: 600px;
+            }
+            @media (max-width: 500px) {
+                height: 300px;
+            }
 
-.portrait-container {
-    //margin-top: 100px;
-    position: relative;
-    width: 50%;
-    //height: 50vw;
-    height: 750px;
-    overflow: visible;
-    @media (max-width: $mobileWidth) {
-        width: 100%;
-        margin-top: 0px;
-        height: 400px;
-    }
-    @media (max-width: 500px) {
-        height: 300px;
-    }
-
-    > .bg-portrait {
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        height: 150%;
-        width: 100%;
-    }
-    > .portrait {
-        position: absolute;
-        z-index: 2;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        height: 100%;
-        width: auto;
-    }
-}
-
-.wave {
-    position: absolute;
-    z-index: 3;
-    top: 530px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    max-height: 700px;
-    @media (max-width: $mobileWidth) {
-        top: 250px;
-    }
-    @media (max-width: 800px) {
-        width: 170%;
-        right: -70%;
-    }
-    @media (max-width: 500px) {
-        top: 150px;
-        width: 250%;
-        left: -50%;
-        right: -100%;
+            > .bg-portrait {
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                height: 150%;
+                width: 100%;
+            }
+            > .portrait {
+                position: absolute;
+                z-index: 2;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%);
+                height: 100%;
+                width: auto;
+            }
+        }
+        > .wave {
+            position: absolute;
+            z-index: 3;
+            top: 530px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            max-height: 700px;
+            @media (max-width: $mobileWidth) {
+                top: 390px;
+            }
+            @media (max-width: 800px) {
+                width: 170%;
+                right: -70%;
+            }
+            @media (max-width: 500px) {
+                top: 150px;
+                width: 250%;
+                left: -50%;
+                right: -100%;
+            }
+        }
     }
 }
