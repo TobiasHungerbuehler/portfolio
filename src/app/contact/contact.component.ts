@@ -1,27 +1,58 @@
-import { Component,HostListener, ElementRef} from '@angular/core';
-import { ScrollStateService } from '../services/scroll-state.service';
+import { Component, HostListener, ElementRef, OnInit } from "@angular/core";
+import { ScrollStateService } from "../services/scroll-state.service";
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { LanguageService } from "../services/language.service";
+import { Subscription } from "rxjs";
 
+@HostListener("window:scroll")
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    selector: "app-contact",
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: "./contact.component.html",
+    styleUrls: ["./contact.component.scss"],
 })
-export class ContactComponent {
-    // Konstruktor der Komponente, der Abhängigkeiten injiziert.
-    constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
-    private scrollService: ScrollStateService) // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
-{}
+export class ContactComponent implements OnInit {
+    contactForm!: FormGroup;
+    submitted = false;
+    currentLanguage: string = "EN";
+    private languageSubscription!: Subscription;
 
-// Dekorator, der eine Methode als Event-Handler für das native scroll Event des Fensters registriert.
-@HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
+    messageData = {
+        name: "",
+        email: "",
+        message: "",
+    };
 
-onScroll() {
-// Wird jedes Mal aufgerufen, wenn auf der Seite gescrollt wird.
-this.scrollService.checkAndEmitVisibility(this.elementRef, 'contact'); 
-// Ruft eine Methode im scrollService auf, die prüft, ob das Element sichtbar ist, und einen Zustand entsprechend ändert.
+    constructor(private elementRef: ElementRef, private scrollService: ScrollStateService, private fb: FormBuilder, private languageService: LanguageService) {}
+
+    onScroll() {
+        this.scrollService.checkAndEmitVisibility(this.elementRef, "contact");
+    }
+
+    ngOnInit(): void {
+        this.contactForm = this.fb.group({
+            name: ["", Validators.required],
+            email: ["", [Validators.required, Validators.email]],
+            message: ["", Validators.required],
+        });
+
+        // Initialer Text basierend auf der aktuellen Sprache
+        //this.currentLanguage = this.languageService.getCurrentLanguage();
+
+        // Abonniere das BehaviorSubject, um die aktuelle Sprache zu überwachen
+        this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
+            this.currentLanguage = language;
+        });
+        console.log(this.currentLanguage);
+    }
+
+    onSubmit(): void {
+        this.submitted = true;
+        if (this.contactForm.invalid) {
+            return;
+        }
+        console.log("Form submitted:", this.contactForm.value);
+    }
 }
-}
-
-

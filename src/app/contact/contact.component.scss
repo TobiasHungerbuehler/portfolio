@@ -1,17 +1,58 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
-
-section{
-    @include flex-center-center;
-    height: 250px;
+section {
+    position: relative;
     width: 100vw;
-    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-    >div{
-        @include contentWidth;
-        
+    height: 800px;
+    > img {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        width: 40vw;
     }
-    
+    > .h2-container {
+        margin-top: 124px;
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
 
+        > .line {
+            height: 4px;
+            width: 40%;
+            background-color: $light-blue;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
 
-    
+        > h2 {
+            margin-left: 5px;
+        }
+    }
+    > .inlay {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        @include contentWidth;
+        height: 600px;
+        @include x;
+
+        display: flex;
+
+        > .text-box {
+            height: 100%;
+            width: 50%;
+            @include x;
+        }
+
+        > .form-box {
+            height: 100%;
+            width: 50%;
+            @include x;
+        }
+    }
 }
