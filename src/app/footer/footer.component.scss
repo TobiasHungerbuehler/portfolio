@@ -1,0 +1,7 @@
+@import "./../../styles.scss";
+
+section {
+    height: 200px;
+    border-top: 4px solid $light-blue;
+    @include flex-center-center;
+}
