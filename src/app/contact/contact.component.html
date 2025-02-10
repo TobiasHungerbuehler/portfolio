@@ -1,53 +1,18 @@
 <section id="contact">
-    <!-- Hintergrundbild -->
     <img src="assets/img/darkBlue4.png" alt="Dekoratives Hintergrundbild" />
-
-    <!-- Überschrift -->
     <div class="h2-container">
         <div class="line"></div>
         <h2>Contact</h2>
     </div>
-
-    <!-- Inlay mit Text und Formular -->
     <div class="inlay">
-        <!-- Linke Textbox -->
         <div class="text-box">
-            <p>Got a problem to solve?</p>
-            <span> Contact me through this form. I am interested in hearing from you, learning your ideas, and contributing to your projects with my work. </span>
-            <br />
-            <span>Need a Frontend developer? Contact me!</span>
+            <div>
+                <p [innerHTML]="getText('contact', 'text1')"></p>
+                <span [innerHTML]="getText('contact', 'text2')"></span>
+            </div>
         </div>
-
-        <!-- Rechte Formularbox -->
         <div class="form-box">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-                <!-- Name -->
-                <div class="form-group">
-                    <input id="name" type="text" formControlName="name" placeholder="Your name" required />
-                    @if (contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted)) {
-                    <small> @if (currentLanguage === 'EN') { Name is required. } @else { Name ist erforderlich. } </small>
-                    }
-                </div>
-
-                <!-- E-Mail -->
-                <div class="form-group">
-                    <input id="email" type="email" formControlName="email" placeholder="Your email" required />
-                    @if (contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted)) {
-                    <small> @if (currentLanguage === 'EN') { Please enter a valid email. } @else { Bitte geben Sie eine gültige E-Mail ein. } </small>
-                    }
-                </div>
-
-                <!-- Nachricht -->
-                <div class="form-group">
-                    <textarea id="message" formControlName="message" placeholder="Your message" rows="5" required></textarea>
-                    @if (contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)) {
-                    <small> @if (currentLanguage === 'EN') { Message is required. } @else { Nachricht ist erforderlich. } </small>
-                    }
-                </div>
-
-                <!-- Submit-Button -->
-                <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-            </form>
+            <app-contact-form></app-contact-form>
         </div>
     </div>
 </section>

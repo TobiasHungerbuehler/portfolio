@@ -1,0 +1,106 @@
+@import "./../../../styles.scss";
+
+form {
+    @include flex-center-center;
+    flex-direction: column;
+
+    > .form-group {
+        margin-top: 8px;
+        width: 100%;
+        margin-bottom: 5px;
+
+        > .input-group {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border: 1px solid $light-blue;
+            border-radius: 5px;
+            background-color: #141d2fec;
+
+            > input,
+            textarea {
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-size: $flow-text-size;
+                color: white;
+                font-family: "Poppins", sans-serif;
+            }
+
+            > img {
+                height: 20px;
+                width: auto;
+                margin-left: 0.5rem;
+            }
+        }
+
+        .default-border {
+            border-color: $light-blue;
+        }
+        .valid-border {
+            border-color: #70e61c;
+        }
+        .invalid-border {
+            border-color: #ff4747;
+        }
+
+        > small {
+            color: #ff4747;
+            font-size: 12px;
+            margin-top: 0.25rem;
+            display: block;
+        }
+    }
+
+    button {
+        margin-top: 1.5rem;
+        border: none;
+        outline: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #b6b6b6;
+        color: white;
+        transition: background-color 0.2s;
+    }
+    .active-button {
+        background-color: green;
+    }
+    .disabled-button {
+        background-color: #b6b6b6;
+        cursor: not-allowed;
+    }
+
+    .privacy-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-check {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: all ease-in-out 125ms;
+        &:hover {
+            background-color: #4a47ff3d;
+            transition: all ease-in-out 125ms;
+        }
+    }
+
+    .privacy-text {
+        margin-left: 5px;
+        font-size: 12px;
+        color: white;
+        transition: color 125ms;
+        > a {
+            color: $dark-blue;
+            &:hover {
+                color: $light-blue;
+                transition: color 125ms;
+            }
+        }
+    }
+}
