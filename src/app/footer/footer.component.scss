@@ -4,4 +4,17 @@ section {
     height: 200px;
     border-top: 4px solid $light-blue;
     @include flex-center-center;
+
+    > .inlay {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include contentWidth;
+
+        @include x;
+        > img {
+            height: 40px;
+            width: auto;
+        }
+    }
 }
