@@ -8,38 +8,38 @@ export class TextService {
     private texts: Texts = {
         aboutMe: {
             text1: {
-                en: "Hi, I'm Tobias, a front-end developer based in St. Gallen, Switzerland, who thrives on solving problems and digitalizing business processes. With a robust background in technical and sales environments, I bring a unique perspective to digital development, combining analytical problem-solving with a communicative approach to deliver straightforward solutions.",
-                de: "Hallo, ich bin Tobias, ein Front-End-Entwickler aus St. Gallen, Schweiz, der es liebt, Probleme zu lösen und Geschäftsprozesse zu digitalisieren. Mit einem soliden Hintergrund in technischen und Vertriebsumgebungen bringe ich eine einzigartige Perspektive in die digitale Entwicklung ein, indem ich analytisches Problemlösen mit einem kommunikativen Ansatz kombiniere, um einfache Lösungen zu liefern.",
+                en: "Hi, I’m Tobias – a web developer from St. Gallen. What do I enjoy most? Automating and digitizing processes. Thanks to my background in energy technology and sales, I build software that really works in practice. With my open nature, I listen carefully to what matters to you and together we find the best way forward.",
+                de: "Hallo, ich bin Tobias – Web-Entwickler aus St. Gallen. Was mir besonders Spaß macht? Prozesse zu automatisieren und zu digitalisieren. Mit meiner Erfahrung in der Energietechnik und im Vertrieb entwickle ich Software, die in der Praxis wirklich funktioniert. Dank meiner offenen Art höre ich genau zu, was Ihnen wichtig ist, und finde gemeinsam mit Ihnen den besten Weg.",
             },
             text2: {
-                en: "My programming journey began with a quest to enhance business operations, quickly evolving into a passion for leveraging web technologies to simplify complex processes and innovate digital interactions.",
-                de: "Meine Programmierreise begann mit dem Bestreben, Geschäftsabläufe zu verbessern, und entwickelte sich schnell zu einer Leidenschaft dafür, Webtechnologien zu nutzen, um komplexe Prozesse zu vereinfachen und digitale Interaktionen zu innovieren.",
+                en: "I began programming to simplify business operations. It wasn’t long before I discovered a passion for modern web technologies that turn complicated processes into everyday advantages.",
+                de: "Ich habe mit der Programmierung angefangen, um Geschäftsabläufe einfacher zu machen. Dabei entdeckte ich schnell meine Begeisterung für moderne Webtechnologien, die es ermöglichen, komplizierte Abläufe so zu gestalten, dass sie im Alltag einen echten Unterschied machen.",
             },
             text3: {
-                en: "I develop user-friendly interfaces and robust backend systems to solve problems and improve workflows. I'm actively expanding my backend skills to tackle complex challenges more effectively.",
-                de: "Ich entwickle benutzerfreundliche Schnittstellen und robuste Backend-Systeme, um Probleme zu lösen und Arbeitsabläufe zu verbessern. Ich erweitere aktiv meine Backend-Fähigkeiten, um komplexe Herausforderungen effektiver zu bewältigen.",
+                en: "While working on exciting projects, I continually improve my skills—especially in modern backend technologies. This keeps me up-to-date and allows me to develop systems that perfectly meet my clients’ needs. For me, it means tackling complex challenges with straightforward, practical solutions.",
+                de: "Während ich an spannenden Projekten arbeite, bilde ich mich ständig weiter – besonders im Bereich moderner Backend-Technologien. So bleibe ich immer auf dem neuesten Stand und kann Systeme entwickeln, die genau zu den Anforderungen meiner Kunden passen. Für mich heißt das, komplexe Herausforderungen mit einfachen, praxisnahen Lösungen anzugehen.",
             },
         },
         mySkills: {
             text1: {
-                en: "I have grown my frontend developments skills that have allowed me to create different real projects.",
-                de: "Ich habe meine Frontend-Entwicklungsfähigkeiten ausgebaut, die es mir ermöglicht haben, verschiedene reale Projekte zu erstellen.",
+                en: "I have expanded my web development skills, enabling me to create various real projects.",
+                de: "Ich habe meine Fähigkeiten in der Webentwicklung ausgebaut, die es mir ermöglicht haben, verschiedene reale Projekte zu erstellen.",
             },
         },
         portfolio: {
             text1: {
-                en: "Explore a selection of my work here - Interact with projects to see my skills in action.",
-                de: "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+                en: "Discover a diverse range of projects, from practical tools to creative experiments, and see my skills in action",
+                de: "Entdecken Sie eine vielfältige Auswahl an Projekten – von praktischen Anwendungen bis zu kreativen Experimenten – und erleben Sie meine Fähigkeiten in Aktion.",
             },
         },
         contact: {
             text1: {
-                en: "Got a problem to solve?",
-                de: "Haben Sie ein Problem zu lösen?",
+                en: "Got an idea or a problem to solve?",
+                de: "Haben Sie eine Idee oder ein Problem zu lösen?",
             },
             text2: {
-                en: "Contact me through this form. I am interested in hearing from you, learning your ideas, and contributing to your projects with my work.</br></br> Need a Frontend developer? <b>Contact me!</b>",
-                de: "Kontaktieren Sie mich über dieses Formular. Ich freue mich darauf, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen.</br></br> Benötigen Sie einen Frontend-Entwickler? <b>Kontaktieren Sie mich!</b>",
+                en: "Contact me through this form. I’m eager to hear from you, learn about your ideas, and help bring your projects to life – whether it’s a custom website with unique features or a full-scale webshop.</br></br>Need a web developer? <b>Contact me!</b>",
+                de: "Kontaktieren Sie mich über dieses Formular. Ich freue mich darauf, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen – sei es eine Webseite mit individuellen Funktionen oder ein kompletter Webshop.</br></br>Benötigen Sie einen Webentwickler? <b>Kontaktieren Sie mich!</b>",
             },
         },
     };
@@ -50,8 +50,7 @@ export class TextService {
         const sectionTexts = this.texts[section];
         const text = sectionTexts[key];
         if (!text) {
-            // Fallback-Wert, falls der Schlüssel nicht existiert
-            return { en: "", de: "" };
+            return { en: "", de: "" }; // Fallback
         }
         return text;
     }
