@@ -36,7 +36,7 @@ section {
                 @include flex-center-center;
             }
 
-            > div {
+            > .language-box {
                 position: relative;
                 top: 7px;
                 width: auto;
@@ -54,16 +54,15 @@ section {
 
                 .language-selector {
                     position: absolute;
-                    width: $distance-to-side;
-                    max-width: 120px;
-                    height: 50px;
                     z-index: 15;
-                    top: 12px;
-                    right: 0px;
-                    transform: translate(100%);
+                    top: -2px;
+                    right: 0;
+                    left: 25px;
+                    transform: translateY(0);
                     @include flex-center-center;
                     opacity: 0;
                     visibility: hidden;
+                    background-color: $bg-color;
                     transition: opacity 0.125s ease-in-out, visibility 0.3s ease-in-out;
 
                     p {

@@ -1,23 +1,20 @@
-import { Injectable } from '@angular/core';
-import { NavigationLink } from '../interfaces/navigation-interface.';
+import { Injectable } from "@angular/core";
+import { NavigationLink } from "../interfaces/navigation-interface.";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: "root",
 })
 export class NavigationService {
+    constructor() {}
 
-  constructor() { }
+    links: NavigationLink[] = [
+        { id: "aboutMe", text: { DE: "Über mich", EN: "About Me" } },
+        { id: "mySkills", text: { DE: "Meine Skills", EN: "My Skills" } },
+        { id: "portfolio", text: { DE: "Portfolio", EN: "Portfolio" } },
+        { id: "contact", text: { DE: "Kontakt", EN: "Contact" } },
+    ];
 
-  links: NavigationLink[] = [
-    { id: "aboutMe", text: "About Me" },
-    { id: "mySkills", text: "My Skills" },
-    { id: "portfolio", text: "Portfolio" },
-    { id: "contact", text: "Contact" }
-  ];
-
-  getLinks(): NavigationLink[] {
-    return this.links;
-  }
-
-
+    getLinks(): NavigationLink[] {
+        return this.links;
+    }
 }

@@ -1,13 +1,8 @@
 <!-- navigation.componenet.html -->
 
 @for (link of links; track $index) {
-  <div class="link-box" [class.link-box-on]="activeSection === link.id">
-    <a [href]="'#' + link.id" (click)="scrollToId($event, link.id)">{{ link.text }}</a>
+<div class="link-box" [class.link-box-on]="activeSection === link.id">
+    <a [href]="'#' + link.id" (click)="scrollToId($event, link.id)">{{ link.text[currentLanguage] }}</a>
     <div class="under-line"></div>
-  </div>
+</div>
 }
-
-
-
-  
-  
