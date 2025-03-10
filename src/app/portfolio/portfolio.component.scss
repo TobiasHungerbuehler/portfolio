@@ -1,23 +1,24 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
 $mobileWidth: 1100px;
 
 section {
     position: relative;
     box-sizing: border-box;
-    border: 2px solid rgb(236, 62, 230);
+    border: 1px solid rgba(236, 62, 230, 0.342);
     width: 100vw;
-    height: 2300px;
-    //overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-
-    >.h2-container {
+    height: 2200px;
+    @media (max-width: $mobileWidth) {
+        height: 3100px;
+    }
+    > .h2-container {
         position: relative;
         margin-top: 124px;
         width: 100%;
         height: 150px;
-        @include x;
+        //@include x;
 
-        >.line {
+        > .line {
             position: absolute;
             z-index: 2;
             top: 50%;
@@ -29,8 +30,7 @@ section {
             border-bottom-left-radius: 2px;
         }
 
-        >h2{
-            @include x;
+        > h2 {
             position: absolute;
             z-index: 3;
             top: 50%;
@@ -40,13 +40,9 @@ section {
             background-color: $bg-color;
             padding: 0 20px 0 20px;
         }
-
     }
 
-
-
-    >.background {
-        
+    > .background {
         box-sizing: border-box;
         width: 100%;
         height: 70%;
@@ -54,35 +50,38 @@ section {
         position: absolute;
         z-index: 1;
 
-        border: 2px solid rgb(236, 140, 62);
+        //border: 2px solid rgb(209, 255, 4);
 
-        >img:nth-child(1) {
+        > img:nth-child(1) {
             position: absolute;
             left: 0;
             width: 45%;
             height: auto;
         }
 
-        >img:nth-child(2) {
+        > img:nth-child(2) {
             position: absolute;
             right: 0;
             bottom: 0;
-
         }
     }
 
-
-    >.project-wrapper {
-        margin-top: 300px;
+    > .project-wrapper {
         box-sizing: border-box;
         position: absolute;
         z-index: 2;
         left: 50%;
         transform: translate(-50%);
         @include contentWidth;
-        border: 2px solid rgb(88, 236, 62);
+        //border: 2px solid rgb(88, 236, 62);
 
-        >.project-element {
+        > .section-description {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: $flow-text-size;
+        }
+
+        > .project-element {
             display: flex;
             flex-direction: row;
             //@include x;
@@ -91,8 +90,11 @@ section {
             @media (max-width: $mobileWidth) {
                 flex-direction: column;
             }
+            &:last-child {
+                margin-bottom: 100px;
+            }
 
-            >div {
+            > div {
                 width: 50%;
                 @include x;
                 display: flex;
@@ -103,7 +105,7 @@ section {
                     width: 100%;
                 }
 
-                >img {
+                > img {
                     margin-right: 10%;
                     height: 350px;
                     width: auto;
@@ -114,7 +116,7 @@ section {
                 }
             }
 
-            >.details-container {
+            > .details-container {
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
@@ -124,7 +126,7 @@ section {
                     align-items: center;
                 }
 
-                >h3 {
+                > h3 {
                     font-weight: 700;
                     font-size: 32px;
                     color: $dark-blue;
@@ -133,10 +135,9 @@ section {
                     @media (max-width: $mobileWidth) {
                         margin: 0;
                     }
-
                 }
 
-                >.technologie {
+                > .technologie {
                     margin-left: 10%;
                     display: flex;
 
@@ -144,43 +145,41 @@ section {
                         margin: 0;
                     }
 
-
-                    >div {
+                    > div {
                         display: flex;
-                        
-                        >p {
+
+                        > p {
                             margin: 0;
                             font-weight: 400;
-                            font-size: 23px;
+                            font-size: $flow-text-size;
                             color: $light-blue;
-                            
-                            >span {
+
+                            > span {
                                 margin: 0;
                                 padding: 0 12px 0 10px;
                             }
                         }
-                        
-                        &:last-child{
-                            >p span {
+
+                        &:last-child {
+                            > p span {
                                 display: none;
                             }
                         }
                     }
                 }
-                
-                >.description {
+
+                > .description {
                     margin-left: 10%;
-                    font-size: 16px;
-                    
+                    font-size: $flow-text-size;
+
                     @media (max-width: $mobileWidth) {
                         margin: 0;
                         width: 60%;
                         text-align: center;
                     }
-                    
                 }
-                
-                >div:last-child {
+
+                > div:last-child {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -188,30 +187,32 @@ section {
                     width: 60%;
                     min-width: 380px;
                     height: 80px;
-                    
+
                     @media (max-width: $mobileWidth) {
+                        min-width: 0px;
+
                         margin: 0;
-                        width: 45%;
+                        width: 100%;
                         min-width: none;
                     }
-                    
-                    >a {
+
+                    > a {
                         @include color-btn;
                         background-color: $dark-blue;
-                        
-                        &:hover{
+
+                        &:hover {
                             transition: all 100ms ease-in-out;
                             width: 165px;
                             height: 58px;
                             background-color: $light-blue;
                         }
 
-                        &:last-child{
+                        &:last-child {
                             transition: all 100ms ease-in-out;
                             background-color: transparent;
                             border: 1px solid $light-blue;
 
-                            &:hover{
+                            &:hover {
                                 background-color: $light-blue;
                             }
                         }
@@ -219,55 +220,41 @@ section {
                 }
             }
 
-
-            &.project-element:nth-child(2n+2) {
-
+            &.project-element:nth-child(2n + 2) {
                 @media (min-width: $mobileWidth) {
                     flex-direction: row-reverse;
 
-                    >div {
+                    > div {
                         justify-content: flex-start;
 
-                        >img {
+                        > img {
                             margin-left: 6%;
                         }
                     }
 
-                    >.details-container {
+                    > .details-container {
                         justify-content: center;
                         align-items: flex-end;
 
-                        >h3 {
+                        > h3 {
                             margin-right: 16%;
                         }
 
-                        >.technologie {
+                        > .technologie {
                             margin-right: 16%;
                         }
 
-                        >.description {
+                        > .description {
                             margin-right: 16%;
                             text-align: right;
                         }
 
-                        >div:last-child {
+                        > div:last-child {
                             margin-right: 16%;
                         }
                     }
                 }
-
-
-
             }
-
         }
     }
-
-
-
-
-
-
-
-
 }

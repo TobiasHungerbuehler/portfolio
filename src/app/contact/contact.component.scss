@@ -1,17 +1,83 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
-
-section{
-    @include flex-center-center;
-    height: 250px;
+section {
+    position: relative;
     width: 100vw;
-    overflow: hidden; // Verhindert, dass Überläufe den Container erweitern
-    >div{
-        @include contentWidth;
-        
+    height: 1000px;
+    @media (max-width: $mobileWidth) {
+        width: 100%;
     }
-    
 
+    > img {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        width: 30vw;
+    }
 
-    
+    > .h2-container {
+        margin-top: 124px;
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        > .line {
+            height: 4px;
+            width: 40%;
+            background-color: $light-blue;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        > h2 {
+            margin-left: 5px;
+        }
+    }
+
+    > .inlay {
+        margin-top: 80px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        @include contentWidth;
+        height: auto;
+        @include x;
+        display: flex;
+
+        @media (max-width: $mobileWidth) {
+            flex-direction: column;
+        }
+
+        > .text-box {
+            height: 100%;
+            width: 50%;
+            @include x;
+            @media (max-width: $mobileWidth) {
+                width: 100%;
+                margin-bottom: 34px;
+            }
+            > div {
+                width: 95%;
+                > p {
+                    margin-top: 0px;
+                    font-size: 32px;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        > .form-box {
+            height: 100%;
+            width: 50%;
+            @include x;
+            @media (max-width: $mobileWidth) {
+                width: 100%;
+            }
+        }
+    }
 }

@@ -1,0 +1,27 @@
+@import "./../../../styles.scss";
+
+.img-wrapper {
+    @include flex-center-center;
+
+    > a {
+        @include flex-center-center;
+        height: 40px;
+        width: 40px;
+
+        &:nth-child(2) {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        > img {
+            transition: all 125ms ease-in-out;
+            height: 30px;
+            width: auto;
+
+            &:hover {
+                height: 36px;
+                transition: all 125ms ease-in-out;
+            }
+        }
+    }
+}

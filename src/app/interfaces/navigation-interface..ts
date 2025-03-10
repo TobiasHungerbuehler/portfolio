@@ -1,5 +1,7 @@
 export interface NavigationLink {
     id: string;
-    text: string;
-  }
-  
+    text: {
+        DE: string;
+        EN: string;
+    };
+}

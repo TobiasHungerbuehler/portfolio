@@ -1,0 +1,65 @@
+<form (ngSubmit)="onSubmit(contactFormRef)" #contactFormRef="ngForm" novalidate>
+    <!-- Name Field -->
+    <div class="form-group">
+        <div class="input-group" [ngClass]="{ 'default-border': !nameInput.touched, 'valid-border': nameInput.touched && nameInput.valid, 'invalid-border': nameInput.touched && !nameInput.valid }">
+            <input [(ngModel)]="contactForm.name" #nameInput="ngModel" name="name" id="name" type="text" [placeholder]="currentLanguage === 'EN' ? 'Your name' : 'Ihr Name'" required />
+            @if(nameInput.touched) { @if(nameInput.valid) {
+            <img src="assets/img/ok.png" alt="OK" />
+            } @else {
+            <img src="assets/img/notOk.png" alt="Not OK" />
+            } }
+        </div>
+        @if(nameInput.touched && !nameInput.valid) {
+        <small> @if(currentLanguage === 'EN') { Name is required. } @else { Name ist erforderlich. } </small>
+        }
+    </div>
+    <div class="form-group">
+        <div class="input-group" [ngClass]="{ 'default-border': !emailInput.touched, 'valid-border': emailInput.touched && emailInput.valid, 'invalid-border': emailInput.touched && !emailInput.valid }">
+            <input [(ngModel)]="contactForm.email" #emailInput="ngModel" name="email" id="email" type="email" [placeholder]="currentLanguage === 'EN' ? 'Your email' : 'Ihre E-Mail'" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />
+            @if(emailInput.touched) { @if(emailInput.valid) {
+            <img src="assets/img/ok.png" alt="OK" />
+            } @else {
+            <img src="assets/img/notOk.png" alt="Not OK" />
+            } }
+        </div>
+        @if(emailInput.touched && !emailInput.valid) {
+        <small> @if(currentLanguage === 'EN') { Please enter a valid email. } @else { Bitte geben Sie eine gültige E-Mail ein. } </small>
+        }
+    </div>
+    <div class="form-group">
+        <div class="input-group" [ngClass]="{ 'default-border': !messageInput.touched, 'valid-border': messageInput.touched && messageInput.valid, 'invalid-border': messageInput.touched && !messageInput.valid }">
+            <textarea [(ngModel)]="contactForm.message" #messageInput="ngModel" name="message" id="message" [placeholder]="currentLanguage === 'EN' ? 'Your message' : 'Ihre Nachricht'" rows="7" required></textarea>
+            @if(messageInput.touched) { @if(messageInput.valid) {
+            <img src="assets/img/ok.png" alt="OK" />
+            } @else {
+            <img src="assets/img/notOk.png" alt="Not OK" />
+            } }
+        </div>
+        @if(messageInput.touched && !messageInput.valid) {
+        <small> @if(currentLanguage === 'EN') { Message is required. } @else { Nachricht ist erforderlich. } </small>
+        }
+    </div>
+    <div class="form-group privacy-group">
+        @if(privacyAccepted) {
+        <img class="privacy-check" (click)="togglePrivacy()" src="assets/img/box_check.png" alt="Privacy accepted" />
+        } @else {
+        <img class="privacy-check" (click)="togglePrivacy()" src="assets/img/box_blank.png" alt="Privacy not accepted" />
+        }
+        <span class="privacy-text"> @if(currentLanguage === 'EN') { I've read the <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined. } @else { Ich habe die <a href="/privacy">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu, wie angegeben. } </span>
+    </div>
+    @if(privacyError) {
+    <div class="form-group">
+        <small> @if(currentLanguage === 'EN') { Please accept the privacy policy. } @else { Bitte akzeptieren Sie die Datenschutzbestimmungen. } </small>
+    </div>
+    }
+    <button
+        type="submit"
+        [disabled]="!(privacyAccepted && nameInput.valid && emailInput.valid && messageInput.valid)"
+        [ngClass]="{
+            'active-button': privacyAccepted && nameInput.valid && emailInput.valid && messageInput.valid,
+            'disabled-button': !(privacyAccepted && nameInput.valid && emailInput.valid && messageInput.valid)
+        }"
+    >
+        @if(currentLanguage === 'EN') { Send Message :-) } @else { Nachricht senden :-) }
+    </button>
+</form>

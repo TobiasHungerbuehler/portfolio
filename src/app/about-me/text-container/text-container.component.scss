@@ -1,7 +1,7 @@
-@import './../../../styles.scss';
-@import './../about-me.component.scss';
+@import "./../../../styles.scss";
+@import "./../about-me.component.scss";
 
-.text-wrapper{
+.text-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -12,9 +12,7 @@
         @include contentWidth;
         margin-top: 44px;
     }
-    @media (max-width: 550px) {
-    }
-    >h2{
+    > h2 {
         margin: 0;
         line-height: 90px;
         padding: 0px 0px 24px 0px;
@@ -22,26 +20,26 @@
             padding: 0;
         }
     }
-    >p{
+    > p {
         line-height: 20px;
         font-size: 16px;
     }
 }
 
-.smal-text-box{
+.smal-text-box {
     line-height: 20px;
     @include flex-center-center;
     font-size: 16px;
-    >.img-container{
+    > .img-container {
         @include flex-center-center;
         height: 100px;
         width: 25%;
-        >img{
+        > img {
             width: 50px;
             height: auto;
         }
     }
-    >.txt{
+    > .txt {
         width: 75%;
         display: flex;
     }

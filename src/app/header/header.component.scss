@@ -1,4 +1,4 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
 $mobile-width: 768px;
 
@@ -9,15 +9,15 @@ section {
     width: 100%;
     height: 90px;
     @include flex-center-center;
-    background-color: #141D2F;
+    background-color: #141d2f;
 
-    >.content-frame {
+    > .content-frame {
         @include contentWidth;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        >a img {
+        > a img {
             height: 30px;
             width: auto;
             cursor: pointer;
@@ -31,20 +31,19 @@ section {
             @media (max-width: $mobile-width) {
                 display: none;
             }
-    
-            >.desktop-nav {
+
+            > .desktop-nav {
                 @include flex-center-center;
-            
             }
 
-            >div {
+            > .language-box {
                 position: relative;
                 top: 7px;
                 width: auto;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                
+
                 .globe-icon {
                     margin-left: 34px;
                     margin-top: 2.2%;
@@ -52,29 +51,28 @@ section {
                     width: auto;
                     cursor: pointer;
                 }
-                
+
                 .language-selector {
                     position: absolute;
-                    width: $distance-to-side;
-                    max-width: 120px;
-                    height: 50px;
                     z-index: 15;
-                    top: 12;
-                    right: 0; 
-                    transform: translate(100%);
+                    top: -2px;
+                    right: 0;
+                    left: 25px;
+                    transform: translateY(0);
                     @include flex-center-center;
                     opacity: 0;
                     visibility: hidden;
+                    background-color: $bg-color;
                     transition: opacity 0.125s ease-in-out, visibility 0.3s ease-in-out;
 
                     p {
                         margin: 0 5px;
                         cursor: pointer;
                         transition: color 0.1s;
-                
+
                         &.active {
                             font-weight: bold;
-                            color: $dark-blue; 
+                            color: $dark-blue;
                         }
                     }
                 }
@@ -84,32 +82,20 @@ section {
                     visibility: visible;
                 }
             }
-    
         }
 
         .burger-menu {
             height: 30px;
             width: auto;
             cursor: pointer;
-        
+
             @media (max-width: $mobile-width) {
                 display: block;
             }
-        
+
             @media (min-width: $mobile-width) {
                 display: none;
             }
         }
-
-
-
     }
-
-
-
-
 }
-
-
-
-

@@ -1,24 +1,16 @@
 // app.component.ts
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent} from './header/header.component';
-//import { AboutMeComponent } from './about-me/about-me.component';
-
-
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: "app-root",
+    standalone: true,
+    imports: [RouterOutlet, HeaderComponent, FooterComponent],
+    templateUrl: "./app.component.html",
+    styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-  title = 'portfolio';
-
-
+    title = "portfolio";
 }
-
-
-
-

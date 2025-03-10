@@ -1,27 +1,39 @@
-import { Component,HostListener, ElementRef} from '@angular/core';
-import { ScrollStateService } from '../services/scroll-state.service';
+import { Component, HostListener, ElementRef, OnInit, inject } from "@angular/core";
+import { ScrollStateService } from "../services/scroll-state.service";
+import { CommonModule } from "@angular/common";
+import { LanguageService } from "../services/language.service";
+import { Subscription } from "rxjs";
+import { FormsModule, NgForm } from "@angular/forms";
+import { ContactFormComponent } from "./contact-form/contact-form.component";
+import { TextService } from "../services/text.service";
 
+@HostListener("window:scroll")
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    selector: "app-contact",
+    standalone: true,
+    imports: [CommonModule, FormsModule, ContactFormComponent],
+    templateUrl: "./contact.component.html",
+    styleUrls: ["./contact.component.scss"],
 })
-export class ContactComponent {
-    // Konstruktor der Komponente, der Abhängigkeiten injiziert.
-    constructor(private elementRef: ElementRef, // Injectiert eine Referenz auf das DOM-Element der Komponente.
-    private scrollService: ScrollStateService) // Injectiert den Service, der für die Scroll-Überwachung zuständig ist.
-{}
+export class ContactComponent implements OnInit {
+    currentLanguage: string = "EN";
+    private languageSubscription!: Subscription;
 
-// Dekorator, der eine Methode als Event-Handler für das native scroll Event des Fensters registriert.
-@HostListener('window:scroll') // Horcht auf das Scroll-Event des Fensters.
+    constructor(private elementRef: ElementRef, private scrollService: ScrollStateService, private languageService: LanguageService, private textService: TextService) {}
 
-onScroll() {
-// Wird jedes Mal aufgerufen, wenn auf der Seite gescrollt wird.
-this.scrollService.checkAndEmitVisibility(this.elementRef, 'contact'); 
-// Ruft eine Methode im scrollService auf, die prüft, ob das Element sichtbar ist, und einen Zustand entsprechend ändert.
+    onScroll() {
+        this.scrollService.checkAndEmitVisibility(this.elementRef, "contact");
+    }
+
+    ngOnInit(): void {
+        // Abonniere die Sprache
+        this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
+            this.currentLanguage = language;
+        });
+    }
+
+    getText(section: keyof (typeof this.textService)["texts"], key: keyof (typeof this.textService)["texts"][typeof section]): string {
+        const text = this.textService.getText(section, key);
+        return this.currentLanguage === "EN" ? text.en : text.de;
+    }
 }
-}
-
-
