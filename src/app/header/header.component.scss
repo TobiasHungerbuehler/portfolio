@@ -59,7 +59,8 @@ section {
                     right: 0;
                     left: 25px;
                     transform: translateY(0);
-                    @include flex-center-center;
+                    display: flex;
+
                     opacity: 0;
                     visibility: hidden;
                     background-color: $bg-color;
@@ -69,6 +70,7 @@ section {
                         margin: 0 5px;
                         cursor: pointer;
                         transition: color 0.1s;
+                        padding-bottom: 20px;
 
                         &.active {
                             font-weight: bold;

@@ -4,6 +4,7 @@ section {
     height: 200px;
     border-top: 4px solid $light-blue;
     @include flex-center-center;
+    flex-direction: column;
 
     > .inlay {
         display: flex;
@@ -15,6 +16,18 @@ section {
         > img {
             height: 40px;
             width: auto;
+        }
+    }
+
+    > div {
+        margin-top: 16px;
+        @include flex-center-center;
+        gap: 10px;
+
+        > a {
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
         }
     }
 }

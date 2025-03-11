@@ -4,11 +4,12 @@ import { FormsModule, NgForm } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { LanguageService } from "../../services/language.service";
 import { Subscription } from "rxjs";
+import { RouterModule } from "@angular/router";
 
 @Component({
     selector: "app-contact-form",
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, RouterModule],
     templateUrl: "./contact-form.component.html",
     styleUrls: ["./contact-form.component.scss"],
 })

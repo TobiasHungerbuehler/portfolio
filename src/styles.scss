@@ -25,6 +25,7 @@ html {
     display: block;
 }
 
+html,
 body {
     height: 100%;
     width: 100%;
@@ -40,8 +41,6 @@ body {
     background-color: $bg-color;
     font-family: "Poppins", sans-serif;
     color: white;
-    display: flex;
-    justify-content: center;
 }
 
 .d-none {
@@ -72,6 +71,7 @@ $mobileWidth: 1100px;
     border: 1px solid rgb(255, 255, 0, 0.5);
 }
 
+// Button design basic
 @mixin color-btn {
     @include flex-center-center;
     width: 165px;

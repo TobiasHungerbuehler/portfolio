@@ -1,11 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { LinkBoxComponent } from "../shared/link-box/link-box.component";
+import { RouterModule } from "@angular/router";
 
 @Component({
     selector: "app-footer",
     standalone: true,
-    imports: [CommonModule, LinkBoxComponent],
+    imports: [CommonModule, LinkBoxComponent, RouterModule],
     templateUrl: "./footer.component.html",
     styleUrl: "./footer.component.scss",
 })
