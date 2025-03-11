@@ -39,6 +39,7 @@ export class NavigationComponent {
     subscribeToSectionChanges() {
         this.subscription = this.scrollService.currentSection.subscribe((section) => {
             this.activeSection = section;
+            console.log(this.activeSection);
         });
     }
 
