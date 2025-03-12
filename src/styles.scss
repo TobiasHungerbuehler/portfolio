@@ -25,7 +25,6 @@ html {
     display: block;
 }
 
-html,
 body {
     height: 100%;
     width: 100%;
@@ -59,6 +58,10 @@ $mobileWidth: 1100px;
 //inner contentwidth
 @mixin contentWidth() {
     width: 84vw;
+
+    @media (max-width: $mobileWidth) {
+        width: 96%;
+    }
 }
 
 @mixin flex-center-center {
@@ -84,17 +87,30 @@ $mobileWidth: 1100px;
     border-radius: 10px;
     cursor: pointer;
     transition: all 125ms ease-in-out;
-    @media (max-width: 769px) {
-        width: 130px;
-        height: 54px;
-        font-size: 18px;
-    }
+
     &:hover {
         transition: all 125ms ease-in-out;
         background-color: $dark-blue;
-        width: 180px;
-        height: 64px;
+        width: 175px;
+        height: 68px;
     }
+
+    @media (max-width: $mobileWidth) {
+        width: 130px;
+        height: 44px;
+        font-size: 16px;
+        &:hover {
+            width: 140px;
+            height: 54px;
+        }
+    }
+}
+
+//Logo desing
+@mixin logo {
+    height: 30px;
+    width: auto;
+    cursor: pointer;
 }
 
 /* Versteckt sowohl horizontale als auch vertikale Scrollbars */

@@ -18,9 +18,7 @@ section {
         align-items: center;
 
         > a img {
-            height: 30px;
-            width: auto;
-            cursor: pointer;
+            @include logo;
         }
 
         > div {
