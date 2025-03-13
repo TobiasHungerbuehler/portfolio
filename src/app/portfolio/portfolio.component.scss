@@ -21,10 +21,16 @@ section {
             top: 50%;
             right: 0;
             height: 4px;
-            width: 70%;
+            width: 0; // Start: no width
             background-color: $dark-blue;
             border-top-left-radius: 2px;
             border-bottom-left-radius: 2px;
+            transition: width 1s ease-out;
+        }
+
+        // whenn user scroll portfolio
+        &.active > .line {
+            width: 70%;
         }
         > h2 {
             position: absolute;
