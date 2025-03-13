@@ -7,6 +7,10 @@ import { Texts, LanguageText, SectionTexts } from "../interfaces/texts.interface
 export class TextService {
     private texts: Texts = {
         aboutMe: {
+            title: {
+                en: "About me",
+                de: "Über mich",
+            },
             text1: {
                 en: "Hi, I’m Tobias – a web developer from St. Gallen. What do I enjoy most? Automating and digitizing processes. Thanks to my background in energy technology and sales, I build software that really works in practice. With my open nature, I listen carefully to what matters to you and together we find the best way forward.",
                 de: "Hallo, ich bin Tobias – Web-Entwickler aus St. Gallen. Was mir besonders Spaß macht? Prozesse zu automatisieren und zu digitalisieren. Mit meiner Erfahrung in der Energietechnik und im Vertrieb entwickle ich Software, die in der Praxis wirklich funktioniert. Dank meiner offenen Art höre ich genau zu, was Ihnen wichtig ist, und finde gemeinsam mit Ihnen den besten Weg.",
