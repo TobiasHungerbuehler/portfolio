@@ -11,6 +11,10 @@ section {
     @include flex-center-center;
     background-color: #141d2f;
 
+    @media (max-width: $mobileWidth) {
+        height: 60px;
+    }
+
     > .content-frame {
         @include contentWidth;
         display: flex;
@@ -31,6 +35,7 @@ section {
             }
 
             > .desktop-nav {
+                margin-top: 5px;
                 @include flex-center-center;
             }
 
@@ -44,8 +49,8 @@ section {
 
                 .globe-icon {
                     margin-left: 34px;
-                    margin-top: 2.2%;
-                    height: 18px;
+                    margin-top: 3px;
+                    height: 19px;
                     width: auto;
                     cursor: pointer;
                 }
@@ -53,9 +58,9 @@ section {
                 .language-selector {
                     position: absolute;
                     z-index: 15;
-                    top: -2px;
+                    top: 3px;
                     right: 0;
-                    left: 25px;
+                    left: 15px;
                     transform: translateY(0);
                     display: flex;
 
@@ -85,7 +90,7 @@ section {
         }
 
         .burger-menu {
-            height: 30px;
+            height: 25px;
             width: auto;
             cursor: pointer;
 
@@ -95,6 +100,11 @@ section {
 
             @media (min-width: $mobile-width) {
                 display: none;
+            }
+
+            > img {
+                height: 17px;
+                width: auto;
             }
         }
     }

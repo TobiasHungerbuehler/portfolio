@@ -111,6 +111,10 @@ $mobileWidth: 1100px;
     height: 30px;
     width: auto;
     cursor: pointer;
+
+    @media (max-width: $mobileWidth) {
+        height: 22px;
+    }
 }
 
 /* Versteckt sowohl horizontale als auch vertikale Scrollbars */
