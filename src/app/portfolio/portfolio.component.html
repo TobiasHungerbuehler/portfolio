@@ -4,11 +4,6 @@
         <h2>Portfolio</h2>
     </div>
 
-    <div class="background">
-        <img src="./assets/img/greenshadow2.png" alt="" />
-        <img src="./assets/img/lightBlue2.png" alt="" />
-    </div>
-
     <div class="section-description">
         <p>{{ getText("portfolio", "text1") }}</p>
     </div>
@@ -16,7 +11,7 @@
     <div class="project-wrapper">
         @for (project of projects; track $index) {
 
-        <div class="project-element">
+        <div class="single-project-element">
             <div>
                 <img src="{{ project.img }}" alt="" />
             </div>

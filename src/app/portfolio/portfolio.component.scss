@@ -7,19 +7,17 @@ section {
     box-sizing: border-box;
     border: 1px solid rgba(236, 62, 230, 0.342);
     width: 100vw;
-    height: 2000px;
-    // height: auto;
-    @media (max-width: $mobileWidth) {
-        height: 2300px;
-    }
+    height: auto;
+    background: url("/assets/img/greenshadow2.png") no-repeat left top, url("/assets/img/lightBlue2.png") no-repeat right bottom;
+    background-size: 35% auto, 30% auto;
+
     > .h2-container {
         position: relative;
         margin-top: 64px;
         width: 100%;
-
+        z-index: 1;
         > .line {
             position: absolute;
-            z-index: 2;
             top: 50%;
             right: 0;
             height: 4px;
@@ -28,39 +26,14 @@ section {
             border-top-left-radius: 2px;
             border-bottom-left-radius: 2px;
         }
-
         > h2 {
             position: absolute;
-            z-index: 3;
             top: 50%;
             right: 50%;
             transform: translate(50%, -50%);
             margin: 0;
             background-color: $bg-color;
-            padding: 0 20px 0 20px;
-        }
-    }
-
-    > .background {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        position: absolute;
-        z-index: 1;
-
-        > img:nth-child(1) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 25%;
-            height: auto;
-        }
-
-        > img:nth-child(2) {
-            position: absolute;
-            right: 0;
-            bottom: 10%;
+            padding: 0 20px;
         }
     }
 
@@ -69,17 +42,18 @@ section {
         display: flex;
         justify-content: center;
         margin-top: 174px;
+        position: relative;
+        z-index: 1;
         @media (max-width: $mobileWidth) {
             margin-top: 114px;
         }
-
         > p {
-            z-index: 2;
             text-align: center;
             width: 50%;
-
+            position: relative;
+            z-index: 1;
             @media (max-width: $mobileWidth) {
-                margin-top: 0px;
+                margin-top: 0;
                 width: 100%;
                 @include contentWidth;
             }
@@ -87,21 +61,18 @@ section {
     }
 
     > .project-wrapper {
-        position: absolute;
-        z-index: 2;
-        left: 50%;
-        transform: translate(-50%);
+        position: relative;
+        margin: 0 auto;
+        z-index: 1;
         @include contentWidth;
 
-        > .project-element {
+        > .single-project-element {
             display: flex;
             flex-direction: row;
             margin-top: 124px;
-            @include x;
             &:first-child {
                 margin-top: 84px;
             }
-
             @media (max-width: $mobileWidth) {
                 flex-direction: column;
                 margin-top: 64px;
@@ -114,19 +85,15 @@ section {
                 width: 50%;
                 display: flex;
                 justify-content: flex-end;
-
                 @media (max-width: $mobileWidth) {
                     justify-content: center;
                     width: 100%;
                 }
-
                 > img {
                     margin-right: 10%;
                     padding-bottom: 32px;
                     height: 220px;
-
                     width: auto;
-
                     @media (max-width: $mobileWidth) {
                         margin: 0;
                         height: 190px;
@@ -139,11 +106,9 @@ section {
                 justify-content: center;
                 align-items: flex-start;
                 flex-direction: column;
-
                 @media (max-width: $mobileWidth) {
                     align-items: center;
                 }
-
                 > h3 {
                     font-weight: 700;
                     font-size: 32px;
@@ -151,25 +116,20 @@ section {
                     margin: 0 0 0 10%;
                     text-align: center;
                     line-height: 1;
-
                     @media (max-width: $mobileWidth) {
                         margin: 0;
                         font-size: 26px;
                     }
                 }
-
                 > .technologie {
                     margin-left: 10%;
                     margin-top: 20px;
                     display: flex;
-
                     @media (max-width: $mobileWidth) {
                         margin-left: 0;
                     }
-
                     > div {
                         display: flex;
-
                         > p {
                             margin: 0;
                             font-weight: 400;
@@ -179,13 +139,11 @@ section {
                                 margin-bottom: 20px;
                                 font-size: 18px;
                             }
-
                             > span {
                                 margin: 0;
                                 padding: 0 12px 0 10px;
                             }
                         }
-
                         &:last-child {
                             > p span {
                                 display: none;
@@ -193,18 +151,15 @@ section {
                         }
                     }
                 }
-
                 > .description {
                     margin-left: 10%;
                     font-size: $flow-text-size;
-
                     @media (max-width: $mobileWidth) {
                         margin: 0;
-                        width: 9 0%;
+                        width: 90%;
                         text-align: center;
                     }
                 }
-
                 > .button-box {
                     display: flex;
                     justify-content: space-between;
@@ -213,33 +168,25 @@ section {
                     width: 70%;
                     min-width: 380px;
                     height: 80px;
-                    @include x;
-
                     @media (max-width: $mobileWidth) {
                         min-width: 0;
                         margin: 0;
                     }
-
                     @media (max-width: 600px) {
                         width: 100%;
                     }
-
                     > a {
                         @include color-btn;
                         background-color: $dark-blue;
-
                         &:hover {
                             background-color: $light-blue;
                         }
-
                         &:first-child:hover {
                             transform: translateX(-5px);
                         }
-
                         &:last-child {
                             background-color: transparent;
                             border: 1px solid $light-blue;
-
                             &:hover {
                                 background-color: $light-blue;
                                 transform: translateX(5px);
@@ -249,36 +196,29 @@ section {
                 }
             }
 
-            &.project-element:nth-child(2n + 2) {
+            &.single-project-element:nth-child(2n + 2) {
                 @media (min-width: $mobileWidth) {
                     flex-direction: row-reverse;
-
                     > div {
                         justify-content: flex-start;
-
                         > img {
                             margin-left: 6%;
                         }
                     }
-
                     > .details-container {
                         justify-content: center;
                         align-items: flex-end;
-
                         > h3 {
                             margin-right: 16%;
                         }
-
                         > .technologie {
                             margin-right: 16%;
                         }
-
                         > .description {
                             margin-right: 16%;
                             text-align: right;
-                            margin-left: 0px;
+                            margin-left: 0;
                         }
-
                         > div:last-child {
                             margin-right: 16%;
                         }
