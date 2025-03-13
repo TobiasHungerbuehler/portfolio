@@ -10,7 +10,7 @@ section {
     height: 2000px;
     // height: auto;
     @media (max-width: $mobileWidth) {
-        height: 2500px;
+        height: 2300px;
     }
     > .h2-container {
         position: relative;
@@ -68,7 +68,7 @@ section {
         font-size: $flow-text-size;
         display: flex;
         justify-content: center;
-        margin-top: 164px;
+        margin-top: 174px;
         @media (max-width: $mobileWidth) {
             margin-top: 114px;
         }
@@ -98,10 +98,16 @@ section {
             flex-direction: row;
             margin-top: 124px;
             @include x;
+            &:first-child {
+                margin-top: 84px;
+            }
 
             @media (max-width: $mobileWidth) {
                 flex-direction: column;
-                margin-top: 54px;
+                margin-top: 64px;
+                &:first-child {
+                    margin-top: 34px;
+                }
             }
 
             > div {
@@ -204,17 +210,18 @@ section {
                     justify-content: space-between;
                     align-items: center;
                     margin-left: 10%;
-                    width: 60%;
+                    width: 70%;
                     min-width: 380px;
                     height: 80px;
+                    @include x;
 
                     @media (max-width: $mobileWidth) {
-                        min-width: 0px;
+                        min-width: 0;
                         margin: 0;
                     }
 
                     @media (max-width: 600px) {
-                        width: 96%;
+                        width: 100%;
                     }
 
                     > a {
@@ -222,19 +229,20 @@ section {
                         background-color: $dark-blue;
 
                         &:hover {
-                            transition: all 100ms ease-in-out;
-                            //width: 165px;
-                            //height: 58px;
                             background-color: $light-blue;
                         }
 
+                        &:first-child:hover {
+                            transform: translateX(-5px);
+                        }
+
                         &:last-child {
-                            transition: all 100ms ease-in-out;
                             background-color: transparent;
                             border: 1px solid $light-blue;
 
                             &:hover {
                                 background-color: $light-blue;
+                                transform: translateX(5px);
                             }
                         }
                     }
