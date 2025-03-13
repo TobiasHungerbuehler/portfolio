@@ -15,7 +15,7 @@ h2 {
 }
 
 // Global Text size
-$flow-text-size: 16px;
+$flow-text-size: clamp(14px, 1.6vw, 16px);
 
 // Global classes
 ///////////////////////
@@ -60,7 +60,7 @@ $mobileWidth: 1100px;
     width: 84vw;
 
     @media (max-width: $mobileWidth) {
-        width: 96%;
+        width: 94%;
     }
 }
 
