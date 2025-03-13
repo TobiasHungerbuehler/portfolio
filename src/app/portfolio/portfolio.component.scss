@@ -3,19 +3,21 @@
 $mobileWidth: 1100px;
 
 section {
-    position: relative;
     box-sizing: border-box;
-    border: 1px solid rgba(236, 62, 230, 0.342);
     width: 100vw;
     height: auto;
     background: url("/assets/img/greenshadow2.png") no-repeat left top, url("/assets/img/lightBlue2.png") no-repeat right bottom;
     background-size: 35% auto, 30% auto;
 
     > .h2-container {
+        height: 1px;
+        margin-top: 154px;
         position: relative;
-        margin-top: 64px;
         width: 100%;
         z-index: 1;
+        @media (max-width: $mobileWidth) {
+            margin-top: 54px;
+        }
         > .line {
             position: absolute;
             top: 50%;
@@ -43,15 +45,15 @@ section {
         }
     }
 
-    .section-description {
+    > .section-description {
         font-size: $flow-text-size;
         display: flex;
         justify-content: center;
-        margin-top: 174px;
+        margin-top: 124px;
         position: relative;
-        z-index: 1;
+        //z-index: 1;
         @media (max-width: $mobileWidth) {
-            margin-top: 114px;
+            margin-top: 54px;
         }
         > p {
             text-align: center;
