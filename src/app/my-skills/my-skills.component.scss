@@ -136,7 +136,7 @@ section {
 
                 // When the section is active, animate the title letters.
                 &.active .animated-title span {
-                    animation: letterFlash 0.5s ease forwards;
+                    animation: letterFlash 0.2s ease forwards;
                 }
 
                 // Apply staggered animation delays for each letter
@@ -144,24 +144,27 @@ section {
                     animation-delay: 0s;
                 }
                 .animated-title span:nth-child(2) {
-                    animation-delay: 0.1s;
+                    animation-delay: 0.05s;
                 }
                 .animated-title span:nth-child(3) {
-                    animation-delay: 0.2s;
+                    animation-delay: 0.1s;
                 }
                 .animated-title span:nth-child(4) {
-                    animation-delay: 0.3s;
+                    animation-delay: 0.15s;
                 }
                 .animated-title span:nth-child(5) {
-                    animation-delay: 0.4s;
+                    animation-delay: 0.2s;
                 }
                 .animated-title span:nth-child(6) {
-                    animation-delay: 0.5s;
+                    animation-delay: 0.25s;
                 }
 
                 > h2 {
                     margin-right: $distance-to-side;
                     color: white; // Default color white
+                    @media (max-width: $mobileWidth) {
+                        margin-right: math.div($distance-to-side, 2);
+                    }
                 }
 
                 > .line {
@@ -173,6 +176,9 @@ section {
                     background-color: $dark-blue;
                     border-top-left-radius: 2px;
                     border-bottom-left-radius: 2px;
+                    @media (max-width: $mobileWidth) {
+                        width: math.div($distance-to-side, 3);
+                    }
                 }
             }
 
@@ -181,6 +187,9 @@ section {
                 margin-right: $distance-to-side;
                 width: 80%;
                 max-width: 500px;
+                @media (max-width: $mobileWidth) {
+                    margin-right: math.div($distance-to-side, 2);
+                }
             }
 
             > div {
