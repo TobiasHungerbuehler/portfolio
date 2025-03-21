@@ -3,115 +3,108 @@
 $mobileWidth: 1100px;
 
 section {
-    position: relative;
     box-sizing: border-box;
-    border: 1px solid rgba(236, 62, 230, 0.342);
     width: 100vw;
-    height: 2200px;
-    @media (max-width: $mobileWidth) {
-        height: 3100px;
-    }
-    > .h2-container {
-        position: relative;
-        margin-top: 124px;
-        width: 100%;
-        height: 150px;
-        //@include x;
+    height: auto;
+    background: url("/assets/img/greenshadow2.png") no-repeat left top, url("/assets/img/lightBlue2.png") no-repeat right bottom;
+    background-size: 35% auto, 30% auto;
 
+    > .h2-container {
+        height: 1px;
+        margin-top: 154px;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        @media (max-width: $mobileWidth) {
+            margin-top: 54px;
+        }
         > .line {
             position: absolute;
-            z-index: 2;
             top: 50%;
             right: 0;
             height: 4px;
-            width: 70%;
+            width: 0; // Start: no width
             background-color: $dark-blue;
             border-top-left-radius: 2px;
             border-bottom-left-radius: 2px;
+            transition: width 1s ease-out;
         }
 
+        // whenn user scroll portfolio
+        &.active > .line {
+            width: 70%;
+        }
         > h2 {
             position: absolute;
-            z-index: 3;
             top: 50%;
             right: 50%;
             transform: translate(50%, -50%);
             margin: 0;
             background-color: $bg-color;
-            padding: 0 20px 0 20px;
+            padding: 0 20px;
         }
     }
 
-    > .background {
-        box-sizing: border-box;
-        width: 100%;
-        height: 70%;
-        bottom: 0;
-        position: absolute;
-        z-index: 1;
-
-        //border: 2px solid rgb(209, 255, 4);
-
-        > img:nth-child(1) {
-            position: absolute;
-            left: 0;
-            width: 45%;
-            height: auto;
+    > .section-description {
+        font-size: $flow-text-size;
+        display: flex;
+        justify-content: center;
+        margin-top: 124px;
+        position: relative;
+        //z-index: 1;
+        @media (max-width: $mobileWidth) {
+            margin-top: 54px;
         }
-
-        > img:nth-child(2) {
-            position: absolute;
-            right: 0;
-            bottom: 0;
+        > p {
+            text-align: center;
+            width: 50%;
+            position: relative;
+            z-index: 1;
+            @media (max-width: $mobileWidth) {
+                margin-top: 0;
+                width: 100%;
+                @include contentWidth;
+            }
         }
     }
 
     > .project-wrapper {
-        box-sizing: border-box;
-        position: absolute;
-        z-index: 2;
-        left: 50%;
-        transform: translate(-50%);
+        position: relative;
+        margin: 0 auto;
+        z-index: 1;
         @include contentWidth;
-        //border: 2px solid rgb(88, 236, 62);
 
-        > .section-description {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: $flow-text-size;
-        }
-
-        > .project-element {
+        > .single-project-element {
             display: flex;
             flex-direction: row;
-            //@include x;
-            margin-bottom: 124px;
-
+            margin-top: 124px;
+            &:first-child {
+                margin-top: 84px;
+            }
             @media (max-width: $mobileWidth) {
                 flex-direction: column;
-            }
-            &:last-child {
-                margin-bottom: 100px;
+                margin-top: 64px;
+                &:first-child {
+                    margin-top: 34px;
+                }
             }
 
             > div {
                 width: 50%;
-                @include x;
                 display: flex;
                 justify-content: flex-end;
-
                 @media (max-width: $mobileWidth) {
                     justify-content: center;
                     width: 100%;
                 }
-
                 > img {
                     margin-right: 10%;
-                    height: 350px;
+                    padding-bottom: 32px;
+                    height: 220px;
                     width: auto;
-
                     @media (max-width: $mobileWidth) {
                         margin: 0;
+                        height: 190px;
                     }
                 }
             }
@@ -121,45 +114,44 @@ section {
                 justify-content: center;
                 align-items: flex-start;
                 flex-direction: column;
-
                 @media (max-width: $mobileWidth) {
                     align-items: center;
                 }
-
                 > h3 {
                     font-weight: 700;
                     font-size: 32px;
                     color: $dark-blue;
                     margin: 0 0 0 10%;
-
+                    text-align: center;
+                    line-height: 1;
                     @media (max-width: $mobileWidth) {
                         margin: 0;
+                        font-size: 26px;
                     }
                 }
-
                 > .technologie {
                     margin-left: 10%;
+                    margin-top: 20px;
                     display: flex;
-
                     @media (max-width: $mobileWidth) {
-                        margin: 0;
+                        margin-left: 0;
                     }
-
                     > div {
                         display: flex;
-
                         > p {
                             margin: 0;
                             font-weight: 400;
-                            font-size: $flow-text-size;
+                            font-size: 24px;
                             color: $light-blue;
-
+                            @media (max-width: $mobileWidth) {
+                                margin-bottom: 20px;
+                                font-size: 18px;
+                            }
                             > span {
                                 margin: 0;
                                 padding: 0 12px 0 10px;
                             }
                         }
-
                         &:last-child {
                             > p span {
                                 display: none;
@@ -167,88 +159,74 @@ section {
                         }
                     }
                 }
-
                 > .description {
                     margin-left: 10%;
                     font-size: $flow-text-size;
-
                     @media (max-width: $mobileWidth) {
                         margin: 0;
-                        width: 60%;
+                        width: 90%;
                         text-align: center;
                     }
                 }
-
-                > div:last-child {
+                > .button-box {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     margin-left: 10%;
-                    width: 60%;
+                    width: 70%;
                     min-width: 380px;
                     height: 80px;
-
                     @media (max-width: $mobileWidth) {
-                        min-width: 0px;
-
+                        min-width: 0;
                         margin: 0;
-                        width: 100%;
-                        min-width: none;
                     }
-
+                    @media (max-width: 600px) {
+                        width: 100%;
+                    }
                     > a {
                         @include color-btn;
                         background-color: $dark-blue;
-
                         &:hover {
-                            transition: all 100ms ease-in-out;
-                            width: 165px;
-                            height: 58px;
                             background-color: $light-blue;
                         }
-
+                        &:first-child:hover {
+                            transform: translateX(-5px);
+                        }
                         &:last-child {
-                            transition: all 100ms ease-in-out;
                             background-color: transparent;
                             border: 1px solid $light-blue;
-
                             &:hover {
                                 background-color: $light-blue;
+                                transform: translateX(5px);
                             }
                         }
                     }
                 }
             }
 
-            &.project-element:nth-child(2n + 2) {
+            &.single-project-element:nth-child(2n + 2) {
                 @media (min-width: $mobileWidth) {
                     flex-direction: row-reverse;
-
                     > div {
                         justify-content: flex-start;
-
                         > img {
                             margin-left: 6%;
                         }
                     }
-
                     > .details-container {
                         justify-content: center;
                         align-items: flex-end;
-
                         > h3 {
                             margin-right: 16%;
                         }
-
                         > .technologie {
                             margin-right: 16%;
                         }
-
                         > .description {
                             margin-right: 16%;
                             text-align: right;
+                            margin-left: 0;
                         }
-
                         > div:last-child {
                             margin-right: 16%;
                         }

@@ -3,10 +3,11 @@
         <div class="text-container">
             <app-text-container></app-text-container>
         </div>
-        <div class="portrait-container">
-            <img class="bg-portrait" src="./assets/img/bg-portrait.png" alt="" />
-            <img class="portrait" src="./assets/img/portrait3.png" alt="" />
+        <!-- Apply the active class to the portrait-container instead of the bg-portrait image -->
+        <div class="portrait-container" [class.active]="active">
+            <img class="bg-portrait" src="./assets/img/bg-portrait.png" alt="Background Portrait" />
+            <img class="portrait" src="./assets/img/portrait3.png" alt="Portrait" />
         </div>
-        <img class="wave" src="./assets/img/bg-wave.png" alt="" />
+        <img class="wave" src="./assets/img/bg-wave.png" alt="Wave Background" />
     </div>
 </section>

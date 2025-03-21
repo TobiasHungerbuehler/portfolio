@@ -15,7 +15,7 @@ h2 {
 }
 
 // Global Text size
-$flow-text-size: 16px;
+$flow-text-size: clamp(14px, 1.6vw, 16px);
 
 // Global classes
 ///////////////////////
@@ -40,8 +40,6 @@ body {
     background-color: $bg-color;
     font-family: "Poppins", sans-serif;
     color: white;
-    display: flex;
-    justify-content: center;
 }
 
 .d-none {
@@ -60,6 +58,10 @@ $mobileWidth: 1100px;
 //inner contentwidth
 @mixin contentWidth() {
     width: 84vw;
+
+    @media (max-width: $mobileWidth) {
+        width: 94%;
+    }
 }
 
 @mixin flex-center-center {
@@ -72,6 +74,7 @@ $mobileWidth: 1100px;
     border: 1px solid rgb(255, 255, 0, 0.5);
 }
 
+// Button design basic
 @mixin color-btn {
     @include flex-center-center;
     width: 165px;
@@ -84,16 +87,33 @@ $mobileWidth: 1100px;
     border-radius: 10px;
     cursor: pointer;
     transition: all 125ms ease-in-out;
-    @media (max-width: 769px) {
-        width: 130px;
-        height: 54px;
-        font-size: 18px;
-    }
+
     &:hover {
         transition: all 125ms ease-in-out;
         background-color: $dark-blue;
-        width: 180px;
-        height: 64px;
+        width: 175px;
+        height: 68px;
+    }
+
+    @media (max-width: $mobileWidth) {
+        width: 130px;
+        height: 44px;
+        font-size: 16px;
+        &:hover {
+            width: 140px;
+            height: 54px;
+        }
+    }
+}
+
+//Logo desing
+@mixin logo {
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+
+    @media (max-width: $mobileWidth) {
+        height: 22px;
     }
 }
 

@@ -4,6 +4,7 @@ export interface LanguageText {
 }
 
 export interface SectionTexts {
+    title?: LanguageText;
     text1: LanguageText;
     text2?: LanguageText;
     text3?: LanguageText;

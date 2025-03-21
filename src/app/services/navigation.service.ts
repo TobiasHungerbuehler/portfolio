@@ -9,7 +9,7 @@ export class NavigationService {
 
     links: NavigationLink[] = [
         { id: "aboutMe", text: { DE: "Über mich", EN: "About Me" } },
-        { id: "mySkills", text: { DE: "Meine Skills", EN: "My Skills" } },
+        { id: "mySkills", text: { DE: "Skills", EN: "Skills" } },
         { id: "portfolio", text: { DE: "Portfolio", EN: "Portfolio" } },
         { id: "contact", text: { DE: "Kontakt", EN: "Contact" } },
     ];

@@ -4,23 +4,28 @@ section {
     box-sizing: border-box;
     width: 100vw;
     height: auto;
-    margin-top: 184px;
+    margin-top: 94px;
+
     @media (max-width: $mobileWidth) {
-        margin-top: 120px;
+        margin-top: 80px;
         overflow: hidden;
     }
+
     > .content-wrapper {
         position: relative;
         width: 100%;
         height: 100%;
         display: flex;
+
         @media (max-width: $mobileWidth) {
             justify-content: center;
             flex-direction: column-reverse;
         }
+
         > .text-container {
             z-index: 4;
             width: 50%;
+
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
@@ -31,11 +36,12 @@ section {
             width: 50%;
             height: 750px;
             overflow: visible;
+
             @media (max-width: $mobileWidth) {
                 width: 100%;
-                margin-top: 0px;
                 height: 600px;
             }
+
             @media (max-width: 500px) {
                 height: 300px;
             }
@@ -46,7 +52,15 @@ section {
                 right: 0;
                 height: 150%;
                 width: 100%;
+                transition: transform 0.3s ease;
+                transform: rotate(180deg); // Default: rotated 180°
             }
+
+            // When the portrait-container has the active class, rotate the background image to 0°.
+            &.active > .bg-portrait {
+                transform: rotate(0deg);
+            }
+
             > .portrait {
                 position: absolute;
                 z-index: 2;
@@ -57,6 +71,7 @@ section {
                 width: auto;
             }
         }
+
         > .wave {
             position: absolute;
             z-index: 3;
@@ -66,15 +81,18 @@ section {
             height: 100%;
             min-height: 300px;
             max-height: 700px;
+
             @media (max-width: $mobileWidth) {
                 top: 390px;
             }
+
             @media (max-width: 800px) {
                 width: 170%;
                 right: -70%;
             }
+
             @media (max-width: 500px) {
-                top: 150px;
+                top: 130px;
                 width: 250%;
                 left: -50%;
                 right: -100%;

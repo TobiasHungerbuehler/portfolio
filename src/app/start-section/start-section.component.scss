@@ -95,7 +95,6 @@ section {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        @include x;
 
         @media (max-width: $mobileWidth) {
             justify-content: center;
@@ -127,7 +126,7 @@ section {
 
     .scroll-box {
         position: absolute;
-        right: 0;
+        right: 3vw;
         bottom: 100px;
         display: flex;
         justify-content: center;

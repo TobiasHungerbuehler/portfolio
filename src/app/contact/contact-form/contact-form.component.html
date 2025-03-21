@@ -45,7 +45,7 @@
         } @else {
         <img class="privacy-check" (click)="togglePrivacy()" src="assets/img/box_blank.png" alt="Privacy not accepted" />
         }
-        <span class="privacy-text"> @if(currentLanguage === 'EN') { I've read the <a href="/privacy">privacy policy</a> and agree to the processing of my data as outlined. } @else { Ich habe die <a href="/privacy">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu, wie angegeben. } </span>
+        <span class="privacy-text"> @if(currentLanguage === 'EN') { I've read the <a routerLink="/privacy">privacy policy</a> and agree to the processing of my data as outlined. } @else { Ich habe die <a routerLink="/privacy">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu, wie angegeben. } </span>
     </div>
     @if(privacyError) {
     <div class="form-group">

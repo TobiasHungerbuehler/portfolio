@@ -1,36 +1,41 @@
 @import "./../../styles.scss";
 
 section {
-    position: relative;
     width: 100vw;
-    height: 1000px;
-    @media (max-width: $mobileWidth) {
-        width: 100%;
-    }
+    height: auto;
+    background: url("/assets/img/darkBlue4.png") no-repeat left bottom;
+    background-size: 35% auto;
+    @include flex-center-center;
+    flex-direction: column;
 
-    > img {
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        bottom: 0;
-        height: auto;
-        width: 30vw;
+    @media (max-width: $mobileWidth) {
+        background-size: 55% auto;
     }
 
     > .h2-container {
-        margin-top: 124px;
+        margin-top: 54px;
         width: 100%;
-        height: 150px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
 
+        // The line element: initially zero width with transition
         > .line {
             height: 4px;
-            width: 40%;
+            width: 0; // Start with 0 width
             background-color: $light-blue;
             border-top-right-radius: 2px;
             border-bottom-right-radius: 2px;
+            transition: width 0.25s ease-out;
+        }
+
+        // When the container is active, expand the line to 40%
+        &.active > .line {
+            width: 37%;
+
+            @media (max-width: $mobileWidth) {
+                width: 24%;
+            }
         }
 
         > h2 {
@@ -39,15 +44,11 @@ section {
     }
 
     > .inlay {
-        margin-top: 80px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
+        margin-top: 10px;
         @include contentWidth;
         height: auto;
-        @include x;
         display: flex;
+        margin-bottom: 64px;
 
         @media (max-width: $mobileWidth) {
             flex-direction: column;
@@ -56,16 +57,19 @@ section {
         > .text-box {
             height: 100%;
             width: 50%;
-            @include x;
+            font-size: $flow-text-size;
+
             @media (max-width: $mobileWidth) {
                 width: 100%;
                 margin-bottom: 34px;
             }
+
             > div {
                 width: 95%;
+
                 > p {
                     margin-top: 0px;
-                    font-size: 32px;
+                    font-size: clamp(24px, 1.6vw, 32px);
                     font-weight: 800;
                 }
             }
@@ -74,7 +78,7 @@ section {
         > .form-box {
             height: 100%;
             width: 50%;
-            @include x;
+
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }

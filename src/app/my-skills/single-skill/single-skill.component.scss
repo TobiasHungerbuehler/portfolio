@@ -1,4 +1,4 @@
-@import './../../../styles.scss';
+@import "./../../../styles.scss";
 
 $mobileWidth: 1100px;
 
@@ -12,37 +12,40 @@ $mobileWidth: 1100px;
     flex-direction: column;
     text-align: center;
     margin-bottom: 64px;
-  
+
+    @media (max-width: $mobileWidth) {
+        margin-bottom: 24px;
+    }
+
     div {
-      position: relative;
-      height: 74px;
-      width: 100%;
-  
-      > img {
-        position: absolute;
-        top: 10px;
-        width: clamp(42px, 5vw, 52px);
-        height: auto;
-        transition: all 125ms ease-in-out;
-        transform: translate(-50%);
-        &:hover {
-          transition: all 125ms ease-in-out;
-          top: 0;
+        position: relative;
+        height: 74px;
+        width: 100%;
+
+        > img {
+            position: absolute;
+            top: 10px;
+            width: clamp(42px, 5vw, 52px);
+            height: auto;
+            transition: all 125ms ease-in-out;
+            transform: translate(-50%);
+            &:hover {
+                transition: all 125ms ease-in-out;
+                top: 0;
+            }
         }
-      }
     }
-  
+
     > p {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-size: 1em;
-      font-weight: 700;
-      margin-top: 12px;
-  
-      @media (max-width: $mobileWidth) {
-        font-size: 0.8em;
-      }
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 700;
+        margin-top: 12px;
+
+        @media (max-width: $mobileWidth) {
+            font-size: 0.8em;
+        }
     }
-  }
-  
+}

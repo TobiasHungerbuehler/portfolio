@@ -4,6 +4,7 @@ section {
     height: 200px;
     border-top: 4px solid $light-blue;
     @include flex-center-center;
+    flex-direction: column;
 
     > .inlay {
         display: flex;
@@ -11,10 +12,27 @@ section {
         align-items: flex-end;
         @include contentWidth;
 
+        @media (max-width: $mobileWidth) {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
         @include x;
-        > img {
-            height: 40px;
-            width: auto;
+        > a img {
+            @include logo;
+        }
+    }
+
+    > div {
+        margin-top: 16px;
+        @include flex-center-center;
+        gap: 10px;
+
+        > a {
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
         }
     }
 }
