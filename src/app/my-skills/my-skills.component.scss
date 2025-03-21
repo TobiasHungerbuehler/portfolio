@@ -1,6 +1,7 @@
+@use "sass:math";
 @import "./../../styles.scss";
 
-$mobileWidth: 1100px;
+//$mobileWidth: 1100px;
 
 // Keyframes for the letter flash animation
 @keyframes letterFlash {
@@ -167,7 +168,7 @@ section {
                     position: absolute;
                     z-index: 8;
                     right: 0;
-                    width: $distance-to-side / 2;
+                    width: math.div($distance-to-side, 2);
                     height: 4px;
                     background-color: $dark-blue;
                     border-top-left-radius: 2px;
