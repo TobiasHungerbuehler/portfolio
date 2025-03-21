@@ -52,8 +52,8 @@ section {
                 right: 0;
                 height: 150%;
                 width: 100%;
-                transition: transform 0.3s ease;
-                transform: rotate(180deg); // Default: rotated 180°
+                transition: transform 0.25s ease;
+                transform: rotate(120deg); // Default: rotated 180°
             }
 
             // When the portrait-container has the active class, rotate the background image to 0°.
