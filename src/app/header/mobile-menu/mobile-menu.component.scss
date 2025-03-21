@@ -1,5 +1,5 @@
-@import './../../../styles.scss';
-@import './../header.component.scss';
+@import "./../../../styles.scss";
+@import "./../header.component.scss";
 
 .overlay {
     position: fixed;
@@ -15,31 +15,31 @@
     align-items: center;
     flex-direction: column;
 
-    @media (min-width: $mobile-width) {
+    @media (min-width: $mobileWidth) {
         display: none;
     }
 }
 
-.header-frame{
+.header-frame {
     @include contentWidth;
     height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    img{
+    img {
         height: 30px;
         width: auto;
         cursor: pointer;
     }
-    .close-btn{
-            background-color: #0b0d12;
-            height: 40px;
-            width: auto;
-        }
+    .close-btn {
+        background-color: #0b0d12;
+        height: 40px;
+        width: auto;
+    }
 }
 
 .overlay.active {
-    right: 0; 
+    right: 0;
 }
 
 .mobile-nav {
@@ -50,17 +50,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     p {
-      margin: 22px 10px;
-      font-size: 22px;
-      cursor: pointer;
-      transition: color 0.3s;
-  
-      &.active {
-        font-weight: bold;
-        color: #007BFF; /* Beispiel für eine blaue Farbe */
-      }
+        margin: 22px 10px;
+        font-size: 22px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &.active {
+            font-weight: bold;
+            color: #007bff; /* Beispiel für eine blaue Farbe */
+        }
     }
 }
-

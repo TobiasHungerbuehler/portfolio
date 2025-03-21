@@ -1,6 +1,6 @@
 @import "./../../styles.scss";
 
-$mobile-width: 768px;
+//$mobile-width: 768px;
 
 section {
     position: fixed;
@@ -30,7 +30,7 @@ section {
             justify-content: center;
             align-items: flex-start;
 
-            @media (max-width: $mobile-width) {
+            @media (max-width: $mobileWidth) {
                 display: none;
             }
 
@@ -94,11 +94,11 @@ section {
             width: auto;
             cursor: pointer;
 
-            @media (max-width: $mobile-width) {
+            @media (max-width: $mobileWidth) {
                 display: block;
             }
 
-            @media (min-width: $mobile-width) {
+            @media (min-width: $mobileWidth) {
                 display: none;
             }
 
