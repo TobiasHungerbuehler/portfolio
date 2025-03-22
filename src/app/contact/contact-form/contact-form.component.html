@@ -62,4 +62,6 @@
     >
         @if(currentLanguage === 'EN') { Send Message :-) } @else { Nachricht senden :-) }
     </button>
+    <!-- Success Message Overlay as Child Component -->
+    <app-contact-success-overlay *ngIf="successMessageVisible" [currentLanguage]="currentLanguage" (closed)="closeOverlay()"> </app-contact-success-overlay>
 </form>

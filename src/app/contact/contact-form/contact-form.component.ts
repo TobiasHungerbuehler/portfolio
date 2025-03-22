@@ -5,17 +5,29 @@ import { HttpClient } from "@angular/common/http";
 import { LanguageService } from "../../services/language.service";
 import { Subscription } from "rxjs";
 import { RouterModule } from "@angular/router";
+import { ContactSuccessOverlayComponent } from "./contact-success-overlay/contact-success-overlay.component";
+
+/**
+ * ContactFormComponent handles the contact form submission.
+ * After a successful submission, it displays a full-screen overlay message.
+ *
+ * @example
+ * <app-contact-form></app-contact-form>
+ */
 
 @Component({
     selector: "app-contact-form",
     standalone: true,
-    imports: [CommonModule, FormsModule, RouterModule],
+    imports: [CommonModule, FormsModule, RouterModule, ContactSuccessOverlayComponent],
     templateUrl: "./contact-form.component.html",
     styleUrls: ["./contact-form.component.scss"],
 })
 export class ContactFormComponent implements OnInit {
     currentLanguage: string = "EN";
     private languageSubscription!: Subscription;
+
+    /** Flag indicating if the success overlay is visible */
+    successMessageVisible: boolean = true;
 
     /** Model for the template-driven form */
     contactForm = {
@@ -96,10 +108,26 @@ export class ContactFormComponent implements OnInit {
                 next: (response) => {
                     ngForm.resetForm();
                     this.privacyAccepted = false;
+                    // Show the success overlay after successful submission
+                    this.successMessageVisible = true;
+                    console.log(this.successMessageVisible);
                 },
                 error: (error) => console.error(error),
                 complete: () => console.info("Send post complete"),
             });
+        }
+    }
+
+    /**
+     * Closes the success overlay.
+     */
+    closeOverlay(): void {
+        this.successMessageVisible = false;
+    }
+
+    ngOnDestroy(): void {
+        if (this.languageSubscription) {
+            this.languageSubscription.unsubscribe();
         }
     }
 }

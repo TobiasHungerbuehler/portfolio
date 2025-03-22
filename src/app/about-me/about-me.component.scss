@@ -52,7 +52,7 @@ section {
                 right: 0;
                 height: 150%;
                 width: 100%;
-                transition: transform 0.25s ease;
+                transition: transform 0.25s ease-out;
                 transform: rotate(120deg); // Default: rotated 180°
             }
 

@@ -27,7 +27,7 @@ section {
             background-color: $dark-blue;
             border-top-left-radius: 2px;
             border-bottom-left-radius: 2px;
-            transition: width 1s ease-out;
+            transition: width 0.125s ease-in-out;
         }
 
         // whenn user scroll portfolio

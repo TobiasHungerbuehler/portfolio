@@ -9,7 +9,8 @@ section {
     flex-direction: column;
 
     @media (max-width: $mobileWidth) {
-        background-size: 55% auto;
+        background: url("/assets/img/darkBlue4.png") no-repeat left bottom;
+        background-size: 28% auto;
     }
 
     > .h2-container {
@@ -26,7 +27,7 @@ section {
             background-color: $light-blue;
             border-top-right-radius: 2px;
             border-bottom-right-radius: 2px;
-            transition: width 0.25s ease-out;
+            transition: width 0.125s ease-in-out;
         }
 
         // When the container is active, expand the line to 40%
