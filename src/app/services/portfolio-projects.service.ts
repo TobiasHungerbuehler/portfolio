@@ -13,9 +13,10 @@ export class PortfolioProjectsService {
             name: "Swiss Climate Watch",
             technologies: ["Angular", "Firebase", "API"],
             description: {
-                en: "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-                de: "Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.",
+                en: "On an interactive map, current temperatures from Swiss weather stations are displayed. I compare these readings with historical averages from 1940 to 1970, revealing local variations.",
+                de: "Auf einer interaktiven Karte werden aktuelle Temperaturen von Schweizer Messstationen visualisiert. Die erfassten Werte vergleiche ich mit historischen Durchschnittsdaten aus den Jahren 1940 bis 1970 – so werden örtliche Unterschiede sichtbar.",
             },
+
             demoLink: "https://swissclimatewatch.thtech.ch",
             githubLink: "https://github.com/TobiasHungerbuehler/swiss-climate-watch",
             img: "./assets/img/portfolio/scw.png",
