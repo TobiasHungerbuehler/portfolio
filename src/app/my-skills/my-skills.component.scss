@@ -23,6 +23,7 @@ section {
     z-index: 7;
     width: 100vw;
     @include flex-center-center;
+    //border: 1px solid rgba(255, 0, 0, 0.164);
 
     @media (max-width: $mobileWidth) {
         margin-top: 0px;

@@ -37,10 +37,12 @@ section {
             width: 50%;
             height: 750px;
             overflow: visible;
+            margin-bottom: 110px;
 
             @media (max-width: $mobileWidth) {
                 width: 100%;
                 height: 600px;
+                margin-bottom: 20px;
             }
 
             @media (max-width: 500px) {
@@ -53,8 +55,8 @@ section {
                 right: 0;
                 height: 150%;
                 width: 100%;
-                transition: transform 0.25s ease-out;
-                transform: rotate(120deg); // Default: rotated 180°
+                transition: transform 0.25s ease-in-out;
+                transform: rotate(10deg); // Default: rotated
             }
 
             // When the portrait-container has the active class, rotate the background image to 0°.
