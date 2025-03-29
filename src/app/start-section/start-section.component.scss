@@ -17,24 +17,30 @@ section {
     > .backdrop {
         width: 100%;
         height: 100%;
+
         > .img-left {
             position: absolute;
             left: 0;
-            top: 100px;
+            top: 150px;
             height: auto;
-            width: 48%;
+            width: 28%;
             max-width: 500px;
+            transform-origin: left center;
+            animation: float 8s ease-in-out infinite;
 
             @media (max-width: 700px) {
                 margin-bottom: 60%;
             }
         }
+
         > .img-right {
             position: absolute;
             bottom: 0;
             right: 0;
             height: auto;
             max-width: 48%;
+            transform-origin: right center;
+            animation: float 8s ease-in-out infinite 2s; // Start mit Verzögerung, um den Effekt asynchron zu machen
         }
     }
     > .title-wrapper {
@@ -153,5 +159,18 @@ section {
             height: 2em;
             width: auto;
         }
+    }
+}
+
+/* Keyframes für den Float-Effekt */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-25px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
     }
 }
