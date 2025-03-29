@@ -38,7 +38,7 @@ export class ContactSuccessOverlayComponent {
      * Returns the close button text based on the current language.
      */
     get closeButtonText(): string {
-        return this.currentLanguage === "EN" ? "Close" : "Schließen";
+        return this.currentLanguage === "EN" ? "Close" : "Schliessen";
     }
 
     /**

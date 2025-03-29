@@ -27,7 +27,7 @@ export class ContactFormComponent implements OnInit {
     private languageSubscription!: Subscription;
 
     /** Flag indicating if the success overlay is visible */
-    successMessageVisible: boolean = true;
+    successMessageVisible: boolean = false;
 
     /** Model for the template-driven form */
     contactForm = {

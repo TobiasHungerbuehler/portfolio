@@ -28,8 +28,9 @@ section {
             transform-origin: left center;
             animation: float 8s ease-in-out infinite;
 
-            @media (max-width: 700px) {
-                margin-bottom: 60%;
+            @media (max-width: $mobileWidth) {
+                //margin-bottom: 60%;
+                width: 40%;
             }
         }
 
@@ -41,6 +42,9 @@ section {
             max-width: 48%;
             transform-origin: right center;
             animation: float 8s ease-in-out infinite 2s; // Start mit Verzögerung, um den Effekt asynchron zu machen
+            @media (max-width: $mobileWidth) {
+                width: 34%;
+            }
         }
     }
     > .title-wrapper {
@@ -52,7 +56,7 @@ section {
         transform: translate(-50%, -50%);
 
         @media (max-width: $mobileWidth) {
-            bottom: 50%;
+            top: 40%;
         }
 
         > .title-box-left {
@@ -66,6 +70,11 @@ section {
                 font-size: clamp(16px, 4.2vw, 54px);
                 font-weight: 400;
                 white-space: nowrap;
+                @media (max-width: $mobileWidth) {
+                    font-size: clamp(18px, 6.7vw, 65px);
+                    padding-bottom: 20px;
+                    font-weight: 400;
+                }
             }
         }
 
@@ -76,6 +85,10 @@ section {
                 margin: 0;
                 white-space: nowrap;
                 line-height: 0.7em;
+                @media (max-width: $mobileWidth) {
+                    white-space: normal;
+                    line-height: 0.8em;
+                }
             }
 
             > p {
