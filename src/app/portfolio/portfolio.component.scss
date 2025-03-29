@@ -17,6 +17,7 @@ section {
         margin-top: 100px;
         @media (max-width: $mobileWidth) {
             margin-top: 54px;
+            padding-top: 94px;
             height: 80px;
         }
         > .line {
@@ -50,12 +51,12 @@ section {
         font-size: $flow-text-size;
         display: flex;
         justify-content: center;
-        margin-top: 34px;
+        margin-top: 20px;
         margin-bottom: 64px;
         position: relative;
         //z-index: 1;
         @media (max-width: $mobileWidth) {
-            margin-top: 54px;
+            margin-top: 34px;
         }
         > p {
             text-align: center;
