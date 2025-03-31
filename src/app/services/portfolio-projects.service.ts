@@ -37,7 +37,7 @@ export class PortfolioProjectsService {
             technologies: ["JavaScript", "HTML", "CSS"],
             description: {
                 en: "A simple Jump-and-run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.",
-                de: "Ein 2D Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Salsa-Flaschen zu finden, um gegen das Killerhuhn zu kämpfen.",
+                de: "Ein 2D Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilfem Sie Pepe, Münzen und Salsa-Flaschen zu finden, um gegen das Killerhuhn zu kämpfen.",
             },
             demoLink: "https://elpolloloco.thtech.ch",
             githubLink: "https://github.com/TobiasHungerbuehler/el_pollo_loco",

@@ -13,7 +13,7 @@ export class TextService {
             },
             text1: {
                 en: "Hi, I’m Tobias – a web developer from St. Gallen. What do I enjoy most? Automating and digitizing processes. Thanks to my background in energy technology and sales, I build software that really works in practice. With my open nature, I listen carefully to what matters to you and together we find the best way forward.",
-                de: "Hallo, ich bin Tobias – Web-Entwickler aus St. Gallen. Was mir besonders Spaß macht? Prozesse zu automatisieren und zu digitalisieren. Mit meiner Erfahrung in der Energietechnik und im Vertrieb entwickle ich Software, die in der Praxis wirklich funktioniert. Dank meiner offenen Art höre ich genau zu, was Ihnen wichtig ist, und finde gemeinsam mit Ihnen den besten Weg.",
+                de: "Hallo, ich bin Tobias, Web-Entwickler aus St. Gallen. Was mir besonders Spass macht? Prozesse zu automatisieren und zu digitalisieren. Mit meiner Erfahrung in der Energietechnik und im Vertrieb entwickle ich Software, die in der Praxis wirklich funktioniert. Dank meiner offenen Art höre ich genau zu, was Ihnen wichtig ist, und finde gemeinsam mit Ihnen den besten Weg.",
             },
             text2: {
                 en: "I began programming to simplify business operations. It wasn’t long before I discovered a passion for modern web technologies that turn complicated processes into everyday advantages.",
@@ -21,7 +21,7 @@ export class TextService {
             },
             text3: {
                 en: "While working on exciting projects, I continually improve my skills—especially in modern backend technologies. This keeps me up-to-date and allows me to develop systems that perfectly meet my clients’ needs. For me, it means tackling complex challenges with straightforward, practical solutions.",
-                de: "Während ich an spannenden Projekten arbeite, bilde ich mich ständig weiter – besonders im Bereich moderner Backend-Technologien. So bleibe ich immer auf dem neuesten Stand und kann Systeme entwickeln, die genau zu den Anforderungen meiner Kunden passen. Für mich heißt das, komplexe Herausforderungen mit einfachen, praxisnahen Lösungen anzugehen.",
+                de: "Während ich an spannenden Projekten arbeite, bilde ich mich ständig weiter – besonders im Bereich moderner Backend-Technologien. So bleibe ich immer auf dem neuesten Stand und kann Systeme entwickeln, die genau zu den Anforderungen meiner Kunden passen. Für mich heisst das, komplexe Herausforderungen mit einfachen, praxisnahen Lösungen anzugehen.",
             },
         },
         mySkills: {
