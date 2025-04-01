@@ -84,6 +84,12 @@ $mobileWidth: 1100px; // Mobile breakpoint
  * Global Styles & Resets
  ******************************************/
 
+// H2 Template
+h2 {
+    font-size: clamp(40px, 7vw, 90px);
+    font-weight: 700;
+}
+
 // Set smooth scrolling behavior
 html {
     scroll-behavior: smooth;
