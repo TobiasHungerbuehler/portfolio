@@ -1,81 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+/******************************************
+ * Global Design Tokens & Variables
+ ******************************************/
 
-// Design colors
-////////////////////////
-
+// Color Palette
 $light-blue: #00bee8;
 $dark-blue: #4b47ff;
 $bg-color: #141d2f;
 
-// Fonts
-////////////////////////
-h2 {
-    font-size: clamp(40px, 7vw, 90px);
-    font-weight: 700;
-}
-
-// Global Text size
+// Global Text Sizes
 $flow-text-size: clamp(14px, 1.6vw, 16px);
 
-// Global classes
-///////////////////////
+// Layout Variables
+$distance-to-side: 8vw; // Distance from inner content to viewport side
+$mobileWidth: 1100px; // Mobile breakpoint
 
-html {
-    scroll-behavior: smooth;
-    display: block;
-}
+/******************************************
+ * Global Mixins
+ ******************************************/
 
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: block;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: $bg-color;
-    font-family: "Poppins", sans-serif;
-    color: white;
-}
-
-.d-none {
-    display: none;
-}
-
-// Global variables
-////////////////////////
-
-// Distance from inner content to viewport side
-$distance-to-side: 8vw;
-
-//Mobile threshold
-$mobileWidth: 1100px;
-
-//inner contentwidth
+// Inner content width (responsive)
 @mixin contentWidth() {
     width: 84vw;
-
     @media (max-width: $mobileWidth) {
         width: 94%;
     }
 }
 
-@mixin flex-center-center {
+// Flexbox Centering
+@mixin flex-center-center() {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin x {
-    border: 1px solid rgb(255, 255, 0, 0.5);
+// Debug Outline (optional)
+@mixin x() {
+    border: 1px solid rgba(255, 255, 0, 0.5);
 }
 
-// Button design basic
-@mixin color-btn {
+// Basic Button Design
+@mixin color-btn() {
     @include flex-center-center;
     width: 165px;
     height: 58px;
@@ -89,7 +53,6 @@ $mobileWidth: 1100px;
     transition: all 125ms ease-in-out;
 
     &:hover {
-        transition: all 125ms ease-in-out;
         background-color: $dark-blue;
         width: 175px;
         height: 68px;
@@ -106,8 +69,8 @@ $mobileWidth: 1100px;
     }
 }
 
-//Logo desing
-@mixin logo {
+// Logo Design
+@mixin logo() {
     height: 40px;
     width: auto;
     cursor: pointer;
@@ -117,17 +80,41 @@ $mobileWidth: 1100px;
     }
 }
 
-/* Versteckt sowohl horizontale als auch vertikale Scrollbars */
+/******************************************
+ * Global Styles & Resets
+ ******************************************/
+
+// Set smooth scrolling behavior
 html {
-    scrollbar-width: none; /* Für Firefox */
+    scroll-behavior: smooth;
+    display: block;
+    // Hide scrollbars in Firefox
+    scrollbar-width: none;
 }
 
+// Global body settings
 body {
-    -ms-overflow-style: none; /* Für Internet Explorer und Edge */
-    scrollbar-width: none; /* Für Firefox */
-    overflow: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: $bg-color;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    /* Ensure body covers full viewport */
+    height: 100vh;
+    width: 100vw;
+    /* Hide scrollbars in IE/Edge and WebKit browsers */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
+// Hide scrollbars in Chrome, Safari, and Opera
 body::-webkit-scrollbar {
-    display: none; /* Für WebKit-Browser wie Chrome und Safari */
+    display: none;
+}
+
+// Utility Class: Hide element
+.d-none {
+    display: none;
 }
