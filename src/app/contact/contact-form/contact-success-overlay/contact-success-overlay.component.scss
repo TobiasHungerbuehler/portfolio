@@ -15,14 +15,17 @@
     > .overlay-content {
         @include flex-center-center;
         flex-direction: column;
-        background-color: $dark-blue;
-        padding: 20px;
+        background-color: $bg-color;
+        padding: 50px;
+        width: 60%;
         border-radius: 15px;
+        border: 1px solid $light-blue;
         > p {
             text-align: center;
             color: white;
             margin: 0 0 20px;
-            font-size: 1.2em;
+            font-size: $flow-text-size;
+            margin-bottom: 45px;
         }
 
         > button {

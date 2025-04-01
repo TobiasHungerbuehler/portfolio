@@ -83,6 +83,19 @@ section {
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
+
+            > .button-box {
+                width: 100%;
+                height: 100%;
+                @include flex-center-center;
+                justify-content: flex-end;
+
+                > a img {
+                    margin-top: 50px;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
         }
     }
 }

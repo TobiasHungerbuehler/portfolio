@@ -31,14 +31,14 @@ export class ContactSuccessOverlayComponent {
      * Returns the success message based on the current language.
      */
     get message(): string {
-        return this.currentLanguage === "EN" ? "Thank you for your message. I will get back to you as soon as possible." : "Danke für die Nachricht. Ich melde mich schnellstmöglich.";
+        return this.currentLanguage === "EN" ? "Thank you for your message. I will get back to you as soon as possible." : "Danke für ihre Nachricht. Ich melde mich schnellstmöglich.";
     }
 
     /**
      * Returns the close button text based on the current language.
      */
     get closeButtonText(): string {
-        return this.currentLanguage === "EN" ? "Close" : "Schließen";
+        return this.currentLanguage === "EN" ? "Close" : "Schliessen";
     }
 
     /**
