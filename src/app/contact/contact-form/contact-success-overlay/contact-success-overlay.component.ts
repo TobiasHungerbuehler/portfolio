@@ -31,7 +31,7 @@ export class ContactSuccessOverlayComponent {
      * Returns the success message based on the current language.
      */
     get message(): string {
-        return this.currentLanguage === "EN" ? "Thank you for your message. I will get back to you as soon as possible." : "Danke für die Nachricht. Ich melde mich schnellstmöglich.";
+        return this.currentLanguage === "EN" ? "Thank you for your message. I will get back to you as soon as possible." : "Danke für ihre Nachricht. Ich melde mich schnellstmöglich.";
     }
 
     /**
