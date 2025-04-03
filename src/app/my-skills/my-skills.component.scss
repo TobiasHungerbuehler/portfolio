@@ -29,6 +29,7 @@ section {
         height: 800px;
         display: flex;
         justify-content: center;
+        max-width: 1920px;
 
         @media (max-width: $mobileWidth) {
             height: 1100px;

@@ -5,14 +5,14 @@
 section {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
     z-index: 12;
     width: 100%;
     height: 90px;
     @include flex-center-center;
     background-color: #141d2f;
-    @include x;
 
     @media (max-width: $mobileWidth) {
         height: 60px;
@@ -23,7 +23,6 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include x;
 
         > a img {
             @include logo;
