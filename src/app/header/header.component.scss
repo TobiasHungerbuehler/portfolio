@@ -12,6 +12,7 @@ section {
     height: 90px;
     @include flex-center-center;
     background-color: #141d2f;
+    @include x;
 
     @media (max-width: $mobileWidth) {
         height: 60px;
@@ -22,6 +23,7 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include x;
 
         > a img {
             @include logo;
