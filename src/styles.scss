@@ -21,6 +21,8 @@ $mobileWidth: 1100px; // Mobile breakpoint
 // Inner content width (responsive)
 @mixin contentWidth() {
     width: 84vw;
+    max-width: 1920px;
+
     @media (max-width: $mobileWidth) {
         width: 94%;
     }
