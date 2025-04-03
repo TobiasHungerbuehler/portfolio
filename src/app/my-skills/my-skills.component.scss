@@ -60,6 +60,7 @@ section {
                 display: flex;
                 justify-content: space-between;
                 width: 55vw;
+                max-width: 1400px;
 
                 @media (max-width: $mobileWidth) {
                     margin-top: 26px;
