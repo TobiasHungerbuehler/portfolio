@@ -17,26 +17,32 @@ section {
         width: 100%;
         height: 100%;
         display: flex;
+        justify-content: center;
         overflow: hidden;
-        max-width: 1920px;
 
         @media (max-width: $mobileWidth) {
-            justify-content: center;
             flex-direction: column-reverse;
         }
 
         > .text-container {
             z-index: 4;
             width: 50%;
+            max-width: $content-limit / 2;
+
+            @media (max-width: 2280px) {
+                margin-left: $distance-to-side;
+            }
 
             @media (max-width: $mobileWidth) {
                 width: 100%;
+                margin-left: 0px;
             }
         }
 
         > .portrait-container {
             position: relative;
             width: 50%;
+            max-width: $content-limit / 2;
             height: 750px;
             overflow: visible;
             margin-bottom: 110px;
