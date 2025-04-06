@@ -145,7 +145,6 @@ section {
             //padding-left: $line-width + $img-gap; // Abstand von der Linie zur Link-Box
             display: flex;
             justify-content: flex-start;
-            @include x;
             // Optional: Falls du auf mobilen Geräten den Abstand anpassen möchtest
             @media (max-width: $mobileWidth) {
                 padding-left: 0;
@@ -153,30 +152,41 @@ section {
             }
         }
     }
-
-    .scroll-box {
+    > .scroll-container {
         position: absolute;
-        right: 3vw;
-        bottom: 100px;
+        @include contentWidth;
+        bottom: 12px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        transform: rotate(90deg);
 
-        @media (max-width: 769px) {
-            display: none;
-        }
+        > .scroll-box-wrapper {
+            position: relative;
+            /* Keine Rotation hier, damit die Flex-Positionierung korrekt wirkt */
 
-        > p {
-            margin: 0;
-            font-size: 1.6em;
-        }
+            > .scroll-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform-origin: right center;
+                transform: rotate(90deg) translateY(32%);
 
-        > img {
-            transform: rotate(-90deg);
-            margin-left: 10px;
-            height: 2em;
-            width: auto;
+                @media (max-width: 769px) {
+                    display: none;
+                }
+
+                > p {
+                    margin: 0;
+                    font-size: 1.6em;
+                }
+
+                > img {
+                    transform: rotate(-90deg);
+                    margin-left: 10px;
+                    height: 2em;
+                    width: auto;
+                }
+            }
         }
     }
 }
