@@ -13,6 +13,7 @@ $flow-text-size: clamp(14px, 1.6vw, 16px);
 // Layout Variables
 $distance-to-side: 8vw; // Distance from inner content to viewport side
 $mobileWidth: 1100px; // Mobile breakpoint
+$content-limit: 1920px;
 
 /******************************************
  * Global Mixins
@@ -21,7 +22,8 @@ $mobileWidth: 1100px; // Mobile breakpoint
 // Inner content width (responsive)
 @mixin contentWidth() {
     width: 84vw;
-    max-width: 1920px;
+    max-width: $content-limit;
+    border: 1px solid pink;
 
     @media (max-width: $mobileWidth) {
         width: 94%;
