@@ -8,7 +8,6 @@ section {
     height: auto;
     background: url("/assets/img/greenshadow2.png") no-repeat left top, url("/assets/img/lightBlue2.png") no-repeat right bottom;
     background-size: 35% auto, 30% auto;
-    max-width: 1920px;
 
     > .h2-container {
         position: relative;
@@ -36,6 +35,7 @@ section {
         // whenn user scroll portfolio
         &.active > .line {
             width: 70%;
+            max-width: 3500px;
         }
         > h2 {
             position: absolute;

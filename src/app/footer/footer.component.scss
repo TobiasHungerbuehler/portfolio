@@ -6,7 +6,6 @@ section {
     @include flex-center-center;
     flex-direction: column;
     width: 100vw;
-    max-width: 1920px;
 
     > .inlay {
         display: flex;
