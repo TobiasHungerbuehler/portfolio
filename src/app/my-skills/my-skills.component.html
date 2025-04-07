@@ -1,7 +1,6 @@
 <section id="mySkills">
     <div class="backdrop">
         <img src="./assets/img/left-blue 1.png" alt="Decorative left image" />
-        <div class="line"></div>
     </div>
     <div class="conten-wrapper">
         <div class="skill-container">
@@ -19,10 +18,8 @@
             </a>
         </div>
         <div class="text-container">
-            <div class="h2-wrapper" [class.active]="active">
-                <!-- Animated title: each letter is wrapped in a span -->
+            <div class="h2-wrapper">
                 <h2 class="animated-title"><span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></h2>
-                <!-- <div class="line"></div> -->
             </div>
             <p>{{ getText("mySkills", "text1") }}</p>
             <div>
@@ -32,4 +29,7 @@
             </div>
         </div>
     </div>
+    <!-- Linie als separates Element:
+       Sie beginnt am rechten Bildschirmrand (right:0) und endet bei 50vw – also der linken Grenze des Text-Containers -->
+    <div class="h2-line"></div>
 </section>
