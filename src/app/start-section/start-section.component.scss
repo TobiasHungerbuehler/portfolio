@@ -1,8 +1,5 @@
 @import "./../../styles.scss";
 
-// $line-width: 100px;
-// $img-gap: 30px;
-
 section {
     box-sizing: border-box;
     position: relative;
@@ -55,11 +52,14 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        @include x;
         max-width: $content-limit;
 
         @media (max-width: $mobileWidth) {
             top: 40%;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 4%;
         }
 
         > .title-box-left {
@@ -70,11 +70,11 @@ section {
             > p {
                 margin: 0;
                 transform: rotate(-90deg);
-                font-size: clamp(16px, 4.2vw, 54px);
+                font-size: clamp(16px, 3.8vw, 68px);
                 font-weight: 400;
                 white-space: nowrap;
                 @media (max-width: $mobileWidth) {
-                    font-size: clamp(18px, 6.7vw, 65px);
+                    font-size: clamp(40px, 6.2vw, 80px);
                     padding-bottom: 20px;
                     font-weight: 400;
                 }
@@ -83,7 +83,7 @@ section {
 
         > .title-box-right {
             > h1 {
-                font-size: clamp(22px, 6vw, 78px);
+                font-size: clamp(40px, 5.4vw, 120px);
                 font-weight: 700;
                 margin: 0;
                 white-space: nowrap;
@@ -135,16 +135,13 @@ section {
             }
         }
 
-        // Neuer Container für die Link-Box
         > .link-container {
             width: 100%;
             @include contentWidth;
             max-width: $content-limit;
-            margin: 0 auto; // Zentriert den Container
-            //padding-left: $line-width + $img-gap; // Abstand von der Linie zur Link-Box
+            margin: 0 auto;
             display: flex;
             justify-content: flex-start;
-            // Optional: Falls du auf mobilen Geräten den Abstand anpassen möchtest
             @media (max-width: $mobileWidth) {
                 padding-left: 0;
                 justify-content: center;
@@ -161,7 +158,6 @@ section {
 
         > .scroll-box-wrapper {
             position: relative;
-            /* Keine Rotation hier, damit die Flex-Positionierung korrekt wirkt */
 
             > .scroll-box {
                 display: flex;
@@ -190,7 +186,7 @@ section {
     }
 }
 
-/* Keyframes für den Float-Effekt */
+/* Keyframes Float-Effect */
 @keyframes float {
     0% {
         transform: translateY(0) scale(1);
