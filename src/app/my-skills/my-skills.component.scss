@@ -23,7 +23,6 @@ section {
     z-index: 7;
     width: 100vw;
     @include flex-center-center;
-    @include x;
 
     > .backdrop {
         position: absolute;
@@ -42,7 +41,7 @@ section {
             z-index: 8;
             right: 0;
             width: math.div($distance-to-side, 2);
-            width: calc(40px + max(0px, (100vw - #{$content-limit}) / 3));
+            width: calc(40px + max(0px, (100vw - #{$content-limit}) / 2.5));
             height: 4px;
             background-color: $dark-blue;
             border-top-left-radius: 2px;
@@ -53,6 +52,9 @@ section {
             }
             @media (max-width: 530px) {
                 top: 9%;
+            }
+            @media (max-width: 390px) {
+                top: 8.5%;
             }
         }
     }
@@ -84,7 +86,7 @@ section {
                 display: flex;
                 justify-content: space-between;
                 width: 55vw;
-                max-width: 1400px;
+                max-width: 1200px;
 
                 @media (max-width: $mobileWidth) {
                     margin-top: 26px;
@@ -149,10 +151,9 @@ section {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                width: 100%;
+                width: 60%;
                 height: 140px;
                 padding-top: 50px;
-                @include x;
                 @media (max-width: $mobileWidth) {
                     padding-top: 0px;
                 }
@@ -183,7 +184,6 @@ section {
                 }
 
                 > h2 {
-                    //margin-right: $distance-to-side;
                     color: white; // Default color white
                     @media (max-width: $mobileWidth) {
                         margin-right: math.div($distance-to-side, 2);
@@ -195,9 +195,6 @@ section {
                 text-align: right;
                 width: 80%;
                 max-width: 500px;
-                @media (max-width: $mobileWidth) {
-                    //margin-right: math.div($distance-to-side, 2);
-                }
             }
 
             > div {
@@ -207,7 +204,6 @@ section {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                @include x;
 
                 @media (max-width: $mobileWidth) {
                     display: none;
@@ -218,7 +214,6 @@ section {
 
                     > .button {
                         @include color-btn;
-                        //margin-right: $distance-to-side;
 
                         &:hover {
                             margin-right: 7.6vw;
