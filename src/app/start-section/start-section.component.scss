@@ -55,7 +55,7 @@ section {
         max-width: $content-limit;
 
         @media (max-width: $mobileWidth) {
-            top: 40%;
+            top: 45%;
         }
 
         @media (max-width: 500px) {
@@ -69,38 +69,46 @@ section {
 
             > p {
                 margin: 0;
+                margin-bottom: 4px;
                 transform: rotate(-90deg);
-                font-size: clamp(16px, 3.8vw, 68px);
+                font-size: clamp(16px, 4.6vw, 80px);
                 font-weight: 400;
                 white-space: nowrap;
                 @media (max-width: $mobileWidth) {
-                    font-size: clamp(43px, 6vw, 80px);
+                    font-size: clamp(43px, 10vw, 118px);
                     padding-bottom: 20px;
-                    font-weight: 400;
+                    font-weight: 200;
                 }
             }
         }
 
         > .title-box-right {
             > h1 {
-                font-size: clamp(40px, 5.4vw, 120px);
+                font-size: clamp(40px, 8vw, 140px);
                 font-weight: 700;
                 margin: 0;
                 white-space: nowrap;
                 line-height: 0.7em;
+                @media (max-width: 1900px) {
+                    font-size: clamp(40px, 7vw, 120px);
+                }
                 @media (max-width: $mobileWidth) {
                     white-space: normal;
                     line-height: 0.8em;
+                    font-size: clamp(40px, 10vw, 160px);
                 }
             }
 
             > p {
-                font-size: clamp(22px, 3vw, 45px);
+                font-size: clamp(22px, 4vw, 60px);
                 margin: 0;
                 margin-top: clamp(10px, 2vw, 22px);
                 padding: 0;
                 color: $dark-blue;
                 line-height: 0.9em;
+                @media (max-width: $mobileWidth) {
+                    font-size: clamp(22px, 5vw, 80px);
+                }
             }
         }
     }
