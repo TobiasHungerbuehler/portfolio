@@ -128,8 +128,7 @@ section {
             background-color: $light-blue;
             border-top-right-radius: 2px;
             border-bottom-right-radius: 2px;
-            // Basisbreite 50px plus zusätzlichen Platz, falls verfügbar:
-            width: calc(70px + max(0px, (100vw - #{$content-limit}) / 3));
+            width: calc(50px + max(0px, (100vw - #{$content-limit}) / 3));
 
             @media (max-width: 769px) {
                 width: 70px;

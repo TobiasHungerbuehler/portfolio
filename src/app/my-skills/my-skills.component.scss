@@ -23,13 +23,46 @@ section {
     z-index: 7;
     width: 100vw;
     @include flex-center-center;
+    @include x;
+
+    > .backdrop {
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        > img {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            width: 20vw;
+            height: auto;
+        }
+        > .line {
+            position: absolute;
+            top: 40%;
+            z-index: 8;
+            right: 0;
+            width: math.div($distance-to-side, 2);
+            width: calc(40px + max(0px, (100vw - #{$content-limit}) / 3));
+            height: 4px;
+            background-color: $dark-blue;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            @media (max-width: $mobileWidth) {
+                top: 10%;
+                width: math.div($distance-to-side, 2);
+            }
+            @media (max-width: 530px) {
+                top: 9%;
+            }
+        }
+    }
 
     > .conten-wrapper {
         width: 100%;
         height: 800px;
         display: flex;
         justify-content: center;
-        max-width: 1920px;
+        @include contentWidth;
 
         @media (max-width: $mobileWidth) {
             height: 1100px;
@@ -45,18 +78,9 @@ section {
                 width: 100%;
             }
 
-            > img {
-                position: absolute;
-                z-index: 2;
-                left: 0;
-                width: 20vw;
-                height: auto;
-            }
-
             > .elements-wrapper {
                 position: absolute;
                 z-index: 3;
-                left: $distance-to-side;
                 display: flex;
                 justify-content: space-between;
                 width: 55vw;
@@ -128,6 +152,7 @@ section {
                 width: 100%;
                 height: 140px;
                 padding-top: 50px;
+                @include x;
                 @media (max-width: $mobileWidth) {
                     padding-top: 0px;
                 }
@@ -158,35 +183,20 @@ section {
                 }
 
                 > h2 {
-                    margin-right: $distance-to-side;
+                    //margin-right: $distance-to-side;
                     color: white; // Default color white
                     @media (max-width: $mobileWidth) {
                         margin-right: math.div($distance-to-side, 2);
-                    }
-                }
-
-                > .line {
-                    position: absolute;
-                    z-index: 8;
-                    right: 0;
-                    width: math.div($distance-to-side, 2);
-                    height: 4px;
-                    background-color: $dark-blue;
-                    border-top-left-radius: 2px;
-                    border-bottom-left-radius: 2px;
-                    @media (max-width: $mobileWidth) {
-                        width: math.div($distance-to-side, 3);
                     }
                 }
             }
 
             > p {
                 text-align: right;
-                margin-right: $distance-to-side;
                 width: 80%;
                 max-width: 500px;
                 @media (max-width: $mobileWidth) {
-                    margin-right: math.div($distance-to-side, 2);
+                    //margin-right: math.div($distance-to-side, 2);
                 }
             }
 
@@ -197,8 +207,9 @@ section {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
+                @include x;
 
-                @media (max-width: 1100px) {
+                @media (max-width: $mobileWidth) {
                     display: none;
                 }
 
@@ -207,7 +218,7 @@ section {
 
                     > .button {
                         @include color-btn;
-                        margin-right: $distance-to-side;
+                        //margin-right: $distance-to-side;
 
                         &:hover {
                             margin-right: 7.6vw;
