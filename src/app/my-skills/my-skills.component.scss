@@ -45,7 +45,7 @@ section {
         z-index: 8;
         right: 0;
         width: math.div($distance-to-side, 2);
-        width: calc(40px + max(0px, (100vw - #{$content-limit}) / 2.5));
+        width: calc(40px + max(0px, (100vw - #{$content-limit}) / 3));
         height: 4px;
         background-color: $dark-blue;
         border-top-left-radius: 2px;
@@ -157,6 +157,7 @@ section {
                 width: 60%;
                 height: 140px;
                 padding-top: 50px;
+                @include x;
                 @media (max-width: $mobileWidth) {
                     padding-top: 0px;
                 }
