@@ -1,8 +1,6 @@
 @use "sass:math";
 @import "./../../styles.scss";
 
-//$mobileWidth: 1100px;
-
 // Keyframes for the letter flash animation
 @keyframes letterFlash {
     0% {
@@ -35,27 +33,28 @@ section {
             width: 20vw;
             height: auto;
         }
-        > .line {
-            position: absolute;
-            top: 40%;
-            z-index: 8;
-            right: 0;
+    }
+
+    > .h2-line {
+        position: absolute;
+        top: 40%;
+        z-index: 8;
+        right: 0;
+        width: math.div($distance-to-side, 2);
+        width: calc(40px + max(0px, (100vw - #{$content-limit}) / 2.5));
+        height: 4px;
+        background-color: $dark-blue;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        @media (max-width: $mobileWidth) {
+            top: 10%;
             width: math.div($distance-to-side, 2);
-            width: calc(40px + max(0px, (100vw - #{$content-limit}) / 2.5));
-            height: 4px;
-            background-color: $dark-blue;
-            border-top-left-radius: 2px;
-            border-bottom-left-radius: 2px;
-            @media (max-width: $mobileWidth) {
-                top: 10%;
-                width: math.div($distance-to-side, 2);
-            }
-            @media (max-width: 530px) {
-                top: 9%;
-            }
-            @media (max-width: 390px) {
-                top: 8.5%;
-            }
+        }
+        @media (max-width: 530px) {
+            top: 9%;
+        }
+        @media (max-width: 390px) {
+            top: 8.5%;
         }
     }
 
