@@ -115,7 +115,7 @@ section {
                 height: 100px;
             }
 
-            > .button {
+            .button {
                 position: absolute;
                 z-index: 4;
                 bottom: 50px;
@@ -206,12 +206,6 @@ section {
                 margin-top: 32px;
                 height: 90px;
                 width: 100%;
-                // display: flex;
-                // justify-content: flex-end;
-                // align-items: center;
-
-                @include x;
-
                 @media (max-width: $mobileWidth) {
                     display: none;
                 }
@@ -228,7 +222,6 @@ section {
                         right: 0;
 
                         &:hover {
-                            //transform: translatex(10%);
                             right: -5px;
                         }
                     }
