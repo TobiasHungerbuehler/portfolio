@@ -30,8 +30,11 @@ section {
             position: absolute;
             z-index: 2;
             left: 0;
-            width: 20vw;
+            width: 25%;
             height: auto;
+            @media (max-width: $mobileWidth) {
+                width: 40%;
+            }
         }
     }
 
