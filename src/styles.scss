@@ -23,7 +23,6 @@ $content-limit: 1920px;
 @mixin contentWidth() {
     width: 84vw;
     max-width: $content-limit;
-    border: 1px solid pink;
 
     @media (max-width: $mobileWidth) {
         width: 94%;

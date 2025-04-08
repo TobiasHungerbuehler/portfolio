@@ -115,7 +115,7 @@ section {
                 height: 100px;
             }
 
-            .button {
+            > .button {
                 position: absolute;
                 z-index: 4;
                 bottom: 50px;
@@ -135,6 +135,7 @@ section {
         }
 
         > .text-container {
+            position: relative;
             box-sizing: border-box;
             min-height: 300px;
             width: 50%;
@@ -157,7 +158,6 @@ section {
                 width: 60%;
                 height: 140px;
                 padding-top: 50px;
-                @include x;
                 @media (max-width: $mobileWidth) {
                     padding-top: 0px;
                 }
@@ -202,12 +202,15 @@ section {
             }
 
             > div {
+                position: relative;
                 margin-top: 32px;
                 height: 90px;
                 width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
+                // display: flex;
+                // justify-content: flex-end;
+                // align-items: center;
+
+                @include x;
 
                 @media (max-width: $mobileWidth) {
                     display: none;
@@ -216,11 +219,17 @@ section {
                 > a {
                     text-decoration: none;
 
-                    > .button {
+                    > .button-in {
                         @include color-btn;
+                        position: absolute;
+                        z-index: 4;
+                        top: 50%;
+                        transform: translatey(-50%);
+                        right: 0;
 
                         &:hover {
-                            margin-right: 7.6vw;
+                            //transform: translatex(10%);
+                            right: -5px;
                         }
                     }
                 }
