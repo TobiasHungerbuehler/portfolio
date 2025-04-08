@@ -68,7 +68,6 @@ section {
         display: flex;
         justify-content: center;
         @include contentWidth;
-
         @media (max-width: $mobileWidth) {
             height: 1100px;
             flex-direction: column-reverse;
@@ -78,7 +77,6 @@ section {
             position: relative;
             width: 50%;
             height: 100%;
-
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
@@ -90,7 +88,6 @@ section {
                 justify-content: space-between;
                 width: 55vw;
                 max-width: 1200px;
-
                 @media (max-width: $mobileWidth) {
                     margin-top: 26px;
                     @include contentWidth;
@@ -104,7 +101,6 @@ section {
                     justify-content: flex-start;
                     flex-direction: column;
                     width: auto;
-
                     &:last-child {
                         margin-right: 0;
                     }
@@ -123,11 +119,9 @@ section {
                 transform: translate(-50%);
                 @include color-btn;
                 display: none;
-
                 &:hover {
                     bottom: 46px;
                 }
-
                 @media (max-width: $mobileWidth) {
                     display: flex;
                 }
@@ -142,7 +136,6 @@ section {
             justify-content: center;
             align-items: flex-end;
             flex-direction: column;
-
             @media (max-width: 1100px) {
                 width: 100%;
             }
@@ -162,29 +155,9 @@ section {
                     padding-top: 0px;
                 }
 
-                // When the section is active, animate the title letters.
-                &.active .animated-title span {
-                    animation: letterFlash 0.2s ease forwards;
-                }
-
-                // Apply staggered animation delays for each letter
-                .animated-title span:nth-child(1) {
-                    animation-delay: 0s;
-                }
-                .animated-title span:nth-child(2) {
-                    animation-delay: 0.05s;
-                }
-                .animated-title span:nth-child(3) {
-                    animation-delay: 0.1s;
-                }
-                .animated-title span:nth-child(4) {
-                    animation-delay: 0.15s;
-                }
-                .animated-title span:nth-child(5) {
-                    animation-delay: 0.2s;
-                }
-                .animated-title span:nth-child(6) {
-                    animation-delay: 0.25s;
+                .animated-title span {
+                    // Hier könntest du ggf. noch einen initialen Zustand festlegen:
+                    color: white;
                 }
 
                 > h2 {
@@ -208,23 +181,28 @@ section {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-
                 @media (max-width: $mobileWidth) {
                     display: none;
                 }
-
                 > a {
                     text-decoration: none;
-
                     > .button {
                         @include color-btn;
-
                         &:hover {
                             margin-right: 7.6vw;
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+/* Wenn die .text-container den active-Status erhält, wird hier der letterFlash-Effekt ausgelöst: */
+.text-container.active {
+    .h2-wrapper {
+        .animated-title span {
+            animation: letterFlash 0.2s ease forwards;
         }
     }
 }
