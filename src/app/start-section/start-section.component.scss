@@ -26,7 +26,6 @@ section {
             animation: float 8s ease-in-out infinite;
 
             @media (max-width: $mobileWidth) {
-                //margin-bottom: 60%;
                 width: 40%;
             }
         }
@@ -38,7 +37,7 @@ section {
             height: auto;
             max-width: 48%;
             transform-origin: right center;
-            animation: float 8s ease-in-out infinite 2s; // Start mit Verzögerung, um den Effekt asynchron zu machen
+            animation: float 8s ease-in-out infinite 2s;
             @media (max-width: $mobileWidth) {
                 width: 34%;
             }
