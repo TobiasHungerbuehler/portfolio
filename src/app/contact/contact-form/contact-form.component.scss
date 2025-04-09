@@ -96,9 +96,9 @@ form {
         color: white;
         transition: color 125ms;
         > a {
-            color: $dark-blue;
+            color: $light-blue;
             &:hover {
-                color: $light-blue;
+                color: rgb(156, 202, 255);
                 transition: color 125ms;
             }
         }

@@ -1,7 +1,9 @@
 <section id="mySkills">
+    <div class="backdrop">
+        <img src="./assets/img/left-blue 1.png" alt="Decorative left image" />
+    </div>
     <div class="conten-wrapper">
         <div class="skill-container">
-            <img src="./assets/img/left-blue 1.png" alt="Decorative left image" />
             <div class="elements-wrapper">
                 @for (group of skillGroups; track group;) {
                 <div class="column">
@@ -11,22 +13,21 @@
                 </div>
                 }
             </div>
-            <a href="#portfolio">
+            <a href="#contact">
                 <div class="button">Get in touch</div>
             </a>
         </div>
         <div class="text-container">
             <div class="h2-wrapper" [class.active]="active">
-                <!-- Animated title: each letter is wrapped in a span -->
                 <h2 class="animated-title"><span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></h2>
-                <div class="line"></div>
             </div>
             <p>{{ getText("mySkills", "text1") }}</p>
             <div>
-                <a href="#portfolio">
-                    <div class="button">Get in touch</div>
+                <a href="#contact">
+                    <div class="button-in">Get in touch</div>
                 </a>
             </div>
         </div>
     </div>
+    <div class="h2-line"></div>
 </section>

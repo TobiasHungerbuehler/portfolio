@@ -4,13 +4,13 @@ section {
     width: 100vw;
     height: auto;
     background: url("/assets/img/darkBlue4.png") no-repeat left bottom;
-    background-size: 35% auto;
+    background-size: 30% auto;
     @include flex-center-center;
     flex-direction: column;
 
     @media (max-width: $mobileWidth) {
-        background: url("/assets/img/darkBlue4.png") no-repeat left bottom;
-        background-size: 28% auto;
+        //background: url("/assets/img/darkBlue4.png") no-repeat left bottom;
+        background-size: 60% auto;
     }
 
     > .h2-container {

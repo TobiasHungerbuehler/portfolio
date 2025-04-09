@@ -1,8 +1,5 @@
 @import "./../../styles.scss";
 
-$line-width: 100px;
-$img-gap: 30px;
-
 section {
     box-sizing: border-box;
     position: relative;
@@ -29,7 +26,6 @@ section {
             animation: float 8s ease-in-out infinite;
 
             @media (max-width: $mobileWidth) {
-                //margin-bottom: 60%;
                 width: 40%;
             }
         }
@@ -41,7 +37,7 @@ section {
             height: auto;
             max-width: 48%;
             transform-origin: right center;
-            animation: float 8s ease-in-out infinite 2s; // Start mit Verzögerung, um den Effekt asynchron zu machen
+            animation: float 8s ease-in-out infinite 2s;
             @media (max-width: $mobileWidth) {
                 width: 34%;
             }
@@ -55,9 +51,14 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        max-width: $content-limit;
 
         @media (max-width: $mobileWidth) {
-            top: 40%;
+            top: 45%;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 4%;
         }
 
         > .title-box-left {
@@ -67,38 +68,46 @@ section {
 
             > p {
                 margin: 0;
+                margin-bottom: 4px;
                 transform: rotate(-90deg);
-                font-size: clamp(16px, 4.2vw, 54px);
+                font-size: clamp(16px, 4.6vw, 80px);
                 font-weight: 400;
                 white-space: nowrap;
                 @media (max-width: $mobileWidth) {
-                    font-size: clamp(18px, 6.7vw, 65px);
+                    font-size: clamp(43px, 10vw, 118px);
                     padding-bottom: 20px;
-                    font-weight: 400;
+                    font-weight: 200;
                 }
             }
         }
 
         > .title-box-right {
             > h1 {
-                font-size: clamp(22px, 6vw, 78px);
+                font-size: clamp(40px, 8vw, 140px);
                 font-weight: 700;
                 margin: 0;
                 white-space: nowrap;
                 line-height: 0.7em;
+                @media (max-width: 1900px) {
+                    font-size: clamp(40px, 7vw, 120px);
+                }
                 @media (max-width: $mobileWidth) {
                     white-space: normal;
                     line-height: 0.8em;
+                    font-size: clamp(40px, 10vw, 160px);
                 }
             }
 
             > p {
-                font-size: clamp(14px, 3vw, 42px);
+                font-size: clamp(22px, 4vw, 60px);
                 margin: 0;
-                margin-top: clamp(5px, 2vw, 22px);
+                margin-top: clamp(10px, 2vw, 22px);
                 padding: 0;
                 color: $dark-blue;
                 line-height: 0.9em;
+                @media (max-width: $mobileWidth) {
+                    font-size: clamp(22px, 5vw, 80px);
+                }
             }
         }
     }
@@ -111,72 +120,80 @@ section {
         @include color-btn;
     }
 
-    .sm-link-box {
+    .line-box {
         position: absolute;
         width: 100%;
         left: 0;
         bottom: 30px;
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-
-        @media (max-width: $mobileWidth) {
-            justify-content: center;
-            bottom: 65px;
-        }
 
         > .line {
             position: absolute;
             left: 0;
-            width: $line-width;
-            max-width: 100px;
             height: 4px;
-            width: $line-width;
             background-color: $light-blue;
             border-top-right-radius: 2px;
             border-bottom-right-radius: 2px;
+            width: calc(50px + max(0px, (100vw - #{$content-limit}) / 3));
 
             @media (max-width: 769px) {
-                width: 50px;
+                width: 70px;
             }
         }
 
-        > .link-box {
-            margin-left: $line-width + $img-gap;
+        > .link-container {
+            width: 100%;
+            @include contentWidth;
+            max-width: $content-limit;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
             @media (max-width: $mobileWidth) {
-                margin-left: 0;
+                padding-left: 0;
+                justify-content: center;
             }
         }
     }
-
-    .scroll-box {
+    > .scroll-container {
         position: absolute;
-        right: 3vw;
-        bottom: 100px;
+        @include contentWidth;
+        bottom: 12px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        transform: rotate(90deg);
 
-        @media (max-width: 769px) {
-            display: none;
-        }
+        > .scroll-box-wrapper {
+            position: relative;
 
-        > p {
-            margin: 0;
-            font-size: 1.6em;
-        }
+            > .scroll-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform-origin: right center;
+                transform: rotate(90deg) translateY(32%);
 
-        > img {
-            transform: rotate(-90deg);
-            margin-left: 10px;
-            height: 2em;
-            width: auto;
+                @media (max-width: 769px) {
+                    display: none;
+                }
+
+                > p {
+                    margin: 0;
+                    font-size: 1.6em;
+                }
+
+                > img {
+                    transform: rotate(-90deg);
+                    margin-left: 10px;
+                    height: 2em;
+                    width: auto;
+                }
+            }
         }
     }
 }
 
-/* Keyframes für den Float-Effekt */
+/* Keyframes Float-Effect */
 @keyframes float {
     0% {
         transform: translateY(0) scale(1);

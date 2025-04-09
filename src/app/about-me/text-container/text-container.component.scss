@@ -6,8 +6,10 @@
     flex-direction: column;
     height: 100%;
     width: clamp(500px, 40vw, 700px);
+    width: 100%;
+    //background-color: red;
 
-    margin-left: $distance-to-side;
+    //margin-left: $distance-to-side;
     @media (max-width: $mobileWidth) {
         margin-left: 3vw;
         @include contentWidth;
