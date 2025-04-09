@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "./../../styles.scss";
 
 section {
@@ -27,7 +28,7 @@ section {
         > .text-container {
             z-index: 4;
             width: 50%;
-            max-width: $content-limit / 2;
+            max-width: math.div($content-limit, 2);
 
             @media (max-width: 2280px) {
                 margin-left: $distance-to-side;
@@ -42,7 +43,7 @@ section {
         > .portrait-container {
             position: relative;
             width: 50%;
-            max-width: $content-limit / 2;
+            max-width: math.div($content-limit, 2);
             height: 750px;
             overflow: visible;
             margin-bottom: 110px;
