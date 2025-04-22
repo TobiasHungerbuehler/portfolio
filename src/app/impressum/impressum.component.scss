@@ -5,9 +5,10 @@ section {
     @include flex-center-center;
 
     > .inlay {
-        margin-top: 90px;
+        margin-top: 120px;
         width: 84vw;
         margin-bottom: 60px;
+        min-height: 72vh;
 
         h2 {
             font-size: 22px;
