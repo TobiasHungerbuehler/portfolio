@@ -32,6 +32,7 @@ export class LanguageService {
      * @returns {string} The current language code.
      */
     getCurrentLanguage(): string {
+        console.log("language");
         return this.currentLanguageSubject.value;
     }
 
