@@ -1,5 +1,5 @@
-import { Injectable, ElementRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, ElementRef } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 /**
  * A service to manage the scroll state of the application.
@@ -7,39 +7,42 @@ import { BehaviorSubject } from 'rxjs';
  * and emits changes to the current active section.
  */
 @Injectable({
-  providedIn: 'root' // Specifies that this service should be created by the root application injector.
+    providedIn: "root", // Specifies that this service should be created by the root application injector.
 })
 export class ScrollStateService {
+    /**
+     * A BehaviorSubject that holds the current active section ID.
+     * BehaviorSubject keeps the latest value cached and emits it to new subscribers.
+     */
+    private sectionSource = new BehaviorSubject<string>("");
 
-  /**
-   * A BehaviorSubject that holds the current active section ID.
-   * BehaviorSubject keeps the latest value cached and emits it to new subscribers.
-   */
-  private sectionSource = new BehaviorSubject<string>('');
+    /**
+     * An Observable derived from the sectionSource BehaviorSubject.
+     * Components can subscribe to this Observable to get updates about the current active section.
+     */
+    currentSection = this.sectionSource.asObservable();
 
+    /**
+     * Checks if the given element is visible in the viewport and emits the section ID if it is.
+     * @param element The ElementRef of the component to check for visibility.
+     * @param sectionId The ID of the section to potentially mark as active.
+     */
+    checkAndEmitVisibility(elementRef: ElementRef, sectionId: string): void {
+        const rect = elementRef.nativeElement.getBoundingClientRect();
 
-  /**
-   * An Observable derived from the sectionSource BehaviorSubject.
-   * Components can subscribe to this Observable to get updates about the current active section.
-   */
-  currentSection = this.sectionSource.asObservable();
+        // Vertical center of the viewport
+        const viewportMiddle = window.innerHeight / 2;
+        // Vertical center of the element
+        const elementMiddle = (rect.top + rect.bottom) / 2;
 
+        // If the element's middle is above and below the viewport middle
+        const isCentered = elementMiddle >= 0 && elementMiddle <= window.innerHeight;
 
-  /**
-   * Checks if the given element is visible in the viewport and emits the section ID if it is.
-   * @param element The ElementRef of the component to check for visibility.
-   * @param sectionId The ID of the section to potentially mark as active.
-   */
-  checkAndEmitVisibility(element: ElementRef, sectionId: string) {
-    // Gets the element's current position relative to the viewport
-    const rect = element.nativeElement.getBoundingClientRect();
-    // Determines if the top of the element is below the top of the viewport and
-    // the bottom of the element is above the bottom of the viewport
-    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+        // Or, stricter: crosses the viewport middle line
+        const crossesMiddle = rect.top < viewportMiddle && rect.bottom > viewportMiddle;
 
-    // If the element is visible, emit its section ID as the current active section
-    if (isVisible) {
-      this.sectionSource.next(sectionId);
+        if (crossesMiddle) {
+            this.sectionSource.next(sectionId);
+        }
     }
-  }
 }
