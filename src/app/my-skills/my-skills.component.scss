@@ -76,6 +76,7 @@ section {
 
         > .skill-container {
             position: relative;
+            z-index: 3;
             width: 50%;
             height: 100%;
 
@@ -84,26 +85,30 @@ section {
             }
 
             > .elements-wrapper {
-                position: absolute;
-                z-index: 3;
+                //position: absolute;
+
                 display: flex;
-                justify-content: space-between;
-                width: 55vw;
+                align-items: center;
+                flex-direction: column;
+                width: 64vw;
                 max-width: 1200px;
+                //transform: translate(-8%);
+                @include x;
 
                 @media (max-width: $mobileWidth) {
                     margin-top: 26px;
-                    @include contentWidth;
-                    left: 50%;
-                    right: 50%;
-                    transform: translate(-50%);
+                    width: 94vw;
+
+                    //@include contentWidth;
+                    // left: 50%;
+                    // right: 50%;
+                    // transform: translate(-50%);
                 }
 
                 > .column {
                     display: flex;
                     justify-content: flex-start;
-                    flex-direction: column;
-                    width: auto;
+                    width: 100%;
 
                     &:last-child {
                         margin-right: 0;

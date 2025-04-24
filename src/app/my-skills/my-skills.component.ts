@@ -83,7 +83,7 @@ export class MySkillsComponent implements OnInit, OnDestroy {
      * Groups the skills into skillGroups based on predefined group sizes.
      */
     renderGroupSkills() {
-        const groupSizes = [4, 3, 2, 1];
+        const groupSizes = [4, 4, 4, 4];
         let index = 0;
         for (const size of groupSizes) {
             this.skillGroups.push({ skills: this.skills.slice(index, index + size) });
