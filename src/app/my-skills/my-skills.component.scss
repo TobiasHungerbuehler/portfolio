@@ -7,7 +7,7 @@
         color: white;
     }
     50% {
-        color: $light-blue;
+        color: $dark-blue;
     }
     100% {
         color: white;
@@ -164,7 +164,7 @@ section {
 
                 // When the section is active, animate the title letters.
                 &.active .animated-title span {
-                    animation: letterFlash 0.2s ease both;
+                    animation: letterFlash 0.2s ease forwards;
                 }
 
                 // Apply staggered animation delays for each letter
