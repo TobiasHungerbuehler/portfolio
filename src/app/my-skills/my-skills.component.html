@@ -5,12 +5,8 @@
     <div class="conten-wrapper">
         <div class="skill-container">
             <div class="elements-wrapper">
-                @for (group of skillGroups; track group;) {
-                <div class="column">
-                    @for (skill of group.skills; track skill; let i = $index;) {
-                    <app-single-skill [skill]="skill"></app-single-skill>
-                    }
-                </div>
+                @for (skill of skills; track skill; let i = $index;) {
+                <app-single-skill [skill]="skill"></app-single-skill>
                 }
             </div>
             <a href="#contact">
