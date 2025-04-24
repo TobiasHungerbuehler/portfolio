@@ -30,7 +30,7 @@ section {
             width: 50%;
             max-width: math.div($content-limit, 2);
 
-            @media (max-width: 2280px) {
+            @media (max-width: 2180px) {
                 margin-left: $distance-to-side;
             }
 

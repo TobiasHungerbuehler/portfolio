@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostListener } from "@angular/core";
+import { Component, AfterViewInit } from "@angular/core";
 import { LinkBoxComponent } from "../shared/link-box/link-box.component";
+declare const AOS: any;
 
 /**
  * StartSectionComponent represents the landing section of the website.
@@ -18,4 +19,9 @@ import { LinkBoxComponent } from "../shared/link-box/link-box.component";
     templateUrl: "./start-section.component.html",
     styleUrl: "./start-section.component.scss",
 })
-export class StartSectionComponent {}
+export class StartSectionComponent implements AfterViewInit {
+    ngAfterViewInit(): void {
+        //AOS.refresh();
+        //console.log("fresh");
+    }
+}
