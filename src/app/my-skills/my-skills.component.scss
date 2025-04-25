@@ -68,9 +68,11 @@ section {
         display: flex;
         justify-content: center;
         @include contentWidth;
+        @include x;
 
         @media (max-width: $mobileWidth) {
             flex-direction: column-reverse;
+            height: 2000 px;
         }
 
         > .skill-container {
@@ -78,17 +80,24 @@ section {
             z-index: 3;
             width: 70%;
             margin: 0 auto;
+            @include x;
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
 
             > .elements-wrapper {
+                position: absolute;
+                left: -5%;
                 display: grid;
-                width: 100%;
-                max-width: 1200px;
+                width: 105%;
                 margin: 0 auto;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 2rem;
+                border: 1px solid red;
+                @media (max-width: $mobileWidth) {
+                    left: 0;
+                    width: 100%;
+                }
             }
 
             > a {
