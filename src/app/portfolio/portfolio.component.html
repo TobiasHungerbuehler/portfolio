@@ -12,9 +12,7 @@
         @for (project of projects; track $index) {
 
         <div class="single-project-element">
-            <div>
-                <img src="{{ project.img }}" alt="" />
-            </div>
+            <div><img src="{{ project.img }}" alt="" data-aos="flip-up" /></div>
 
             <div class="details-container">
                 <h3>{{ project.name }}</h3>

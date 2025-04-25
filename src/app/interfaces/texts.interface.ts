@@ -15,4 +15,6 @@ export interface Texts {
     mySkills: SectionTexts;
     portfolio: SectionTexts;
     contact: SectionTexts;
+    privacy: SectionTexts;
+    impressum: SectionTexts;
 }

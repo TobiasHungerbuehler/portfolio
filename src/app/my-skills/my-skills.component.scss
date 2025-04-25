@@ -15,121 +15,55 @@
 }
 
 section {
-    margin-top: 0px;
+    margin-top: 50px;
     box-sizing: border-box;
-    position: relative;
     z-index: 7;
     width: 100vw;
     @include flex-center-center;
-
-    > .backdrop {
-        position: absolute;
-        height: 100%;
-        width: 100vw;
-        > img {
-            position: absolute;
-            z-index: 2;
-            left: 0;
-            width: 25%;
-            height: auto;
-            max-height: 3000px;
-            @media (max-width: $mobileWidth) {
-                width: 40%;
-            }
-        }
-    }
-
-    > .h2-line {
-        position: absolute;
-        top: 40%;
-        z-index: 8;
-        right: 0;
-        width: math.div($distance-to-side, 2);
-        width: calc(40px + max(0px, (100vw - #{$content-limit}) / 3));
-        height: 4px;
-        background-color: $dark-blue;
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-        @media (max-width: $mobileWidth) {
-            top: 10%;
-            width: math.div($distance-to-side, 2);
-        }
-        @media (max-width: 530px) {
-            top: 9%;
-        }
-        @media (max-width: 390px) {
-            top: 8.5%;
-        }
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100vw;
+    height: auto;
+    background: url("/assets/img/left-blue 1.png") no-repeat left top;
+    background-size: 17% auto;
+    @media (max-width: $mobileWidth) {
+        background-size: 35% auto;
     }
 
     > .conten-wrapper {
         width: 100%;
-        height: 800px;
+        min-height: 800px;
         display: flex;
         justify-content: center;
         @include contentWidth;
 
         @media (max-width: $mobileWidth) {
-            height: 1100px;
+            align-items: flex-start;
             flex-direction: column-reverse;
         }
 
         > .skill-container {
             position: relative;
-            width: 50%;
-            height: 100%;
-
+            z-index: 3;
+            width: 70%;
+            margin: 0 auto;
             @media (max-width: $mobileWidth) {
                 width: 100%;
             }
 
             > .elements-wrapper {
                 position: absolute;
-                z-index: 3;
-                display: flex;
-                justify-content: space-between;
-                width: 55vw;
-                max-width: 1200px;
-
+                top: 0;
+                left: -5%;
+                display: grid;
+                width: 105%;
+                margin: 0 auto;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
                 @media (max-width: $mobileWidth) {
-                    margin-top: 26px;
-                    @include contentWidth;
-                    left: 50%;
-                    right: 50%;
-                    transform: translate(-50%);
-                }
-
-                > .column {
-                    display: flex;
-                    justify-content: flex-start;
-                    flex-direction: column;
-                    width: auto;
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
-            }
-
-            > a {
-                height: 100px;
-            }
-
-            .button {
-                position: absolute;
-                z-index: 4;
-                bottom: 50px;
-                left: 50%;
-                transform: translate(-50%);
-                @include color-btn;
-                display: none;
-
-                &:hover {
-                    bottom: 46px;
-                }
-
-                @media (max-width: $mobileWidth) {
-                    display: flex;
+                    position: inherit;
+                    left: 0;
+                    width: 100%;
                 }
             }
         }
@@ -138,7 +72,7 @@ section {
             position: relative;
             box-sizing: border-box;
             min-height: 300px;
-            width: 50%;
+            width: 30%;
             display: flex;
             justify-content: center;
             align-items: flex-end;
@@ -156,8 +90,6 @@ section {
                 justify-content: flex-end;
                 align-items: center;
                 width: 60%;
-                height: 140px;
-                padding-top: 50px;
                 @media (max-width: $mobileWidth) {
                     padding-top: 0px;
                 }
@@ -188,17 +120,34 @@ section {
                 }
 
                 > h2 {
-                    color: white; // Default color white
+                    color: white;
+                    margin: 0;
+                }
+
+                > .h2-line {
+                    position: absolute;
+                    top: 50%;
+                    bottom: 50%;
+                    z-index: 8;
+                    right: -$distance-to-side;
+                    width: calc(40px + max(0px, (100vw - #{$content-limit}) / 3));
+                    height: 4px;
+                    background-color: $dark-blue;
+                    border-top-left-radius: 2px;
+                    border-bottom-left-radius: 2px;
                     @media (max-width: $mobileWidth) {
-                        margin-right: math.div($distance-to-side, 2);
+                        right: -3vw;
+                        width: math.div($distance-to-side, 4);
                     }
                 }
             }
 
             > p {
+                z-index: 4;
                 text-align: right;
-                width: 80%;
+                width: 100%;
                 max-width: 500px;
+                min-height: 150px;
             }
 
             > div {
@@ -225,6 +174,35 @@ section {
                             right: -5px;
                         }
                     }
+                }
+            }
+        }
+    }
+    .mobile-contact-btn-box {
+        display: none; // standardmäßig versteckt
+
+        // ab einer Viewport-Breite von (und *unter*) mobileWidth anzeigen
+        @media (max-width: $mobileWidth) {
+            display: flex;
+            margin-top: 40px;
+            height: 70px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            > a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: auto;
+                text-decoration: none;
+
+                > .button {
+                    @include color-btn;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }

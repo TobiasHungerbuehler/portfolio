@@ -2,33 +2,37 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 /**
- * Service for managing the application's language.
+ * Service for managing the application's language with persistence.
  *
- * Provides methods to get and set the current language, as well as an observable
- * for other components to subscribe to language changes.
- *
- * @example
- * languageService.setCurrentLanguage("EN");
- * const currentLang = languageService.getCurrentLanguage();
+ * Saves the selected language to localStorage under key 'appLanguage'.
+ * On initialization, loads the stored language or falls back to default 'DE'.
  */
 @Injectable({
     providedIn: "root",
 })
 export class LanguageService {
+    private storageKey = "appLanguage";
+
     /**
      * BehaviorSubject holding the current language code.
-     * Default is "DE".
+     * Initialized from localStorage or defaults to 'DE'.
      */
-    private currentLanguageSubject = new BehaviorSubject<string>("DE");
+    private currentLanguageSubject: BehaviorSubject<string>;
 
     /**
      * Observable stream of the current language.
      */
-    currentLanguage$ = this.currentLanguageSubject.asObservable();
+    public currentLanguage$;
+
+    constructor() {
+        const saved = localStorage.getItem(this.storageKey);
+        const defaultLang = saved ? saved : "DE";
+        this.currentLanguageSubject = new BehaviorSubject<string>(defaultLang);
+        this.currentLanguage$ = this.currentLanguageSubject.asObservable();
+    }
 
     /**
      * Retrieves the current language.
-     *
      * @returns {string} The current language code.
      */
     getCurrentLanguage(): string {
@@ -36,11 +40,11 @@ export class LanguageService {
     }
 
     /**
-     * Updates the current language.
-     *
+     * Updates the current language and persists it to localStorage.
      * @param language - The new language code.
      */
     setCurrentLanguage(language: string) {
+        localStorage.setItem(this.storageKey, language);
         this.currentLanguageSubject.next(language);
     }
 }

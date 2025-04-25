@@ -1,25 +1,16 @@
 <section id="mySkills">
-    <div class="backdrop">
-        <img src="./assets/img/left-blue 1.png" alt="Decorative left image" />
-    </div>
     <div class="conten-wrapper">
         <div class="skill-container">
             <div class="elements-wrapper">
-                @for (group of skillGroups; track group;) {
-                <div class="column">
-                    @for (skill of group.skills; track skill; let i = $index;) {
-                    <app-single-skill [skill]="skill"></app-single-skill>
-                    }
-                </div>
+                @for (skill of skills; track skill; let i = $index;) {
+                <app-single-skill [skill]="skill"></app-single-skill>
                 }
             </div>
-            <a href="#contact">
-                <div class="button">Get in touch</div>
-            </a>
         </div>
         <div class="text-container">
             <div class="h2-wrapper" [class.active]="active">
                 <h2 class="animated-title"><span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span></h2>
+                <div class="h2-line"></div>
             </div>
             <p>{{ getText("mySkills", "text1") }}</p>
             <div>
@@ -29,5 +20,9 @@
             </div>
         </div>
     </div>
-    <div class="h2-line"></div>
+    <div class="mobile-contact-btn-box">
+        <a href="#contact">
+            <div class="button">Get in touch</div>
+        </a>
+    </div>
 </section>

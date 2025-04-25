@@ -3,19 +3,11 @@
 $mobileWidth: 1100px;
 
 .skill-element {
-    width: 5vw;
-    min-width: 74px;
-    height: 144px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     text-align: center;
-    margin-bottom: 64px;
-
-    @media (max-width: $mobileWidth) {
-        margin-bottom: 24px;
-    }
 
     div {
         position: relative;
@@ -24,25 +16,23 @@ $mobileWidth: 1100px;
 
         > img {
             position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             top: 10px;
-            width: clamp(42px, 5vw, 52px);
+            width: clamp(22px, 6vw, 62px);
             height: auto;
             transition: all 125ms ease-in-out;
-            transform: translate(-50%);
+
             &:hover {
-                transition: all 125ms ease-in-out;
                 top: 0;
             }
         }
     }
 
     > p {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        font-size: 1em;
-        font-weight: 700;
-        margin-top: 12px;
+        margin-top: 28px;
+        font-size: 1.2em;
+        font-weight: 500;
 
         @media (max-width: $mobileWidth) {
             font-size: 0.8em;

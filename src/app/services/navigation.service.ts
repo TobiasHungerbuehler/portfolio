@@ -17,10 +17,10 @@ export class NavigationService {
      * Each link contains an identifier and a text object with translations.
      */
     links: NavigationLink[] = [
-        { id: "aboutMe", text: { DE: "Über mich", EN: "About Me" } },
-        { id: "mySkills", text: { DE: "Skills", EN: "Skills" } },
-        { id: "portfolio", text: { DE: "Portfolio", EN: "Portfolio" } },
-        { id: "contact", text: { DE: "Kontakt", EN: "Contact" } },
+        { route: "/", id: "aboutMe", text: { DE: "Über mich", EN: "About Me" } },
+        { route: "/", id: "mySkills", text: { DE: "Skills", EN: "Skills" } },
+        { route: "/", id: "portfolio", text: { DE: "Portfolio", EN: "Portfolio" } },
+        { route: "/", id: "contact", text: { DE: "Kontakt", EN: "Contact" } },
     ];
 
     constructor() {}

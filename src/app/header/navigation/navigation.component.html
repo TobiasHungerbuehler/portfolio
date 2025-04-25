@@ -1,6 +1,7 @@
-@for (link of links; track $index) {
-<div class="link-box" [class.link-box-on]="activeSection === link.id">
-    <a [href]="'#' + link.id" (click)="scrollToId($event, link.id)">{{ link.text[currentLanguage] }}</a>
+<!-- header.component.html -->
+<div *ngFor="let link of links" class="link-box" [class.link-box-on]="activeSection === link.id">
+    <a href="#" (click)="onLinkClick(link.id, $event)">
+        {{ link.text[currentLanguage] }}
+    </a>
     <div class="under-line"></div>
 </div>
-}
