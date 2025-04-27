@@ -65,6 +65,9 @@ section {
                     left: 0;
                     width: 100%;
                 }
+                @media (max-width: $mobileWidth) {
+                    gap: 0.8rem;
+                }
             }
         }
 
