@@ -39,6 +39,9 @@ section {
         &.active > .line {
             width: 70%;
             max-width: 3500px;
+            @media (max-width: $mobileWidth) {
+                width: 85%;
+            }
         }
         > h2 {
             position: absolute;
