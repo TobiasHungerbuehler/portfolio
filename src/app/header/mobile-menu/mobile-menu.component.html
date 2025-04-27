@@ -1,22 +1,15 @@
 <!-- mobile-menu.component.html -->
 <div class="overlay" [class.active]="isVisible">
-
     <div class="header-frame">
-        <img src="./assets/img/logo.png" alt="Logo">
+        <img src="./assets/img/logo.png" alt="Logo" />
         <div class="close-btn" (click)="close()">
-            <img src="./assets/img/close.png" alt="Logo">
+            <img src="./assets/img/close.png" alt="Logo" />
         </div>
-
     </div>
-    
     <app-navigation class="mobile-nav" [links]="links" [isMobileMenu]="true" (closeMenu)="close()"></app-navigation>
-    
+
     <div class="language-selector">
         <p (click)="setLanguage('EN')" [class.active]="currentLanguage === 'EN'">EN</p>
         <p (click)="setLanguage('DE')" [class.active]="currentLanguage === 'DE'">DE</p>
-      </div>
-
-
-
+    </div>
 </div>
-

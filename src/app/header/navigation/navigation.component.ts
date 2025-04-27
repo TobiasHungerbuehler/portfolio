@@ -113,6 +113,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     onLinkClick(fragment: string, event: MouseEvent): void {
         event.preventDefault();
         this.handleNavigation(fragment);
+        this.closeOverlay();
     }
 
     /**
